@@ -1,6 +1,6 @@
 module.exports = {
-    MongoUser: '',
+    MongoUser: 'test',
     MongoHost: 'localhost',
-    MongoPassword: '',
+    MongoPassword: 'test',
     MongoPort: 27017
 };

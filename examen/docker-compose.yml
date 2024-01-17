@@ -1,26 +1,35 @@
 version: '3'
 
 services:
-  mongo:
+  # MongoDB container
+  mongodb:
     image: mongo
+    container_name: mongodb
+    restart: always
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test
 
-  nodejs_app:
-    build: ./exoplanets
+  # Node.js application container
+  node_app:
+    build:
+      context: exoplanets/  # Replace with your Node.js image details
+    container_name: node_app
+    restart: always
     ports:
       - "7000:3000"
-    depends_on:
-      - mongo
 
+  # Mongo Express container
   mongo_express:
     image: mongo-express
+    container_name: mongo_express
+    restart: always
     ports:
       - "8000:8081"
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mongo
-      - ME_CONFIG_MONGODB_PORT=27017
-      - ME_CONFIG_BASICAUTH_USERNAME=admin
-      - ME_CONFIG_BASICAUTH_PASSWORD=password
-    depends_on:
-      - mongo
+      ME_CONFIG_MONGODB_SERVER: "mongodb"
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: test
+      ME_CONFIG_MONGODB_ADMINPASSWORD: test
