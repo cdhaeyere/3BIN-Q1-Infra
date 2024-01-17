@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - Bootstrap </title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html" class="current">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>CSS 3 - Bootstrap</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="css3.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#bootstrap">Bootstrap</a></li>
+					<li><a href="#install">Installation</a></li>
+					<li><a href="#grille">Grille</a></li>
+					<li><a href="#classes">Classes Bootstrap</a></li>
+					<li><a href="#glyhicon">Les Glyphicons</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+					<li><a href="http://www.w3schools.com/bootstrap/default.asp">W3School Bootstrap</a></li>
+					<li><a href="https://openclassrooms.com/courses/prenez-en-main-bootstrap">Openclassrooms Bootstrap</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<p class="important">
+				<img src="./images/important.png" alt="Important"
+					class="floatLeft" /> Le framework Bootstrap ne fera pas partie de l'évaluation
+			</p>
+			<h2 id="intro">Introduction</h2>
+			<p>Grâce aux <span class="html">Media Queries</span>, nous pouvons réaliser des sites <a href="./css_rwd.html">Responsive </a>.
+			Cependant la mise en place de ces <span class="html">Media Queries</span> est lourde à effectuer pour le développeur. Lors de la création d'un site Web, 
+			vous avez sans doute également remarqué que la tâche la plus consommatrice est le CSS. En effet, le positionnement n'est pas aisé et les tests sont obligatoires
+			pour s'assurer du résultat final et ceci sur plusieurs navigateurs.</p>
+			<p>
+				C'est pourquoi différents framework CSS ont vu le jour dans le but de diminuer la charge de cette tâche pour le développeur.
+			</p>
+			<p class="information">
+				<img src="./images/information.png" alt="Information"
+					class="floatLeft" /> Un framework est un terme courant en informatique. <br>Ce mot désigne un ensemble d'outils et de composants logiciels structurés.
+					On parle de bibliothèque logicielle. <br> Ces frameworks ont pour but de faciliter le travail du développeur.
+			</p>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="bootstrap">Bootstrap</h2>
+			<p>
+				Bootstrap est un donc un framework CSS. Il a été conçu par les développeurs de Twitter et est rapidement devenu le 
+				framework CSS le plus utilisé.
+			</p>
+				Voici les éléments principaux qui composent Bootstrap :
+				<ul>
+					<li>Mise en page(positionnement) via une grille (12 colonnes)</li>
+					<li>Rendre automatiquement votre site Responsive</li>
+					<li>Garantir la compatibilité de votre site sur plusieurs navigateurs</li> 
+					<li>Fournir un ensemble de classes CSS pour faciliter et embellir votre site </li> 
+				</ul>
+		</article>
+			<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="install">Installation et préparation de Bootstrap</h2>
+			<p>
+				Pour installer Bootstrap, il faut au préalable le télécharger sur son site <a href="http://getbootstrap.com/"> Get Bootstrap </a>.
+				Ensuite il suffit de décompresser l'archive dans le répertoire de votre site.
+			</p>
+			<p>
+				Pour utiliser Bootstrap, il faudra se plier à une structure de base HTML fournie par Bootstrap. Vous avez la possibilité de récupérer cette structure de base
+				directement sur le site de bootstrap à cet <a href="http://getbootstrap.com/getting-started/#template"> endroit</a>. 
+			</p>
+			<p>
+				Vous devrez sans doute modifier les liens vers les fichiers CSS de ce modèle de base. En effet, l'architecture de votre site sera la suivante :
+			</p>
+			<img src="./images/structureSiteBootstrap.png" alt="structure site bootstrap">
+			<p>
+				Le modèle de base (index.html) contient des liens vers des feuilles de styles bootstrap qu'il conviendra de faire pointer au bon endroit (bootstrap/css).
+			</p>
+			<p>
+				Remarquez également que Bootstrap fournit des fichiers pour la production( Ex: bootstrap.min.css) et pour le développement(Ex: bootstrap.css). Ces fichiers sont identiques,
+				mise à part, que le fichier de production a une taille plus petite et est donc plus rapide à charger. C'est donc celui-ci que l'on retrouve dans le modèle de base.
+				Si le développeur veut jeter un coup d'oeil à ce fichier, il dispose de la version de développement qui est nettemment plus lisible pour un être humain.
+			</p>
+			
+			<p>
+				Bootstrap peut également être utilisé via un CDN (Content Delivery Network). 
+				Dans ce cas vous ne devez pas télécharger le framework Bootstrap, vous utilisez celui présent dans le CDN.
+			</p>
+			<p class="important">
+				Attention l'utilisation de Bootstrap via un CDN impose d'avoir un accès à Internet. 
+				Ce n'est pas toujours le cas ! 
+				Par exemple lorsque vous présenterez votre projet Web durant la session de juin, vous n'aurez pas d'accès à Internet
+				ce qui rend les CDN inutilisables.
+			</p>
+			
+			
+		</article>
+			<article>
+			<h2 id="grille">Positionnement avec Bootstrap</h2>
+			<p>
+				Bootstrap utilise un système de grille qu'il faudra utiliser pour positionner nos différents éléments HTML.
+				Cette grille est constituée de lignes (row) et de colonnes (col) sachant qu'il y a au maximum 12 colonnes.
+			</p>
+			<p> Exemple : je veux créer un site comportant une zone à gauche(menu) et une zone centrale </p>
+			<pre>
+<code>&lt;div class="container-fluid"&gt;
+	&lt;section class="row"&gt;
+		&lt;article class="col-lg-4"&gt; ... &lt;/article&gt; 
+		&lt;article class="col-lg-8"&gt; ... &lt;/article&gt;
+	&lt;/section&gt;
+&lt;/div&gt;	
+</code></pre>
+			<p>
+				Analysons cet exemple. <br>
+				Pour pouvoir utiliser la grille, Bootstrap demande que l'entièreté du site soit encapsulé dans une division associée 
+				à la classe <span class="html"> container-fluid</span>. Ceci permet à Bootstrap de rendre votre site <em>Responsive</em>.<br>
+				Ensuite nos différentes zones peuvent se placer sur la grille. On définit ici une seule ligne qui est composée d'une zone comportant les 4 premières colonnes de
+				la grille, suivit d'une zone(tjs sur la même ligne) comprenant les 8 dernières colonnes.
+			</p>
+			<p>
+				Vous le voyez le positionnement a été grandement facilité. Bien sûr on peut définir plusieurs lignes (row). 
+				On peut donc avoir une ligne comptant 12 colonnes (header) suivit par une ligne comptant une zone de 4 colonnes et une zone de 8 colonnes.
+			</p>
+			<p>
+				Remarquez également que Bootstrap utilise des classes, le choix des éléments HTML <span class="html">article</span> et <span class="html">section</span> 
+				dans l'exemple précédent appartient au développeur.
+				N'oubliez donc pas les bonnes habitudes apprises avant Bootstrap notamment sur l'utilisation des balises sémantiques.
+			</p>
+			<p>
+				Dans l'exemple, ces sont des classes <em>col-lg-*</em> qui ont été utilisées. Sachez qu'il existe également des versions <em>col-xs-*</em>, <em>col-sm-*</em>, 
+				<em>col-md-*</em> de ces classes. <em>xs</em>, <em>sm</em>, <em>md</em> et <em>lg</em> définissent en fait le type d'écran pour lequel le site a été conçu. 
+				La taille des colonnes étant évidemment différente sur un smartphone(xs), sur une tablette (sm), sur un écran de bureau (md) et sur un écran large. 
+			</p>
+			
+		</article>
+				<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="classes">Les classes Bootstrap</h2>
+			<p>
+				Bootstrap propose différentes classes permettant d'embellir votre site ou de l'enrichir avec des composants prêts à l'emploi. Evidemment pour pouvoir les utiliser,
+				il faut connaître ces classes et savoir comment les utiliser. Le site de de <a href="http://www.w3schools.com/bootstrap/default.asp"> W3School</a> propose justement
+				la liste des composants bootstrap ainsi qu'un exemple l'illustrant.
+			</p>
+		</article>
+		<article>
+			<h2 id="glyphicon">Les Glyphicons</h2>
+			<p>
+				Bootstrap propose différentes icônes libres appelées Glyphicons et qui s'utilise très facilement.
+				Voir <a href="http://getbootstrap.com/components/">ici</a>.
+			</p>
+		</article
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

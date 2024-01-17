@@ -1,0 +1,40 @@
+---
+- name: Deploy Exoplanets Version 2
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update package cache and install Node.js
+      become: yes
+      apt:
+        name: nodejs
+        state: present
+        update_cache: yes
+
+    - name: Install npm
+      become: yes
+      apt:
+        name: npm
+        state: present
+
+    - name: Install pm2
+      become: yes
+      npm:
+        name: pm2
+        global: yes
+
+    - name: Clone the repository
+      git:
+        repo: https://gitlab.vinci.be/olivier.choquet/exoplanets_infra.git
+        dest: /home/nitroc/ansible/exoplanets-infra-2
+        clone: yes
+
+    - name: Install dependencies using npm
+      command: npm install
+      args:
+        chdir: /home/nitroc/ansible/exoplanets-infra-2
+
+    - name: Start the Node.js application with PM2
+      command: pm2 start npm -- start
+      args:
+        chdir: /home/nitroc/ansible/exoplanets-infra-2

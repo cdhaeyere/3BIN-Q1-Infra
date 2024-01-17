@@ -1,0 +1,29 @@
+---
+# tasks file for deploy_nodejs_app_from_git
+- name: "Install nodejs"
+  apt:
+    update_cache: yes
+    name:
+    - nodejs
+    - npm
+    state: present
+
+- name: "git clone public repo"
+  ansible.builtin.git:
+    repo: "{{ app_git_repo }}"
+    dest: "{{ app_deploy_path }}"
+
+- name: "Build app"
+  command: npm install
+  args:
+    chdir: "{{ app_deploy_path }}"
+
+- name: Install PM2
+  npm:
+    name: pm2
+    global: yes
+
+- name: Start App
+  command: pm2 start npm -- start
+  args:
+    chdir: "{{ app_deploy_path }}"

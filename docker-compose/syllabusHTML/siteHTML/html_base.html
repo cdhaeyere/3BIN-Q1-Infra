@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les bases</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Notions de base</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="html5.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#document">Elaborer un document HTML</a></li>
+					<li><a href="#typesbalises">Les types de balises</a></li>
+					<li><a href="#balises">Les balises</a></li>
+					<li><a href="#quirk">Quirk mode </a></li>
+					<li><a href="#validateur">Validateur</a></li>
+					<li><a href="#caracteres">Les caractères spéciaux</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://notepad-plus.sourceforge.net/fr/site.htm">Notepad++</a></li>
+					<li><a href="http://validator.w3.org">Validateur W3C</a></li>
+					<li><a
+						href="http://www.w3schools.com/charsets/ref_html_entities_4.asp">Caractères
+							spéciaux</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Nous commençons par préciser quelques notions de base du
+				langage HTML. Ensuite, partant d'un petit exemple, nous élaborerons
+				une première page HTML. Enfin, nous verrons ce qu'est le quirk mode
+				et le validateur. Nous terminons ce chapitre par une brève
+				explication sur les caractères spéciaux.</p>
+
+			<h4>Définition</h4>
+			<p>
+				Le <span id="i_html"><em>HTML</em></span>, HyperText Markup
+				Language, est un langage de présentation; il fournit des
+				informations sur la structure des documents. Il s'agit d'un standard
+				adopté par le W3C. Le HTML est constitué de <em>balises</em>
+				(signaux) destinées à informer le navigateur sur le contenu de la
+				page HTML qu'il doit afficher. Il s'agit d'un langage qui permet de
+				baliser des textes afin que les navigateurs en reconnaissent la
+				structure et la manière de l'afficher. Outre cet aspect de langage
+				de balisage (Markup Language), le HTML permet de faire des liens
+				hypertextes (HyperText). Un lien hypertexte est un moyen de
+				référencer d'autres sites à partir d'un site.
+				C'est ainsi que se tisse la toile, les sites ayant des liens entre
+				eux permettent la navigation tranquille sur le Web.
+			</p>
+
+			<p>
+				Un fichier dont l'extension est <span class="html">.html</span>
+				n'est qu'un simple fichier texte n'incluant aucune information de
+				formatage contrairement au fichier <span class="html">.doc</span>,
+				par exemple. La convention est d'ajouter l'extension <span
+					class="html">.htm</span> ou <span class="html">.html</span> afin de
+				signifier qu'il s'agit bien d'un fichier HTML. <span class="html">.html</span>
+				ou <span class="html">.htm</span>. Cela ne change rien mais permet
+				simplement aux plateformes qui ne comprennent que les extensions
+				à trois caractères de fonctionner correctement.
+			</p>
+
+			<p>
+				Le choix d'un langage de balisage se justifie pleinement car il
+				offre la possibilité à <em>tous</em> navigateurs de
+				récupérer les ressources du Web. Le choix d'une
+				application WYSIWYG plut&ocirc;t qu'un langage de balisage aurait
+				entra&icirc;né des dépendances vis à vis du format des
+				ressources or l'objectif premier du Web est certainement son
+				universalité.
+			</p>
+
+
+			<p>
+				<em>WYSIWYG </em>(What you see is what you get, càd ce que
+				vous voyez est ce que vous obtenez) est un acronyme utilisé
+				pour désigner des interfaces graphiques permettant de
+				composer visuellement le résultat voulu, par exemple pour un
+				logiciel de mise en page comme PowerPoint ou un traitement de texte
+				comme Word.
+			</p>
+
+			<h4>Editeurs de page HTML</h4>
+			<p>
+				<img class="floatLeft" src="./images/informaticien.gif"
+					alt="un informaticien" />Pour écrire une page HTML, un
+				éditeur est indispensable. Un <em>éditeur HTML</em> (ou
+				éditeur Web) est un logiciel conçu pour faciliter la
+				préparation et la modification de documents écrits en HTML. Le choix
+				est vaste et s'étend du simple bloc-notes à des
+				éditeurs puissants comme Eclipse par exemple.
+			</p>
+			<p>
+				Toutefois il est indispensable de débuter avec un
+				éditeur simple afin de comprendre progressivement HTML.
+				Lorsqu'on ma&icirc;trise parfaitement HTML (et CSS), il devient
+				judicieux de choisir un éditeur plus sophistiqué. A
+				l'école, vous disposez sur les machines de <a
+					href="http://notepad-plus.sourceforge.net/fr/site.htm">Notepad++</a>,
+				il vous est conseillé d'utiliser celui-ci. Gr&acirc;ce à au
+				lien, vous pouvez facilement installer cet éditeur sur votre PC
+				personnel.
+			</p>
+			<h4>Extension &quot;.html&quot;</h4>
+
+			<p>Pour écrire une page HTML, il suffit de la créer
+				dans l'éditeur et de l'enregistrer en veillant bien à
+				ce que l'extension &quot;.html&quot; ou &quot;.htm&quot; soit
+				présente. Nous vous conseillons vivement d'afficher les
+				extensions de vos fichiers dans votre explorateur. Effectivement,
+				par défaut, l'explorateur de fichiers XP n'affiche pas les
+				extensions de fichiers lorsqu'il s'agit d'un type répandu.
+				Par exemple, votre page &quot;blabla.html&quot; s'affichera comme
+				&quot;blabla&quot; dans l'explorateur sans l'extension
+				&quot;.html&quot;.</p>
+
+			<p>Afin d'afficher les extensions de vos fichiers dans
+				l'explorateur, sélectionnez dans le menu &quot;Outils&quot;
+				de l'explorateur Windows &quot;Options des dossiers&quot;. Ensuite,
+				dans l'onglet &quot;Affichage&quot;, faites défiler jusqu'au
+				moment ou vous verrez &quot;Masquez les extensions des fichiers dont
+				le type est connu&quot; et décochez cette option. Cliquez sur
+				&quot;Ok&quot; pour terminer.</p>
+
+
+
+			<h4>Affichage des pages HTML</h4>
+
+			<p>Pour afficher une page HTML, soit vous ouvrez votre navigateur
+				et sélectionnez dans le menu &quot;fichier&quot;
+				&quot;Ouvrir&quot; soit, dans votre explorateur, vous double-cliquez
+				sur votre page.</p>
+
+		</article>
+		<article>
+			<h2 id="document">Elaborer un document HTML</h2>
+			<h4>Premier essai</h4>
+			<p>Faisons un petit essai:</p>
+			<ol>
+				<li>ouvrez votre éditeur NotePad++</li>
+				<li>encodez le texte suivant :<br /> <img
+					alt="delaFontaine.JPG" src="./images/delaFontaine.JPG"/></li>
+				<li>enregistrez votre page avec le nom suivant <span
+					class="html">delaFontaine.html</span></li>
+				<li>fermez votre éditeur</li>
+				<li>ouvrez votre page avec votre navigateur Web (en faisant un
+					double-click sur l'icône ou le nom du fichier contenant ce que vous
+					venez d'écrire par exemple)</li>
+			</ol>
+			<p>Vous constatez que le contenu de votre fichier est
+				effectivement affiché mais sans aucune mise en forme. Il n'y
+				a ni titre, ni paragraphes. Ceci est normal puisqu'aucune mise en
+				forme n'a été effectuée; vous n'avez
+				indiqué aucune exigence quant à la structure et la
+				présentation de votre page.</p>
+			<p>
+				<em>Structurer une page</em>, c'est y introduire des titres, des
+				paragraphes, des mots en évidence, ... bref, toutes les informations
+				sur la structure de la page. Le HTML permet le balisage du contenu
+				de votre page afin d'en définir la structure et la
+				présentation lors de l'affichage par le navigateur. Voyons
+				maintenant ce qu'est une balise !
+			</p>
+
+			<h4>HTML, langage de balisage</h4>
+			<h5>Définition</h5>
+			<p>
+				Une <em>balise</em>, en anglais markup, est un mot-clé assigné
+				à de l'information. Une balise est contenue entre
+				&quot;&lt;&quot; et &quot;&gt;&quot;. Il existe des balises
+				ouvrantes et fermantes.
+			</p>
+			<ul>
+				<li>une balise ouvrante s'exprime comme suit: <span
+					class="html"> &lt; nom de la balise &gt;</span>. Par exemple, <span
+					class="html">&lt;h3&gt;</span>, est une balise ouvrante pour un
+					titre de niveau 3.<br />
+				</li>
+				<li>une balise fermante renferme le même nom de balise
+					que la balise ouvrante correspondante mais commence par un
+					&quot;slash&quot; ( &quot;/&quot; ) <span class="html">:&lt;
+						/nom de la balise &gt;</span>. <span class="html">&lt;/h3&gt;</span> est
+					la balise fermante pour mon titre ci-dessus.
+				</li>
+			</ul>
+			<p>Nous verrons par la suite qu'une balise ne doit pas toujours
+				se fermer en HTML mais bien en XHTML.</p>
+			<p>
+				En HTML, un <em>élément = balise ouvrante +
+					contenu + balise fermante</em>. Par exemple, l'élément suivant <span
+					class="html">&lt;h3&gt;Ceci est un titre de niveau
+					3&lt;/h3&gt;</span> est un titre de niveau 3.
+			</p>
+			<p>
+				Un élément peut contenir un ou plusieurs attributs. Un
+				<em>attribut</em> est un ajout d'information sur
+				l'élément. On spécifie l'attribut dans la
+				balise ouvrante en indiquant sa valeur. La balise ouvrante prend
+				alors la forme suivante :<span class="html"> &lt; uneBalise
+					unAttribut = uneValeur&gt;</span>. Lorsqu'un élément a
+				plusieurs attributs, l'ordre d'énumération de ceux-ci
+				importe peu. Attention, les attributs sont déterminés
+				pour les éléments, il ne s'agit pas de les inventer.
+				Effectivement, les navigateurs ne connaissent qu'une liste
+				d'attributs prédéfinis pour chaque
+				élément. Si vous inventez des attributs, les
+				navigateurs Web ne sauront pas quoi en faire. Quand un navigateur
+				identifie un élément ou un attribut, on dit qu'il
+				&quot;supporte&quot; cet élément ou cet attribut. Nous
+				identifierons quelques attributs pour les éléments que
+				nous allons aborder par la suite.
+			</p>
+			<p>
+				Par exemple, l'élément <span class="html"> img</span> est la balise
+				qui permet d'insérer une image dans un document HTML. Il faut
+				évidemment préciser quelle est l'image que l'on veut insérer. Comme
+				nous le verrons plus tard, il faudra donner la référence du fichier
+				qui contient cette image à l'aide d'un attribut. Si l'image à
+				insérer est logo.gif, l'élément prendra par exemple la forme
+				suivante : <span class="html"> &lt;img
+					src=&quot;images/logo.gif&quot;/&gt;</span>.
+			</p>
+			<p>Par convention, les balises s'écrivent en minuscule en
+				HTML.</p>
+			<h4 id="typesbalises">Les types de balises</h4>
+			En HTML, on distingue deux types de balises:<br />
+			<ul>
+				<li><em>Les balises de structure</em>: ces balises permettent
+					de structurer le contenu des pages HTML. Elle déterminent
+					les différents éléments de la page : les paragraphes, les titres,
+					les morceaux de pages, les listes, ... Ce qui correspond aux
+					balises suivantes: &lt;p&gt;, &lt;h1&gt;,&lt;div&gt;,&lt;ul&gt;,
+					...</li>
+
+				<li><em>Les balises de forme</em>: ces balises permettent la
+					mise en forme du texte. Par exemple, les balises &lt;i&gt;,
+					&lt;font&gt;, ...</li>
+
+			</ul>
+			<p>
+				Lorsqu'on écrit des pages HTML, le code source est souvent alourdi
+				par les balises de forme. La dernière version du standard HTML
+				encourage la séparation entre les balises de structure et de forme
+				afin d'alléger le contenu des pages HTML. Effectivement,
+				tandis que les anciennes versions du HTML mèlangent les balises de
+				forme et de structure, dans toutes les versions ultérieures à la
+				version 4.0, on préconise l'emploi de feuille de style (CSS) pour la
+				gestion de la forme. Dans le cadre de ce
+				cours, nous veillerons à <em>respecter un standard (HTML 5)</em> et
+				nous placerons <em>tous les éléments de style dans des feuilles
+					de style</em> (voir les chapitres sur les CSS).
+			</p>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> 
+				Donc pas de styles dans les pages HTML !!! <br>
+				Les CSS s'occuperont de cette partie. 
+			</p>
+
+			<h5>Structure d'une page HTML</h5>
+			<p>Commençons par analyser une simple page HTML:</p>
+			<pre>
+<code>&lt;!DOCTYPE html&gt;
+<em> &lt;html </em> lang="fr" <em>&gt;</em>
+<em> &lt;head&gt; </em> 
+	<em>&lt;meta charset="UTF-8"&gt;</em>
+	<em>&lt;title&gt;</em>Le titre de ma page<em> &lt;/title&gt;</em>
+<em> &lt;/head&gt;</em>
+<em> &lt;body&gt;</em>
+	J'écris ici le contenu de ma page... 
+<em>  &lt;/body&gt; </em>
+<em> &lt;/html&gt;</em></code></pre>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Vous devez
+				connaître par coeur la structure de base d'un document HTML5 telle
+				que présentée ci-dessus.
+			</p>
+			<p class="clear">La première ligne indique que c'est un document
+				HTML et plus particulièrement un document HTML5.</p>
+			<p class="information clear">
+				<img src="./images/information.png" class="floatLeft" alt="Information"/> Ceux
+				d'entre vous qui auraient fait de l'HTML4 pourront remarquer
+				l'allégement de cette première ligne par rapport à HTML4.
+			</p>
+			<p class="clear">
+				La première balise qui permet de délimiter le fichier HTML est <em><span
+					class="html">&lt;html&gt;</span></em>. On retrouve la balise fermante
+				correspondante (<em><span class="html">&lt;/html&gt;</span></em>) en
+				fin de fichier.
+			</p>
+			<p>
+				On constate ensuite que le fichier HTML se compose d'une
+				en-tête, <em><span class="html">head</span> </em> et d'un
+				corps, <em><span class="html">body</span></em>.
+			</p>
+			<p>
+				Graphiquement, on représente l'imbrication des balises via une
+				arborescence comme suit : <img alt="structureBase.gif"
+					src="./images/structureBase.gif" />.
+			</p>
+
+			<h4 id="balises">
+				Les balises <span class="html">&lt;html&gt;</span>, <span
+					class="html">&lt;head&gt;</span> et <span class="html">&lt;body&gt;</span>
+			</h4>
+			<h5 class="html">
+				<a id="b_html">&lt;html&gt;</a>
+			</h5>
+			<p>
+				L'entièreté de votre document doit se trouver entre
+				les balises <span class="html">&lt;html&gt;</span> et <span
+					class="html">&lt;/html&gt;</span> qui permet d'indiquer au
+				navigateur que le fichier est un <em>fichier HTML</em>.
+			</p>
+
+			<h5 class="html">
+				<a id="b_head">&lt;head&gt;</a>
+			</h5>
+			<p>
+				Dans l'élément <span class="html">html</span>, on place tout d'abord
+				l'élément <em>en-tête</em> du document. Cet élément se compose
+				des balises <span class="html">&lt;head&gt;</span> et <span
+					class="html">&lt;/head&gt;</span>.Les informations indiquées dans
+				l'en-tête d'un document HTML précisent des informations sur la
+				page. L'en-tête contient ce que l'on appelle des <em>méta-informations</em>,
+				càd des informations sur la page HTML elle-même. Ces informations ne
+				sont pas affichées en temps que telles mais renseignent le
+				navigateur.
+			</p>
+
+
+
+			<p>
+				Tout d'abord, dans l'en-tête, il est conseillé de spécifier
+				le <em>type de contenu</em> du fichier ainsi que les caractères
+				utilisés pour son encodage. Sans ces informations, certains
+				navigateurs afficheraient votre page bizarrement; imaginez un
+				navigateur asiatique configuré par défaut pour des idéogrammes,
+				impossible pour lui de comprendre les lettres de type latin (càd
+				ISO-8859-1) si on ne l'informe pas qu'il s'agit effectivement de
+				charactères de type latin.
+			</p>
+			<p>Pour déclarer le type d'encodage de la page HTML, on spécifie
+				donc la balise suivante :</p>
+			<div class="html">&lt;meta charset="UTF-8"&gt;</div>
+			<dl>
+				<dt class="html">meta</dt>
+				<dd>signifie qu'on donne des informations sur la page au
+					navigateur.</dd>
+				<dt class="html">charset</dt>
+				<dd>permet de préciser le type d'encodage des caractères
+					utilisé pour le fichier html.</dd>
+			</dl>
+			<p>Il existe différents types d'encodage. Les plus connus dans
+				nos contrées sont le codage latin (ISO-8859-1) et le codage UTF-8.
+				Le premier encodage est capable de coder la plupart des langues
+				européeenes mais ne connait pas les caractères arabes, russes,
+				chinois, ... . Ceci est dommage quand on veut faire un site web
+				accessible sur Internet et par conséquent potentiellement par des
+				nations ayant des jeux de caractères différents. Vous l'aurez
+				peut-être compris le deuxième encodage (UTF-8) supporte la plupart
+				des jeux de caractères internationaux. C'est pourquoi nous
+				utiliserons celui-ci.</p>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Vu que l'on
+				précise que l'on utilise l'encodage UTF-8 pour créer nos pages HTML,
+				vous devez vérifiez que votre fichier HTML est effectivement bien
+				enregistré avec cet encodage. Sinon vous aurez le symptôme suivant :
+				des caractères (souvent accentués) apparaitront bizaremment. Sous
+				Windows, vous pouvez vérifiez ceci dans le menu "Encodage" de
+				Notepad++, sélectionnez "Encodez en UTF-8 sans BOM". Sous Mac et
+				Linux, l'encodage par défaut est UTF-8 donc vous n'aurez normalement
+				pas de problème.
+			</p>
+
+			<p class="clear">
+				On peut également préciser le <em>titre</em> de la page gr&acirc;ce
+				à l'élément <span class="html">title</span>. Le titre
+				s'affiche généralement en haut de la fenêtre du navigateur.
+			</p>
+			<p>
+				Voici un exemple avec un titre qui s'affiche dans le menu tandis que
+				les informations contextuelles sont gérées par le navigateur. La
+				balise <span class="html">&lt;br&gt;</span> permet de faire un
+				passage à la ligne mais nous aborderons ce point plus loin.
+			</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille70"><pre>
+<code>&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Paroles de M : En Tête À Tête&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...&lt;br&gt;
+En tête à tête avec moi-même &lt;br&gt;
+Souvent j'me tâte pour trouver l't'hème &lt;br&gt; En tête à tête 
+avec moi-même &lt;br&gt; J'ai pas la force de m'dire "je, je, je ..." 
+&lt;br&gt;
+... &lt;br&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code>
+						</pre></td>
+					<td><img src="./images/titre.png" alt="exemple de titre" /></td>
+				</tr>
+			</table>
+
+
+
+			<p>Ensuite, on peut préciser d'autres méta-informations comme
+				l'auteur de la page, des mots-clés de la page (ceux
+				permettant aux moteurs de recherche comme google de
+				référencer adéquatement votre page), ...</p>
+
+<pre><code>&lt;meta <em>name</em> = &quot;description&quot; <em>content</em> = &quot;Ce texte de description doit apparaître à
+l'utilisateur dans les résultats du moteurs de recherche.&quot;&gt;
+&lt;meta <em>name</em> = &quot;author&quot; <em>content</em> = &quot;Emmeline Leconte&quot;&gt;
+&lt;meta <em>name</em> = &quot;keywords&quot; <em>content</em> = &quot;HTML, Information Meta, programme de recherche, protocole HTTP&quot;&gt;</code></pre>
+			<dl>
+				<dt class="html">meta</dt>
+				<dd>signifie qu'on précise les méta-informations de la page.</dd>
+				<dt class="html">name</dt>
+				<dd>
+					permet de préciser le type d'information qu'on donne dans <em>content</em>.
+				</dd>
+				<dt class="html">content</dt>
+				<dd>renferme l'information proprement dite.</dd>
+			</dl>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Vous savez donc maintenant
+				comment renseigner votre nom et prénom sur chaque page HTML que vous créerez. 
+			</p>
+			<h5 class="html clear">
+				<a id="b_body">&lt;body&gt;</a>
+			</h5>
+			<p>
+				Dans l'élément <span class="html">html</span>, après l'entête,
+				on précise ensuite le <em>corps</em> de la page qui englobe
+				l'ensemble du contenu de la page. Cet élément se compose des balises
+				<span class="html">&lt;body&gt;</span> et <span class="html">&lt;/body&gt;</span>.
+			</p>
+			<p>C'est le contenu du corps de la page qui est affiché
+				par le navigateur.</p>
+
+			<h4>Le fichier HTML</h4>
+			<h5>La déclaration du type de document</h5>
+			En général, on commence un document HTML par la ligne suivante (juste
+			avant la balise <span class="html">&lt;html&gt;</span>):
+			<div class="taille60">
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+			</div>
+			<p>
+				Cette ligne est la <em>déclaration du type de document</em>. Elle
+				permet de valider le document selon la recommendation du W3C afin de
+				certifier que votre site est conforme au standard annoncé.
+				Décomposons-la brièvement
+			</p>
+			<dl>
+				<dt class="html">!DOCTYPE</dt>
+				<dd>précise au navigateur qu'il ne s'agit pas d'un élément
+					HTML.</dd>
+				<dt class="html">html</dt>
+				<dd>indique que l'élément &lt;html&gt; sera le premier de la
+					page.</dd>
+			</dl>
+			<p>Si vous ne précisez rien d'autre que ce que nous ne venons de voir
+				ci-dessus, vous indiquez que votre document respectera la norme
+				HTML5. Effectivement, il est judicieux de spécifier à
+				quelle version du HTML le document est conforme. La
+				conformité de votre site signifie qu'il respecte la version
+				standard sur laquelle tout le monde s'est mis d'accord.
+				Actuellement, le HTML standard est la version 5. Préciser le
+				standard respecté par votre site vous permet d'avoir la
+				garantie que vos pages HTML seront affichées de la même
+				façon (plus ou moins) par tous les navigateurs.</p>
+
+
+			<h4 id="i_commentaire">Commentaire</h4>
+			<p>
+				On peut placer des <em>commentaires</em> dans une page HTML. Ce qui
+				est mis en commentaire est ignoré par le navigateur. Le
+				commentaire se place entre les balises <span class="html">&lt;!--
+					Ici les commentaires --&gt;</span>. Voici un exemple
+			</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>Nom : Feimal <em>&lt;br&gt;</em>
+Prénom : <em>&lt;!-- </em>Vérifier ci c'est Aïcha<em>
+--&gt; </em> <em>&lt;br&gt;</em>
+Adresse : <em>&lt;!-- </em>la rue???<em> --&gt;</em> 
+...</code>
+						</pre></td>
+					<td><div class="affichageNav">
+							Nom : Feimal <br /> Prénom :
+							<!-- Vérifier ci c'est Aïcha
+-->
+							<br /> Adresse :
+							<!-- la rue??? -->
+							...
+						</div></td>
+				</tr>
+			</table>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Attention les
+				commentaires HTML sont visibles du côté utilisateur (si
+				l'utilisateur affiche la source du document HTML). On veillera donc
+				à ne pas mettre d'informations secrètes, confidentielles,
+				importantes dans ces commentaires !
+			</p>
+		</article>
+		<article>
+			<h2 id="quirk">Quirks mode</h2>
+			<p>
+				Le navigateur doit savoir exactement de quelle façon gérer
+				vos pages. Effectivement, il existe plusieurs générations de HTML,
+				chacune ayant des spécificités et des améliorations par rapport
+				à la version antérieure. Les versions antérieures du HTML
+				étaient moins standardisées et étaient dès lors beaucoup plus
+				permissives. Ce qui signifie qu'un document conforme au HTML2 ne
+				sera certainement pas conforme au HTML5. Lorsqu'une nouvelle version
+				du HTML voit le jour, il faudrait que tous les webmasters du monde
+				entier mettent à jour leurs sites Web pour respecter le
+				dernier standard sorti; ceci est impossible. C'est pourquoi
+				l'utilisation des anciens standards HTML reste permise et comprise
+				par les navigateurs. Effectivement, il suffit de préciser au début
+				du document HTML le type du document correspondant au standard
+				respecté. <em>Suivant la version HTML utilisée, la première
+					ligne DOCTYPE sera différente. C'est ainsi que le navigateur sait
+					quelles règles HTML il doit utiliser pour afficher le document</em>
+			</p>
+			<p>
+				Mais que se passe-t-il si le DOCTYPE n'est pas précisé? Ou alors si
+				le DOCTYPE précisé n'est pas respecté? <br /> Le navigateur va
+				quand même afficher le document HTML mais n'offre aucune
+				garantie quant à son affichage. Le navigateur va appliquer
+				les anciennes règles du HTML (plus permissives), il passe en <em>mode
+					quirk</em>.
+			</p>
+		</article>
+		<article>
+			<h2 id="validateur">Validateur</h2>
+			<p>
+				<a href="http://validator.w3.org/"><img
+					src="./images/validateur.jpeg" alt="validateur.jpeg"
+					class="floatRight" /></a>Pour vérifier si une page HTML est
+				conforme au standard HTML5 par exemple, il suffit d'un validateur.
+				Le W3C propose un validateur sur son site Web. Pour vous connectez à
+				ce site, cliquez sur l'écran à droite de la page. Les éditeurs
+				proposent parfois un validateur (sous forme de bouton ou autre) qui
+				appelle indirectement le validateur du W3C.
+			</p>
+			<p class="important clear">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Il est
+				important de valider vos pages HTML via le validateur du W3C et ce
+				dès le début de l'écriture de vos pages. En effet il est plus facile
+				de corriger des erreurs dès le début quand votre page HTML n'est pas
+				encore trop touffue plutôt que d'être découragé à la vue de 1500
+				erreurs à corriger. De plus vous verrez que souvent des erreurs se
+				répètent, vous pouvez alors vous corriger dès le début pour diminuer
+				les erreurs.
+			</p>
+			<p class="important clear">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Pour qu'un
+				site Web soit bien référencé (classement Google), le première étape
+				consiste à avoir un document HTML valide ! Nous insistons donc
+				lourdement sur cette validation.
+			</p>
+		</article>
+		<article>
+			<h2 id="caracteres">Les caractères spéciaux</h2>
+			<p>Les normes HTML demandent de respecter le codage des
+				caractères UTF-8. Nous n'avons donc plus de problèmes avec les
+				caractères accentués comme c'était le cas en HTML4. Cependant
+				certains caractères particuliers comme par exemple &lt; utilisé
+				directement par le langage HTML demande un codage particulier pour
+				sa représentation.
+			<p>
+				Pour coder un tel caractère, on entre une combinaison précédée du
+				caractère <em>&amp;</em> et terminée par un point-virgule <em>;</em>.
+				Voici quelques représentations HTML des caractères ASCII avec le
+				code UTF-8 et le code HTML :
+			</p>
+			<table id="codes">
+			<caption>Ce tableau présente le code ISO et ASCII de quelques caractères."</caption>
+				<tr>
+					<th>Caractère</th>
+					<th>Code ISO</th>
+					<th>Code HTML</th>
+				</tr>
+				<tr>
+					<td>&amp;</td>
+					<td>&#38;#38;</td>
+					<td>&#38;amp;</td>
+				</tr>
+				<tr>
+					<td>&lt;</td>
+					<td>&#38;#139;</td>
+					<td>&#38;lt;</td>
+				</tr>
+				<tr>
+					<td>&gt;</td>
+					<td>&#38;#155;</td>
+					<td>&#38;gt;</td>
+				</tr>
+				<tr>
+					<td>espace</td>
+					<td>&#38;#160;</td>
+					<td>&#38;nbsp;</td>
+				</tr>
+
+			</table>
+			<p>
+				Le site de <a
+					href="http://www.w3schools.com/charsets/ref_html_entities_4.asp">
+					w3cschools.com </a>vous donne d'autres représentations HTML de
+				caractères spéciaux.
+			</p>
+			<p>
+				Par exemple, pour afficher la chaîne de caractères <em class="html">&lt;body&gt;
+				</em>, il faut qu'elle soit codée dans la page de la manière suivante : <em
+					class="html">&#38;lt;body&#38;gt;</em> pour qu'elle ne soit pas
+				interprétée par le navigateur comme de l'HTML. <br /> Notez que le
+				caractère espace (tabulation) n'est pas interprété par le
+				navigateur; il faut donc le spécifier lorsqu'on désire un espace
+				explicitement.
+			</p>
+
+		</article>
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

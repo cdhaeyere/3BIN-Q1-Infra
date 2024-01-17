@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les tableaux</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Les tableaux</h1>
+		<div id="menu">
+		<nav>
+			<ul>
+				<li><a href="html5.html">Retour au sommaire</a></li>
+				<li><a href="#intro">Introduction</a></li>
+				<li><a href="#table">Les tableaux en HTML</a></li>
+				<li><a href="#balises">Les balises spécifiques aux tables </a></li>
+				<li><a href="#deco">La décoration des tableaux</a></li>
+				<li><a href="#fusion">La mise en forme complexe</a></li>
+			</ul>
+		</nav>
+		<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+		<aside>
+			<p>Liens utiles</p>
+			<ul>
+			</ul>
+		</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>
+				Lorsque nous devons afficher des données, il est souvent utile
+				d'employer un tableau, ensemble d'éléments
+				classés dans des lignes (<span class="html">rows</span> en
+				anglais) et des colonnes (<span class="html">columns</span>).
+			</p>
+
+			<p>Un tableau se définit donc en spécifiant le
+				nombre de lignes et le nombre de colonnes.</p>
+			<p>
+				Dans ce chapitre, nous allons aborder les
+					tableaux en HTML. Nous verront d'abord les
+					balises spécifiques aux tables et les
+					attributs d'un tableau. Nous découvrirons également comment
+					décorer un tableau gràce aux feuilles de style. <br>Grâce à la fusion de cellules, 
+					il est possible d'obtenir une mise en forme plus complexe.
+			</p>
+		</article>
+		<!-- ******************************************************************************************************* -->
+		<article>
+			<h2 id="table">Les tableaux en HTML</h2>
+			<p>En HTML, l'implémentation d'un tableau permet de spécifier
+				différentes parties, comme nous le montre l'exemple suivant.</p>
+			<div>
+				<table id="exemple">
+					<caption>Le titre de la table</caption>
+					<thead>
+
+						<tr>
+							<th></th>
+							<th>entête de colonne</th>
+							<th>Une colonne</th>
+							<th>Une autre colonne</th>
+						</tr>
+						<tr>
+							<th>Entête de ligne</th>
+							<td>Une cellule dans la ligne</td>
+							<td>Une autre cellule</td>
+							<td>X</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Une autre ligne</td>
+							<td></td>
+							<td>Y</td>
+							<td>Z</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>
+				Le <em>titre</em> du tableau décrit l'objet du tableau, il se
+				place au dessus du tableau, mais il peut aussi être placé en
+				légende, en bas ou sur un des cotés.
+			</p>
+			<p>
+				Les différents éléments sont définis par <em>ligne</em>, les uns à
+				la suite des autres.
+			</p>
+
+			<p>
+				Les <em>cellules</em> d'un tableau sont les cases individuelles qui
+				apparaissent dans le tableau et qui contiennent les données
+				&agrave; afficher.
+			</p>
+
+			<p>
+				Les <em>en-t&ecirc;tes</em> sont des cellules spéciales qui
+				contiennent la description de la colonne ou de la ligne, elles se
+				placent en début de ligne ou en début de colonne.
+			</p>
+
+			<p>
+				Les <em>données</em> sont les valeurs présentes dans
+				les cellules du tableau.
+			</p>
+			<p>Découvrons ensemble les balises qui permettent de dessiner un
+				tableau dans une page web.</p>
+		</article>
+		<!-- ******************************************************************************************************* -->
+		<article>
+			<h2 id="balises">Les balises spécifiques aux tables</h2>
+			<ul>
+
+				<li>
+					<p>
+						Le tableau est déterminé par les balises <span
+							class="html"><em id="i_baliseTable">&lt;table&gt;</em> ...
+							<em>&lt;/table&gt;</em></span>, tous les éléments
+						constituant le tableau doivent se trouver entre ces 2 balises.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						Le tableau est donné ligne par ligne, une ligne est
+						indiquée par les balises <span class="html"><em
+							id="i_tr">&lt;tr&gt;</em> ...<em> &lt;/tr&gt;</em> </span>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						A l'intérieur d'une ligne chaque cellule est
+						délimitée par les balises <span class="html"><em
+							id="i_td">&lt;td&gt;</em> ... <em>&lt;/td&gt;</em></span>. Il est
+						préférable de donner le m&ecirc;me nombre
+						d'éléments dans chaque ligne pour obtenir un tableau
+						bien structuré.
+					</p>
+
+					<p>Une cellule peut contenir n'importe quel type de
+						données, du texte, du code HTML (par exemple une autre
+						table), des liens, des images, .. et m&ecirc;me rien du tout pour
+						indiquer une cellule vide.</p>
+				</li>
+
+				<li>
+					<p>
+						<span id="i_th">Les cases d'en-t&ecirc;te</span> sont
+						délimitées par les balises <span class="html"><em>&lt;th&gt;
+						</em>... <em>&lt;/th&gt;</em></span>. Ces en-t&ecirc;tes sont facultatives,
+						elles peuvent &ecirc;tre placées soit en début de
+						ligne, soit en début de colonne, ou m&ecirc;me en
+						début de ligne et de colonne.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<span id="i_caption">Le titre du tableau</span> est donné
+						par les balises <span class="html"><em>&lt;caption&gt;</em>
+							...<em> &lt;/caption&gt;</em></span>.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<span id="i_thead">Les balises</span> <span class="html"><em>&lt;thead&gt;</em></span>,
+						<span class="html"><em>&lt;tbody&gt;</em></span> et <span
+							class="html"><em>&lt;tfoot&gt;</em></span> sont de nouvelles
+						balises qui ont pour but de structurer les données présentes dans
+						l'élément <span class="html">table</span>. La balise <span
+							class="html"><em>&lt;thead&gt;</em></span> est ainsi censée
+						regrouper les informations concernant l'en-tête du tableau comme
+						le titre et le nom des colonnes par exemple. La balise <span
+							class="html"><em>&lt;tbody&gt;</em></span> est destinée à
+						contenir l'ensemble des données et la balise <span class="html"><em>&lt;tfoot&gt;</em></span>
+						des remarques ou une légende.
+					</p>
+					<p>
+						Le véritable apport vient du fait que pour une table volumineuse
+						un scroll va permettre de visualiser les données inclues dans la
+						balise <span class="html"><em>&lt;tbody&gt;</em></span> alors que
+						les données présentent dans <span class="html"><em>thead</em></span>
+						et <span class="html"><em>tfoot</em></span> resteront toujours
+						visibles. Cependant aucun navigateur ne supporte encore cet effet.
+					</p>
+				</li>
+
+			</ul>
+
+			<p>Nous pouvons maintenant placer ces différents éléments dans le
+				code ci-dessous, pour obtenir le tableau donné en introduction au
+				début de la page.</p>
+			<pre class="taille70">
+				<code>
+<em>&lt;table&gt;</em>
+	<em>&lt;caption&gt;</em>Le titre de la table <em>&lt;/caption&gt;</em>
+	<em>&lt;thead&gt;</em>
+		<em>&lt;tr&gt; </em>&lt;!-- 1ère ligne, entête des colonnes--&gt;
+			 <em>&lt;th&gt; </em> <em>&lt;/th&gt;</em>
+			 <em>&lt;th&gt;</em>Entête de colonne  <em>&lt;/th&gt;</em>
+			 <em>&lt;th&gt;</em>Une colonne <em>&lt;/th&gt;</em>
+			 <em>&lt;th&gt;</em>Une autre colonne <em>&lt;/th&gt;</em>
+		<em>&lt;/tr&gt;</em>
+	<em>&lt;/thead&gt;</em>
+	<em>&lt;tbody&gt;</em>
+		 <em>&lt;tr&gt; </em>&lt;!-- 2ème ligne--&gt;
+			<em>&lt;th&gt;</em>Entête de ligne <em>&lt;/th&gt;</em>
+			<em>&lt;td&gt;</em>Une cellule dans la ligne<em>&lt;/td&gt;</em>
+			<em>&lt;td&gt;</em>Une autre cellule<em>&lt;/td&gt;</em>
+			<em>&lt;td&gt; X</em><em>&lt;/td&gt;</em>
+		 <em>&lt;/tr&gt;</em>
+		 <em>&lt;tr&gt;</em>
+			 <em>&lt;th&gt;</em>Une autre ligne &lt;!-- 3ème ligne--&gt; <em>&lt;/th&gt;</em>
+			 <em>&lt;td&gt; </em>&lt;!-- Une cellule vide--&gt; <em>&lt;/td&gt;</em>
+			 <em>&lt;td&gt;Y</em><em>&lt;/td&gt;</em>
+			 <em>&lt;td&gt;Z</em><em>&lt;/td&gt;</em>
+		 <em>&lt;/tr&gt;</em>
+	<em>&lt;/tbody&gt;</em>
+<em>&lt;/table&gt;</em>
+</code>
+			</pre>
+			<p>Pour la lisibilité du code de la page, il est vivement
+				conseiller d'user et d'abuser de l'indentation (attention l'excès
+				nuit en tout). Cette mise en page du code n'a pas d'influence sur le
+				rendu de la page lors de l'affichage dans un navigateur.</p>
+			<p>Résumons les principales balises permettant la création de
+				table en HTML:</p>
+			<table id="tableBalises">
+				<thead>
+					<tr>
+						<th>Balise</th>
+						<th>Signification</th>
+						<th>Usage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span class="html">table</span></td>
+						<td></td>
+						<td>délimite la table</td>
+					</tr>
+
+					<tr>
+						<td><span class="html">caption</span></td>
+						<td></td>
+						<td>donne le titre</td>
+					</tr>
+
+					<tr>
+						<td><span class="html">tr</span></td>
+						<td>table row</td>
+						<td>délimite une ligne</td>
+					</tr>
+
+					<tr>
+						<td><span class="html">td</span></td>
+						<td>table data</td>
+						<td>délimite une cellule de données</td>
+					</tr>
+
+					<tr>
+						<td><span class="html">th</span></td>
+						<td>table header</td>
+						<td>donne une cellule d'en-t&ecirc;te de ligne ou colonne</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+		<!-- ******************************************************************************************************* -->
+		<article>
+			<h2 id="deco">La déco avec les feuilles de style</h2>
+			<p>
+				La mise en forme d'un tableau, même si elle peut être réalisée grâce
+				aux attributs des balises HTML, bénéficie de la souplesse et de la
+				puissance des feuilles de style (CSS). Une table, une cellule, est
+				considérée comme une <a href="css_formatage.html#modeleboite"> boîte </a> au sens CSS et leurs attributs peuvent donc s'appliquer aux tableaux.
+			</p>
+			<p>Voici quelques propriétés applicables aux tableaux.</p>
+			<p>
+				La <em>position de la légende</em> peut être spécifiée par la
+				propriété <span class="html" id="i_caption-side">caption-side
+				</span> qui accepte les valeurs
+			</p>
+			<dl>
+				<dt>
+					<span class="html">top</span>
+				</dt>
+				<dd>légende en haut (valeur pas défaut)</dd>
+				<dt>
+					<span class="html">bottom</span>
+				</dt>
+				<dd>légende en bas</dd>
+				<dt>
+					<span class="html">left</span>
+				</dt>
+				<dd>légende à gauche</dd>
+				<dt>
+					<span class="html">right</span>
+				</dt>
+				<dd>légende à droite</dd>
+			</dl>
+			<p>
+				La <em id="i_border-collapse">fusion des bordures</em> des cellules
+				est possible grâce à l'attribut <span class="html">border-collapse</span>
+				qui prend les valeurs <span class="html">collapse</span> ou <span
+					class="html">separate</span>.
+			</p>
+			<p>
+				La propriété <span class="html" id="i_border-spacing">border-spacing</span>
+				spécifie l'écartement entre les cellules (en px).
+			</p>
+
+			<p>Voici trois exemples :</p>
+
+			<p>1er exemple (même écartement des cellules de 10px de tous les
+				cotés)</p>
+
+
+
+<pre class="taille60"><code>
+<em>&lt;html&gt;</em>
+ <em>&lt;head&gt;</em>
+ <em>&lt;style type="text/css"&gt;</em>
+table.one { 
+		border-collapse : separate;
+		border-spacing : 10px;
+}
+
+<em>&lt;/style&gt;</em>
+ <em>&lt;/head&gt;</em>
+ <em>&lt;body&gt;</em>
+ <em>&lt;table class=</em>"one"<em>&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Alpha<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>Beta<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Gamma<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>delta<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+ <em>&lt;/table&gt;</em>
+ <em>&lt;/body&gt;</em>
+ <em>&lt;/html&gt;</em>
+				</code>
+			</pre>
+
+			<p>Affichage :</p>
+
+			<table class="one">
+				<tr>
+					<td>Alpha</td>
+					<td>Beta</td>
+				</tr>
+				<tr>
+					<td>Gamma</td>
+					<td>Delta</td>
+				</tr>
+			</table>
+			<p>2ème exemple (écartement différent en vertical 30px et en
+				horizontal 10px)</p>
+
+<pre class="taille60"><code>
+<em>&lt;html&gt;</em>
+ <em>&lt;head&gt;</em>
+ <em>&lt;style type="text/css"&gt;</em>
+table.two {
+		border-collapse: separate;
+		border-spacing: 10px 30px;
+}
+<em>&lt;/style&gt;</em>
+ <em>&lt;/head&gt;</em>
+ <em>&lt;body&gt;</em>
+ <em>&lt;table class=</em>"two"<em>&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Rouge<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>Orange<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Vert<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>Jaune<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+ <em>&lt;/table&gt;</em>
+ <em>&lt;/body&gt;</em>
+ <em>&lt;/html&gt;</em>
+				</code>
+			</pre>
+			<p>Affichage :</p>
+			<table class="two">
+				<tr>
+					<td>Rouge</td>
+					<td>Orange</td>
+				</tr>
+				<tr>
+					<td>Vert</td>
+					<td>Jaune</td>
+				</tr>
+			</table>
+			<p>
+				3ème exemple (pas d'écartement <span class="html">border-collapse:
+					collapse</span>)
+			</p>
+
+<pre class="taille60">
+				<code>
+<em>&lt;html&gt;</em>
+ <em>&lt;head&gt;</em>
+ <em>&lt;style type="text/css"&gt;</em>
+table.three {
+		border-collapse: collapse;
+}
+<em>&lt;/style&gt;</em>
+ <em>&lt;/head&gt;</em>
+ <em>&lt;body&gt;</em>
+ <em>&lt;table class=</em>"three"<em>&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Rouge<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>Orange<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+	 <em>&lt;tr&gt;</em>
+		 <em>&lt;td&gt;</em>Vert<em>&lt;/td&gt;</em>
+		 <em>&lt;td&gt;</em>Jaune<em>&lt;/td&gt;</em>
+	 <em>&lt;/tr&gt;</em>
+ <em>&lt;/table&gt;</em>
+ <em>&lt;/body&gt;</em>
+ <em>&lt;/html&gt;</em>
+				</code>
+			</pre>
+
+			<p>Affichage :</p>
+			<table class="three">
+				<tr>
+					<td>Rouge</td>
+					<td>Orange</td>
+				</tr>
+				<tr>
+					<td>Vert</td>
+					<td>Jaune</td>
+				</tr>
+			</table>
+			<p>
+				Les cellules peuvent s'apparenter au <a href="css_formatage.html#modeleboite">modèle de boîte </a> que vous avez
+				déjà rencontré lors de l'introduction des CSS. Mais la gestion des marges
+				est cependant toute différente. Elle se réalise au niveau de la
+				table (!! il n'est pas possible de traiter séparément chaque
+				cellule).
+			</p>
+		</article>
+		<!-- ******************************************************************************************************* -->
+		<article>
+			<h2 id="fusion">La mise en forme plus complexe d'un tableau</h2>
+
+			<p>
+				HTML permet de <span id="i_fusion">fusionner des cellules</span>
+				pour une organisation plus souple des données.
+			</p>
+			<p>
+				L'attribut <span class="html"><em>rowspan</em></span> (<span
+					class="html"><em>colspan</em></span>) des balises <span
+					class="html">&lt;td&gt;</span> ou <span class="html">&lt;th&gt;</span>
+				permet de spécifier le nombre lignes (colonnes) que l'on
+				désire fusionner.
+			</p>
+			<p>Ce premier exemple montre la fusion de 2 cellules dans une
+				m&ecirc;me ligne</p>
+			<table class="colspan">
+				<tbody>
+					<tr>
+						<th>Figure</th>
+						<th colspan="2">dimension(s)</th>
+					</tr>
+					<tr>
+						<td>rectangle</td>
+						<td>6</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>carré</td>
+						<td colspan="2">2</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>En HTML :</p>
+			<pre class="taille70">
+				<code>
+&lt;table &gt;
+	&lt;tbody&gt;
+		&lt;tr &gt;
+			&lt;th&gt;Figure&lt;/th&gt;
+			&lt;th <em>colspan = "2"</em>&gt;dimension(s)&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;rectangle&lt;/td&gt;
+			&lt;td&gt;6&lt;/td&gt;
+			&lt;td &gt;4&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;carré&lt;/td&gt;
+			&lt;td <em>colspan = "2"</em>&gt;2&lt;/td&gt;			
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+</code>
+			</pre>
+
+			<p>Cet autre exemple fusionne des cellules dans la colonne</p>
+			<table class="colspan">
+				<tbody>
+					<tr>
+						<th></th>
+						<th></th>
+						<th>Rectangle</th>
+						<th>Carré</th>
+					</tr>
+					<tr>
+						<th rowspan="2">dimension</th>
+						<td>Longueur</td>
+						<td>10</td>
+						<td rowspan="2">6</td>
+					</tr>
+					<tr>
+						<td>largeur</td>
+						<td>5</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>En HTML :</p>
+			<pre class="taille70">
+<code>&lt;table&gt;
+	&lt;tbody&gt;
+		&lt;tr &gt;
+			&lt;th&gt;&lt;/th&gt;&lt;th&gt;&lt;/th&gt;
+			&lt;th&gt;Rectangle&lt;/th&gt;
+			&lt;th&gt;Carré&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th <em>rowspan = "2"</em>&gt;dimension&lt;/th&gt;
+			&lt;td&gt;Longueur&lt;/td&gt;
+			&lt;td&gt;10&lt;/td&gt;
+			&lt;td <em>rowspan = "2"</em>&gt;6&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;largeur&lt;/td&gt;
+			&lt;td&gt;5&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+</code>
+			</pre>
+		</article>
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

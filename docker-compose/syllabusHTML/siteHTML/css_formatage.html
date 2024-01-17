@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - CSS Le formatage</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html" class="current">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>CSS 3 - Le formatage</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="css3.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#textes">Textes</a></li>
+					<li><a href="#liens">Liens</a></li>
+					<li><a href="#coul">Couleurs et images de fond</a></li>
+					<li><a href="#modeleboite">Le modèle de boîtes</a></li>
+					<li><a href="#i_dim">Les dimensions</a></li>
+					<li><a href="#i_iborder">Les bordures</a></li>
+					<li><a href="#i_padding">Les espacements</a></li>
+					<li><a href="#i_margin">Les marges</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://jigsaw.w3.org/css-validator/">Validateur
+							CSS3</a></li>
+					<li><a
+						href="http://www.w3schools.com/cssref/css_selectors.asp">Sélecteurs
+							W3C</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Nous savons maintenant que ce sont les CSS qui permettent
+				d'habiller, de "décorer" les pages HTML. Dans un premier temps, nous
+				allons préciser les attributs propres aux caractères. Nous allons
+				ensuite passer en revue les propriétés les plus fréquemment
+				utilisées dans les CSS. Pour terminer, nous verrons comment modifier
+				l'aspect des liens grâce aux CSS.</p>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="textes">Textes</h2>
+			<p>
+				Un soin particulier est apporté à la forme du texte en définissant
+				le type de <em>police</em>, la <em>taille</em> des caractères ou
+				encore la <em>couleur</em>.
+			</p>
+
+			<h4>La taille</h4>
+			Pour préciser la taille des caractères, il existe plusieurs types de
+			mesure:
+			<dl>
+				<dt>
+					Le pixel (<em>px</em>)
+				</dt>
+				<dd>Cette taille est relative à la définition de l'écran, qui
+					est définie en pixels (un pixel est un point de l'écran)</dd>
+				<dt>
+					Le point (<em>pt</em>)
+				</dt>
+				<dd>Cette taille que vous trouvez dans les traitements de texte
+					se réfère à la taille typographique. 12pt est la taille normale
+					d'une police.</dd>
+				<dt>
+					Le pourcentage (<em>%</em>)
+				</dt>
+				<dd>Le pourcentage permet de préciser une taille relative à la
+					taille normale d'une police.</dd>
+				<dt>
+					L'unité em (<em>em</em>)
+				</dt>
+				<dd>Cette taille correspond à un rapport à la taille normale
+					d'une police. 1em correspond à 100% de la taille normale de la
+					police, 1.4em à 140% etc.</dd>
+			</dl>
+
+			<h4>La police</h4>
+			<p>Il existe 5 familles de polices de caractères :</p>
+			<dl>
+				<dt>
+					<span class="html">sans-serif</span>
+				</dt>
+				<dd>Cette famille comprend les polices à caractères bâtons, les
+					plus lisibles à l'écran : Verdana, Arial, Arial Black, Trebuchet
+					MS, Geneva.</dd>
+				<dt>
+					<span class="html">serif</span>
+				</dt>
+				<dd>Ce sont les polices à empattements (serif en anglais) qui
+					sont en général utilisées par les journaux: Times, Times New Roman,
+					Georgia</dd>
+				<dt>
+					<span class="html">Monospace</span>
+				</dt>
+				<dd>Les caractères ont une largeur fixe. Ces polices servent à
+					illustrer les codes informatiques: Courier, Courier New, Andale
+					Mono</dd>
+				<dt>
+					<span class="html">Cursive</span>
+				</dt>
+				<dd>Les polices ressemblent à l'écriture manuscrite: Comic
+					Sans, Apple Chancery</dd>
+				<dt>
+					<span class="html">Fantasy</span>
+				</dt>
+				<dd>On trouve ici des polices stylées et décoratives rarement
+					utilisées dans les pages web professionnelles: Last Ninja, Impact</dd>
+			</dl>
+
+			<h4>La couleur</h4>
+			<p>En HTML, deux façons de préciser une couleur coexistent :</p>
+			<ul>
+				<li>
+					<p>
+						Via le <em>nom</em> de la couleur.
+					</p>
+					<p>A la base en HTML, 16 couleurs possèdent un nom. Dans le
+						tableau qui suit, ces couleurs sont présentées en couleur de fond
+						avec leur nom et leur code associé :</p>
+					<div id="couleurs" class="centre">
+						<table>
+							<tr>
+								<td>
+									<table class="aqua">
+										<tr>
+											<td>aqua</td>
+											<td>#00FFFF</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="black">
+										<tr>
+											<td>black</td>
+											<td>#000000</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="blue">
+										<tr>
+											<td>blue</td>
+											<td>#0000FF</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="fuchsia">
+										<tr>
+											<td>fuchsia</td>
+											<td>#FF00FF</td>
+										</tr>
+									</table>
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+									<table class="green">
+										<tr>
+											<td>green</td>
+											<td>#008000</td>
+										</tr>
+									</table>
+								</td>
+
+								<td>
+									<table class="lime">
+										<tr>
+											<td>lime</td>
+											<td>#00FF00</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="maroon">
+										<tr>
+											<td>maroon</td>
+											<td>#800000</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="navy">
+										<tr>
+											<td>navy</td>
+											<td>#000080</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table class="olive">
+										<tr>
+											<td>olive</td>
+											<td>#808000</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="purple">
+										<tr>
+											<td>purple</td>
+											<td>#800080</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="red">
+										<tr>
+											<td>red</td>
+											<td>#FF0000</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="silver">
+										<tr>
+											<td>silver</td>
+											<td>#C0C0C0</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table class="teal">
+										<tr>
+											<td>teal</td>
+											<td>#008080</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="white">
+										<tr>
+											<td>white</td>
+											<td>#FFFFFF</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="yellow">
+										<tr>
+											<td>yellow</td>
+											<td>#FFFF00</td>
+										</tr>
+									</table>
+								</td>
+								<td>
+									<table class="gray">
+										<tr>
+											<td>gray</td>
+											<td>#808080</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li>
+					<p>
+						Via le <em>code hexadécimal</em> de la couleur.
+					</p>
+					<p>L'hexadécimal sera largement étudié dans le cours de langage
+						d'assemblage.</p>
+					<p>
+						Il est pourtant intéressant pour vous de comprendre le principe
+						des couleurs. Votre écran, pour afficher les couleurs, fait un
+						mélange de trois composantes : le rouge, le vert et le bleu. Ceci
+						donne naissance au système de couleurs <em>RVB</em> (Rouge, Vert,
+						Bleu) ou <em>RGB</em> (Red, Green, Blue) en anglais.
+					</p>
+					<p>Si on veut décrire une couleur, on doit décrire la
+						proportion de chacune des trois couleurs de base, sachant que le
+						blanc est obtenu en mélangeant la quantité maximale (symbolisée
+						par FF que vous comprendrez dès que vous aurez étudié
+						l'hexadécimal) des trois couleurs. Le noir est obtenu en mettant
+						la quantité minimale (00) des trois couleurs.</p>
+					<p>Quelques exemples:</p>
+					<p>
+						<em>Blanc</em> s'obtient donc par <em>#FFFFFF</em> ce qui signifie
+						FF de rouge, FF de vert, FF de bleu
+					</p>
+					<p>
+						<em>Noir</em> s'obtient par #000000, vert pur par #00FF00 etc.
+					</p>
+					<p>Vous avez compris qu'il suffit de changer un des chiffres
+						pour obtenir une autre couleur.</p>
+					<p>
+						Toutes les couleurs ne sont pas Web safe et on se contentera de
+						combiner les 3 couleurs en utilisant les 6 quantités 00 33 66 99
+						CC et FF, ce qui nous donne 216 couleurs (ou 6 à la puissance 3).
+						Si vous voulez en savoir plus sur le sujet, consulter la
+						bibliographie du cours ou par exemple la page <a
+							href="http://fr.wikipedia.org/wiki/Couleurs_du_Web"> couleurs
+							du Web </a> de Wikipedia.
+					</p>
+				</li>
+			</ul>
+
+
+			<h4>Liste des propriétés</h4>
+			<p>Rappelons-nous au départ que ces propriétés ont une valeur par
+				défaut. L'introduction d'une propriété modifie cette valeur par
+				défaut.</p>
+			<p>Ajoutons enfin qu'il existe beaucoup de différences entre les
+				navigateurs. Certains conseils vous seront donnés pour éviter les
+				mauvaises surprises. La liste des propriétés et de leurs attributs
+				que vous trouverez ci-dessous n'est pas exhaustive mais elle reprend
+				les plus élémentaires. Libre à vous de vouloir aller plus loin.</p>
+			<p>Dans certains exemples qui suivent, les propriétés ont
+				toujours été appliquées au sélecteur classe mais celles-ci peuvent
+				évidemment être appliquées à d'autres sélecteurs (h1, h2, p ...)</p>
+
+			<h4>Propriétés portant sur les caractères.</h4>
+			<dl>
+				<dt>
+					<span class="html"><em>font-family</em></span>
+				</dt>
+
+				<dd>
+					<p>
+						La propriété <span class="html">font-family</span> définit la
+						police de caractères à utiliser. Normalement, on prévoit plusieurs
+						polices car certaines polices ne se trouvent que sur certaines
+						plateformes (Windows, Linux, Mac). Les navigateurs utiliseront la
+						première police de la liste qui est présente sur l'ordinateur. Il
+						est conseillé de toujours préciser la famille générique en fin de
+						liste dans le cas où aucune des polices de la liste n'est
+						disponible. Lorsque le nom de la police est composé de plusieurs
+						mots, on peut le mettre entre guillemets.
+					</p>
+				</dd>
+			</dl>
+			<table>
+				<tr>
+					<th>Le code HTML :</th>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td>
+						<p class="html">
+							&lt;p class = "sans-serif"&gt;<br /> Tennis sans-serif&lt;/p&gt;
+						</p>
+
+						<p class="html">
+							&lt;p class = "serif"&gt; <br /> Tennis serif&gt;
+						</p>
+
+						<p class="html">
+							&lt;p class = "monospace"&gt; <br /> Tennis monospace&lt;/p&gt;
+						</p>
+
+						<p class="html">
+							&lt;p class = "cursive"&gt; <br /> Tennis cursive&lt;/p&gt;
+						</p>
+
+						<p class="html">
+							&lt;p class = "fantasy"&gt; <br /> Tennis fantasy&lt;/p&gt;
+						</p>
+					</td>
+					<td>
+						<p class="html">
+							<em>.sans-serif {</em> <br /> font-family : verdana, arial,
+							sans-serif;<em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.serif {</em> <br /> font-family : "times new roman",
+							georgia, serif;<em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.monospace {</em> <br /> font-family : "andale mono",
+							courier, monospace;<em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.cursive {</em> <br /> font-family : "apple chancery",
+							cursive;<em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.fantasy {</em> <br /> font-family : impact, fantasy;<em>}</em>
+						</p>
+					</td>
+					<td><img src="./images/font.png" alt="capture font" /></td>
+				</tr>
+			</table>
+
+			<dl>
+				<dt>
+					<span class="html"><em>font-size</em></span>
+				</dt>
+				<dd>
+					<span class="html">font-size</span> peut prendre les valeurs
+					suivantes :
+					<ul>
+						<li>
+							<p>Une valeur numérique suivie de px sans espace qui est la
+								taille précise des caractères.</p> <span class="html">font-size
+								: 14px ;</span>
+						</li>
+						<li>
+							<p>Une valeur numérique suivie de % sans espace qui est la
+								taille relative des caractères par rapport à la taille par
+								défaut.</p>
+							<p>
+								<span class=" html">font-size : 200% ; </span>doublera la taille
+								des caractères par défaut.
+							</p>
+						</li>
+						<li>
+							<p>Une valeur numérique suivie de em sans espace qui est un
+								coefficient multiplicateur de la taille par défaut.</p>
+							<p>
+								<span class="html">font-size : 1.2em ;</span>
+							</p>
+						</li>
+						<li>Un mot-clé : xx-small (équivalent de 6,9 pt), x-small
+							(équivalent de 8,3pt), small (équivalent de 10pt), medium (12pt
+							valeur initiale), large (équivalent de 14,4pt), x-large
+							(équivalent de 17,28pt), xx-large (équivalent de 20,7pt).</li>
+					</ul>
+					<p>
+						Il est conseillé de choisir pour <span class="html">body</span> un
+						des mots-clés comme taille de caractères et de définir toutes
+						autres tailles de caractères relativement à <span class="html">body</span>
+						à l'aide de <span class="html">%</span> ou <span class="html">em</span>.
+						Il sera alors très simple de changer la taille de toute la page en
+						modifiant uniquement la taille assignée à <span class="html">body</span>.
+					</p>
+				</dd>
+			</dl>
+			<table>
+				<tr>
+					<th>Le code HTML :</th>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td>
+						<p class="html">&lt;p class="px12"&gt;Tennis px12&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="px18"&gt; Tennis px18&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="pt12"&gt; Tennis pt12&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="pt18"&gt; Tennis pt18&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="em80"&gt; Tennis em80&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="em140"&gt; Tennis em140&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="p80"&gt; Tennis 80%&lt;/p&gt;</p>
+
+						<p class="html">&lt;p class="p200"&gt; Tennis 200%&lt;/p&gt;</p>
+
+
+					</td>
+					<td>
+						<p class="html">
+							<em>.px12 {</em>font-size : 12; <em>}</em>
+						</p>
+						<p class="html">
+							<em>.px18 {</em> font-size : 18px; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.pt12 {</em> font-size : 12pt; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.pt18 {</em> font-size : 18pt; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.em80 {</em> font-size : 0.8em; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.em140 {</em> font-size : 1.4em; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.p80 {</em> font-size : 80%; <em>}</em>
+						</p>
+
+						<p class="html">
+							<em>.p200 {</em> font-size : 200%; <em>}</em>
+						</p>
+					</td>
+					<td><img src="./images/taille.png" alt="saisie écran taille" /></td>
+				</tr>
+			</table>
+			<dl>
+				<dt>
+					<span class="html"><em>font-weight</em></span>
+				</dt>
+				<dd>
+					<span class="html">font-weight</span> permet de définir le niveau
+					de gras du caractère ; soit <span class="html">normal</span>, soit
+					<span class="html">bold</span>.
+				</dd>
+
+				<dt>
+					<span class="html"><em>font-style</em></span>
+				</dt>
+				<dd>
+					<span class="html">font-style</span> peut prendre les valeurs <span
+						class="html">normal</span>, <span class="html">italic</span> ou <span
+						class="html">oblique</span>.
+				</dd>
+
+				<dt>
+					<span class="html"><em>text-align</em></span>
+				</dt>
+				<dd>
+					Cette propriété sert à aligner le texte au centre, à gauche ou à
+					droite (<span class="html">center</span>, <span class="html">left</span>
+					,<span class="html">right</span>).
+				</dd>
+
+				<dt>
+					<span class="html"><em>text-decoration</em></span>
+				</dt>
+				<dd>
+					Cette propriété permet de décorer le texte c'est-à-dire de le
+					surligner, le faire clignoter, ... . (<span class="html">underline</span>,
+					<span class="html">overline</span> ,<span class="html">blink</span>,
+					<span class="html">line-through</span>).
+				</dd>
+
+				<dt>
+					<span class="html"><em>color</em></span>
+				</dt>
+				<dd>Cette propriété sera décrite dans le point suivant.</dd>
+
+				<dt>
+					<span class="html"><em>@font-face</em></span>
+				</dt>
+				<dd>Cette propriété permet d'utiliser une police externe.
+					Attention il vous faudra sans doute importer plusieurs fichiers,
+					les navigateurs privilégiant chacun leur propre format.
+
+<pre><code>@font-face {
+ font-family : 'mapolice';
+ /* IE*/
+ src:url('fichier.eot');
+ /* Firefox */
+ src:url('fichier.woff');
+}</code></pre>
+				</dd>
+				<dt>
+					<span class="html"><em>text-shadow</em></span>
+				</dt>
+				<dd>
+					Cette propriété permet de créer une ombre pour un texte. <br> Cette
+					propriété possède la syntaxe suivante : <span class="html">text-shadow
+						: X,Y,Z,couleur </span>.<br> X représente le décalage horizontal de l'ombre.<br>
+					Y représente le décalage vertical de l'ombre.<br> Z représente le flou
+					de l'ombre.
+				</dd>
+			</dl>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="liens">Liens</h2>
+			<p>Le lien est un des concepts les plus importants du Web
+				puisqu'il permet d'interconnecter de l'information. Par défaut, un
+				lien est bleu et souligné. Avec les CSS, on peut appliquer des
+				règles de style sur des liens en fonction de leur état: non visité,
+				actif (c'est sur ce lien que j'ai cliqué), visité (j'ai déjà
+				consulté ce lien auparavant mais j'en suis sorti - par défaut il
+				devient mauve) ou survolé (je suis en train de passer sur le lien
+				avec ma souris).</p>
+			<p>En utilisant certaines propriétés déjà vues, nous pourrions
+				créer des règles de style pour chacun des états d'un lien.</p>
+			<p>
+				Dans les CSS, on précisera le sélecteur de lien (<span class="html">a</span>)
+				suivi de son état et puis entre accolades les règles de style à
+				appliquer.
+			</p>
+			<ul>
+				<li><span class="html"><em>a:link </em></span> représente les
+					liens à l'état "non visité"</li>
+				<li><span class="html"><em>a:hover</em></span> représente les
+					liens à l'état "survolé"</li>
+				<li><span class="html"><em>a:actif</em></span> représente les
+					liens à l'état "actif"</li>
+				<li><span class="html"><em>a:visited</em></span> représente les
+					liens à l'état "visité"</li>
+			</ul>
+			<p>Exemple:</p>
+			<p>Observons le code HTML suivant:</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;&lt;<em>a</em> href = "http://www.justine-henin.be/public/index.asp?lang=fr"&gt;Le site de Justine Henin &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; &lt;<em>a</em> href = "http://www.olivier-rochus.be/public/"&gt;Le site d'Olivier Rochus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; &lt;<em>a</em> href = "http://www.rogerfederer.com/fr/index.cfm"&gt;Le site de Roger Federer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+			<p>et la CSS qui lui est associée:</p>
+
+			<table>
+				<tr>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td>
+						<p class="html">
+							<em>a:link </em>{ color : blue; }<br /> <em>a:hover</em> { color
+							: orange; }<br /> <em>a:actif </em>{ color : red; }<br /> <em>a:visited
+							</em>{ color : green; }<br />
+						</p>
+					</td>
+					<td><img src="./images/cssliens.png" alt="écran saisie liens" /></td>
+				</tr>
+			</table>
+			<p>Le site d'Olivier Rochus a déjà été consulté (il est donc en
+				vert), le curseur est en train de survoler celui de Roger Federer
+				(il est donc en orange).</p>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="coul">Couleurs et images de fond</h2>
+			<dl>
+				<dt>
+					<span class="html"><em>background-color</em></span>
+				</dt>
+				<dd>
+					<span class="html">background-color</span> définit la couleur de
+					fond de l'élément. Comme déjà vu ci-dessus, il y a plusieurs
+					manières d'indiquer une couleur.
+					<p class="html">
+						background-color : orange ;<br /> <span class="vert">background-color
+							: </span>rgb(80%, 40%, 0%) ;<br /> <span class="vert">background-color
+							: </span>rgb(204, 102, 0) ;<br /> <span class="vert">background-color
+							: </span>#cc6600 ;
+					</p>
+					sont les différents moyens pour obtenir un fond orange.
+				</dd>
+				<dt>
+					<span class="html"><em>background-image</em></span>
+				</dt>
+				<dd>
+					Cette propriété permet de placer une image derrière un élément de
+					votre page.<br> Avec les CSS3, cette propriété permet également de
+					réaliser un dégradé de couleur comme image de fond. Attention
+					toutefois les instructions sont différentes suivants les
+					navigateurs, il faudra donc ajouter une instruction par navigateur
+					que l'on veut supporter ! Voici des exemples :
+<pre><code>background-image {
+  url:('masuperimagedefond.png');
+}</code></pre>
+<pre><code>  /* dégradé de bleu */
+  /* navigateur mozilla firefox*/
+  background-image:-moz-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur Chrome 10 et suivants ainsi que pour Safari 5.1 et suivants */
+  background-image:-webkit-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur Opera */
+  background-image:-o-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur IE 10 et suivants */
+  background-image:-ms-linear-gradient(top,#77dcfb,#0aafe1);
+</code></pre>
+				</dd>
+				<dt>
+					<span class="html"><em>color</em></span>
+				</dt>
+				<dd>
+					color permet de spécifier la couleur du texte.<br />
+					<p class="html">color: red;</p>
+				</dd>
+			</dl>
+			<p>L'exemple qui suit illustre deux des propriétés portant sur
+				les couleurs.</p>
+			<table>
+				<tr>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td>
+						<p class="html">
+							h1 {<br /> <em>background-color</em> : #00FF00; <br /> <em>color</em>
+							: rgb(80%, 40%, 0%);}
+						</p>
+					</td>
+					<td><img src="./images/couleur.png" alt="saisie écran couleur" /></td>
+				</tr>
+			</table>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="modeleboite">Le modèle de boîtes et CSS</h2>
+			<p>En CSS, les éléments de structure sont vus comme des boîtes.
+				Les CSS permettent de contrôler les propriétés des boîtes, et donc
+				l'aspect de la page HTML.</p>
+			<p class="centre">
+				<img alt="boxdim.gif" src="./images/boxdim.gif" />
+			</p>
+			<ul>
+				<li>Chaque boîte a une aire de contenu (<em>contents</em>) dont
+					la taille s'adapte automatiquement à la quantité du contenu, c'est
+					le navigateur qui en calcule les dimensions.
+				</li>
+				<li>L'aire peut être entourée d'une bordure (<a
+					href="#i_border"><em>border</em></a>) qui peut avoir une épaisseur,
+					une couleur et un style propres.
+				</li>
+				<li>Il existe une largeur d'espacement (qui peut être nulle)
+					entre le contour de l'aire et le contenu de celle-ci (<a
+					href="#i_padding"><em>padding</em></a>).
+				</li>
+				<li>Enfin, la marge (<a href="#i_margin"><em>margin</em></a>)
+					encadre la bordure. La marge fournit le moyen de créer un espace
+					entre les différents éléments d'une page. Quand deux boîtes sont
+					côte à côte, les marges permettent de maintenir un espace entre
+					elles.
+				</li>
+			</ul>
+			<p>L'espacement et la marge peuvent être différents en haut, en
+				bas, à gauche et à droite. Ils sont transparents, n'ont ni couleur,
+				ni décoration.</p>
+			<p>Par défaut, la marge et l'espacement sont nuls et il n'y a pas
+				de bordure.</p>
+
+			<h3>Les propriétés des boîtes</h3>
+
+			<h4 id="i_dim">Les dimensions </h4>
+			<p>
+				Les dimensions (<span class="html">height /width</span>).
+				Nous pouvons fixer les dimensions d'une boîte grâce aux propriétés <em>height</em> et <em>width</em>.
+				Par rapport à l'image ci-dessus, ces 2 propriétés fixe la partie "content". Ces 2 propriétés ont par défaut la valeur
+				<em>auto</em>, c'est alors le navigateur qui calcule les dimensions.
+			</p>
+<pre class="taille50"><code><em>height</em> :  200px;
+<em>width :</em> 200px; 
+</code></pre>
+			<h4 id="i_iborder">
+				Les bordures (<span class="html">border</span>)
+			</h4>
+			<p>Ces mêmes propriétés seront utilisées par la suite dans les
+				tableaux. Les bordures peuvent avoir une couleur, une épaisseur de
+				trait, un style:</p>
+<pre class="taille50"><code><em>border-color</em> :  black;
+/*voir les couleurs*/
+<em>border-width :</em> 1px;
+<em>border-style : </em>solid; 
+</code></pre>
+			<p>
+				L'épaisseur s'exprime en pixels ou à l'aide d'un mot-clé : <span
+					class="html">thin</span>, <span class="html">medium</span>, <span
+					class="html">thick</span>.
+			</p>
+			<p>
+				Il existe 8 styles de bordures: <span class="html">solid</span>, <span
+					class="html">dotted</span>, <span class="html">dashed</span>, <span
+					class="html">inset</span>, <span class="html">ridge</span>, <span
+					class="html">outset</span>, <span class="html">double</span>, <span
+					class="html">groove</span>. Les 4 côtés sont indépendants et
+				peuvent donc être différents en haut, à droite, en bas ou à gauche (<span
+					class="html">top</span>, <span class="html">right</span>, <span
+					class="html">bottom</span>, <span class="html">left</span>)
+			</p>
+
+<pre class="taille50"><code><em>border-top-color</em> : black;
+<em>border-bottom-style</em>: groove;</code>
+</pre>
+			<p>Si on désire donner un style différent aux 4 côtés de la
+				bordure, on peut écrire la propriété de manière condensée:</p>
+<pre class="taille50"><code><em>border-style </em>: solid groove solid groove</code>
+</pre>
+			<p>L'ordre dans lequel sont énoncées les valeurs est important.
+				Celles-ci décrivent successivement le haut, la droite, le bas et la
+				gauche de la bordure.</p>
+			<p>L'exemple qui suit illustre ces propriétés :</p>
+			<table>
+				<tr>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td class="taille60">
+<pre><code><em>body {</em>
+	color : red;
+	font-size: 120%;
+	text-align : left; <em>} </em>
+<em>h1 {</em>
+	border-color : green;
+	border-width : 7px;
+	border-style : solid dotted groove dashed;
+	text-align : center;<em>} </em>
+</code></pre>
+					</td>
+					<td><img src="./images/encadrement.png"
+						alt="saisie écran encadrement" /></td>
+				</tr>
+			</table>
+
+			<p>Une nouveauté apparue avec les CSS3 est la possiblité de créer
+				des bordures arrondies. Ceci se fait de la manière suivante :
+			</p>
+<pre><code>
+<em>p {</em>
+	/* définition d'une bordure de manière raccourcie */
+	border: 1px solid #36b0d9; 
+	/* Ici l'angle aura une "importance" de 10 pixels pour les 4 angles.*/ 
+	/* Il faut également répéter cette instruction pour tous les navigateurs */ 
+	border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px;
+<em>}</em>
+</code></pre>
+			
+			<h4 id="i_padding">
+				L'espacement (<span class="html"><em>padding</em></span>)
+			</h4>
+			<p>
+				La propriété <span class="html">padding</span> crée un espacement
+				sur les côtés du contenu entre ce contenu et le contour. Le <span
+					class="html">padding</span> s'exprime soit en pixel, soit en
+				pourcentage. Sa valeur par défaut est 0.
+			</p>
+			<p class="html">
+				<em>padding</em> : 25px;
+			</p>
+			<p>
+				Par défaut, le <span class="html">padding</span> est le même sur les
+				4 cotés mais il est possible de spécifier des espacements différents
+				en haut, à droite, en bas ou à gauche en complétant la règle padding
+				:
+			</p>
+			<p class="html">
+				<em>padding-left</em> : 25px;
+			</p>
+			<p>
+				Nous avons vu une forme condensée pour définir le style des 4 côtés
+				de la bordure, cette même forme existe pour le <span class="html">padding</span>.
+			</p>
+
+			<h4 id="i_margin">
+				La marge (<span class="html"><em>margin</em></span>)
+			</h4>
+			<p>Cette propriété se comporte comme l'espacement si ce n'est que
+				l'espace est créé en dehors du contour, entre le contour et les
+				autres éléments.</p>
+			<p class="html">
+				<em>margin</em> : 30px;
+			</p>
+			<p>Comme dans le cas de l'espacement, il est possible d'ajouter
+				des espacements différents en haut, à droite, en bas ou à gauche.</p>
+			<p class="html">
+				<em>margin-top </em>: 40px;
+			</p>
+			<p>Il existe également une forme condensée permettant de définir
+				4 valeurs différentes de marge pour les 4 côtés.</p>
+		</article>
+
+
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

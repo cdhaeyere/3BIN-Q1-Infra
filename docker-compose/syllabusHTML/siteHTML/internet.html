@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - Internet</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html" class="current">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>Internet</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="#intro"> Introduction </a></li>
+					<li><a href="#fonctionnement"> Fonctionement d'Internet </a></li>
+					<li><a href="#serveur"> Le serveur Web </a></li>
+					<li><a href="#http"> HTTP </a></li>
+					<li><a href="#w3c"> W3C </a></li>
+					<li><a href="#navigateur"> Le navigateur Web </a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://www.w3.org">W3C </a></li>
+					<li><a href="http://www.microsoft.com/en-us/download/internet-explorer.aspx">Internet Explorer</a></li>
+					<li><a href="http://www.mozilla-europe.org/fr/">Mozilla Firefox</a></li>
+					<li><a href="http://www.opera.com/">Opera</a></li>
+					<li><a href="http://lynx.browser.org/">Lynx</a></li>
+					<li><a href="http://html5test.com/">html5test.com</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Ce chapitre résume tout ce que vous devez savoir sur Internet
+				avant d'aborder le HTML et les CSS. Il débute par une présentation
+				pratique du fonctionnement d'internet suivie d'une présentation des
+				différents concepts liés à Internet : serveurs Web, HTTP, W3C et
+				navigateurs Web.</p>
+			<p>Nous utilisons dans ce cours les termes Internet, Web ou World
+				Wide Web de manière équivalente.</p>
+		</article>
+		<article>
+			<h2 id="fonctionnement">Fonctionement d'Internet</h2>
+			<h4>Exemple</h4>
+			<p>
+				<img alt="fonctionnement" src="./images/fonctionnement.png" />
+			</p>
+			<p>
+				Lorsqu'un utilisateur désire consulter, par exemple, le site
+				internet de l'école, il encode l'adresse du site <a
+					href="http://ochoquet.be/index.html">http://ochoquet.be/index.html</a>
+				dans son navigateur (par exemple, Firefox). Le navigateur
+				demande la page Web introduite au serveur. Dans notre exemple, la
+				page Web demandée est "index.html".Remarquez que l'adresse&nbsp;<a
+					href="http://ochoquet.be/index.html">http://ochoquet.be/index.html</a>
+				est strictement équivalente à l'adresse&nbsp;<a
+					href="http://ochoquet.be">http://ochoquet.be</a> parce que
+				lorsqu'aucune page particulière n'est renseignée dans l'adresse de
+				la ressource demandée,&nbsp;le serveur recherche par défaut la page
+				"index.html" (parfois default.html).
+			</p>
+			<p>Le serveur Web qui reçoit la demande répond par l'envoi de la
+				ressource concernée. Dans notre exemple, le serveur Web de l'école
+				sert la page d'accueil (index.html). Lorsque le navigateur de
+				l'utilisateur reçoit la ressource, il l'affiche à l'utilisateur. Le
+				HTML contenu dans la page web indique au navigateur ce qu'il doit
+				savoir pour afficher le contenu de la page.</p>
+			<p>Avant d'aborder le sujet principal de ce cours, HTML et les
+				CSS, nous allons essayer de mieux comprendre notre environnement de
+				travail en définissant les concepts de serveur Web, W3C, navigateur
+				Web et enfin de situer le HTML dans cet environnement.</p>
+		</article>
+		<article>
+			<h2 id="serveur">Le serveur Web</h2>
+			<h4>Définition</h4>
+			<p>
+				<img src="./images/serveur.gif" alt="Serveur web" class="floatRight" />
+			</p>
+			<p>
+				Un serveur HTTP ou démon HTTP ou HTTPd (<i>HTTP daemon</i>) ou
+				(moins précisément) <em>serveur Web</em>, est un logiciel servant
+				des requêtes respectant le protocole de communication client-serveur
+				HTTP, qui a été développé pour le World Wide Web (pas de panique,
+				nous reparlerons de protocole de communication plus loin).
+			</p>
+			<p>Le serveur Web est un serveur qui attend en permanence les
+				requêtes des navigateurs Web. Il doit fonctionner continuellement
+				sinon le site Internet est hors service. Lorsqu'il reçoit une
+				requête,il recherche l'élément demandé (page HTML, image, film, ...)
+				et le renvoie au navigateur.</p>
+
+			<h4 id="http">HTTP</h4>
+			<p>
+				<img class="floatLeft" src="./images/internet.gif"
+					alt="internet.gif" />
+			</p>
+			<p>
+				HTTP permet à des PC, des Mac, des PDA et à tous les appareils
+				connectés de surfer sur Internet. <em>HTTP </em> (HyperText Transfer
+				Protocol) est un protocole (ensemble de règles permettant d'établir
+				une communication entre deux entités) qui permet de transférer des
+				documents hypertexte sur le Web. Ces documents hypertexte sont des
+				pages HTML, des images, des films ou d'autres types de fichiers liés
+				à une page Web. HTTP est un protocole à base de requêtes et de
+				réponses; lorsqu'on introduit une adresse dans le navigateur,
+				celui-ci demande au serveur la ressource correspondante à la demande
+				via HTTP.
+			</p>
+			<p>
+				Il existe deux types de requêtes : <a href="formulaires#i_get"><em>get</em></a>
+				et <a href="formulaires#i_post"><em>post</em></a> (ces méthodes
+				seront détaillées dans la partie sur les formulaires). Lorsque le
+				serveur trouve la page Web recherchée, il la sert au navigateur et
+				celui-ci l'affiche. Quand la ressource est introuvable, la réponse
+				du serveur est une erreur 404. Il existe d'autres protocoles
+				permettant le transfert de fichiers: HTTPS, FTP, FTPS, SSH, ...
+			</p>
+
+			<h4 id="w3c">W3C</h4>
+			<p>
+				Le <a href="http://www.w3.org/">World Wide Web Consortium</a>,abrégé
+				<em>W3C</em>, est un consortium&nbsp;fondé en 1994 pour promouvoir
+				la compatibilité des technologies du World Wide Web telles que le
+				HTTP,HTML, XHTML, XML, PNG, SVG, SOAP, ... . En d'autres termes, ce
+				consortium travaille à la standardisation et l'harmonisation des
+				technologies Web.
+			</p>
+			<p>Il réunit les plus grands instituts informatiques du monde
+				entier; par exemple, le Massachusetts Institute of Technology (MIT).
+			</p>
+			<p>
+				Le W3C met des <em>recommandations</em> (des "normes") à valeur de
+				standards industriels. Un document W3C traverse plusieurs étapes
+				avant de devenir une recommandation:
+			</p>
+			<p>
+				<img alt="recommandation.gif" src="./images/recommandation.gif" />
+			</p>
+			<p>
+				Les recommandations émises par le W3C sont détaillées sur le site <a
+					href="http://w3c.org">http://w3c.org</a> sur lequel vous
+				retrouverez toutes les informations sur le HTTP et le HTML, par
+				exemple. La <a href="http://www.w3.org/standards/techs/http#w3c_all">recommandation
+					sur le HTTP</a> détaille en long et large le protocole HTTP et définit
+				entre autres tous les codes d'erreur gérés susceptibles d'être
+				renvoyés par un serveur Web.
+			</p>
+			<p>Les codes d'erreur(composés de 3 chiffres) sont classés comme
+				suit:</p>
+			<ul>
+				<li>les codes de type 1xx pour les messages d'information;</li>
+				<li>les codes de type 2xx pour les messages de réussite;</li>
+				<li>les codes de type 3xx pour les messages de redirection;</li>
+				<li>les codes de type 4xx pour les messages d'erreur de la part
+					du client;</li>
+				<li>les codes de type 5xx pour les messages d'erreur du
+					serveur;</li>
+			</ul>
+			<p>Dans la recommandation sur le HTML, l'erreur 404 est définie
+				par les termes suivants :</p>
+			<pre>
+				<code>404 Not Found<br />
+The server has not found anything matching the Request-URI. 
+No indication is given of whether the condition is temporary or permanent. 
+The 410 (Gone) status code SHOULD be used if the server knows, 
+through some internally configurable mechanism, that an old resource is permanently 
+unavailable and has no forwarding address.
+This status code is commonly used when the server does not wish 
+to reveal exactly why the request has been refused, 
+or when no other response is applicable.
+    </code>
+			</pre>
+
+		</article>
+
+		<article>
+			<h2 id="navigateur">Le navigateur Web</h2>
+			<h4>Définition</h4>
+			<p>
+				<img src="./images/navigateur.gif" alt="Serveur web"
+					class="floatLeft" />
+			</p>
+			<p>
+				Le <em>navigateur Web</em> est le logiciel qui permet de naviguer
+				sur la toile; il permet de consulter le World Wide Web, càd
+				l'ensemble des sites Web. Le navigateur se trouve sur le PC de la
+				personne qui navigue sur le Web. Il permet essentiellement
+				d'interpréter le langage HTML mais avec&nbsp; l'ajout de modules
+				d'extension (surnommés plug-in ou helper applications en anglais),
+				il peut également&nbsp;interpréter des langages complémentaires ou
+				décoder des formats complémentaires, notamment JavaScript, les
+				séquences animées Flash, PerlScript, Ajax, etc.
+			</p>
+			<p>Remarque, le navigateur n'interpréte pas le PHP, langage qui
+				sera abordé au second semestre. Le PHP est du code interprété côté
+				serveur et non côté client comme le HTML. Dans ce cas, c'est le
+				serveur qui effectue le travail.</p>
+			<p>
+				Techniquement, le navigateur est un <em>client HTTP</em> dans une <em>architecture
+					client/serveur</em>. Il peut être graphique ou texte.Il existe d'autres
+				protocoles , par exemple "file" qui est utilisé quand le navigateur
+				lit des fichiers qui se trouvent sur votre ordinateur. Introduisez <span
+					class="html">file:///c:/ </span> dans la barre de navigation du
+				navigateur, vous pourrez explorer les dossiers contenus sur votre
+				disque <span class="html">c</span>.
+			</p>
+			<h4>Exemples</h4>
+			<p>
+				<img src="./images/firefox-balancoire.gif" alt="Firefox et IE"
+					class="floatRight" />
+			</p>
+			<p>Quelques exemples de navigateurs les plus célèbres et les plus
+				utilisés:</p>
+			<ul>
+				<li>Chrome</li>
+				<li>Firefox</li>
+				<li>Opera</li>
+				<li><a href="http://lynx.browser.org/">Lynx</a></li>
+				<li>...</li>
+			</ul>
+			<p>Le choix du navigateur importe peu puisque normalement tous
+				interprètent de façon semblable les pages HTML. Evidemment cela
+				reste de la théorie parce que bien que le HTML soit un standard,
+				l'affichage diffère parfois entre les navigateurs.
+				<br>
+				Vous pouvez tester la compatibilité HTML5 de votre navigateur sur le site <a href="http://html5test.com/">
+				HTML5TEST.COM</a>. 
+			</p>
+			<h4>Astuce</h4>
+			<p>Pour voir le code source d'une page HTML, il suffit de le
+				demander au navigateur. Souvent, un simple click droit permet de
+				choisir "Afficher la source" (IE) ou "Code source de la page"
+				(Firefox). Essayez sur n'importe quel site, vous accédez à la source
+				du site Web. <br>
+				Essayez par exemple de regardez le code HTML5 de ce syllabus !
+			</p>
+		</article>
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

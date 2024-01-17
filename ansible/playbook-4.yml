@@ -1,0 +1,48 @@
+- name: "Install Docker and pull image from DockerHub"
+  hosts: localhost
+  tasks:
+    - name: Install apt dependencies for Docker
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg-agent
+          - software-properties-common
+        state: present
+
+    - name: "Add Docker GPG key"
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+
+    - name: "Add Docker repository"
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian bookworm stable
+        state: present
+
+    - name: "Install Docker"
+      apt:
+        update_cache: true
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: "Install docker python module via apt"
+      apt:
+        name: python3-docker
+
+    - name: "Pull Docker image from DockerHub"
+      docker_image:
+        name: olivierchoquet/syllabushtml
+        source: pull
+
+    - name: Start Docker container
+      docker_container:
+        name: syllabushtml_container
+        image: olivierchoquet/syllabushtml
+        ports:
+          - "8081:80"
+        state: started

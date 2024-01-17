@@ -1,0 +1,7 @@
+version: '3'
+services:
+  webapp:
+    build:
+      context: .
+    ports:
+      - "8080:80"

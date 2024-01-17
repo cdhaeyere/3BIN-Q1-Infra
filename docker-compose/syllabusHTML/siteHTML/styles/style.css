@@ -1,0 +1,504 @@
+/* mettre par défaut toutes les marges intérieures et extérieures à 0 */
+* { margin: 0; padding: 0; outline: 0;}
+
+
+/************************************************ Partie HEADER **********************************************************************/
+
+@media screen and (max-height:200px)
+{
+	header {display:none;}
+}
+
+/*@media screen and (max-height:600px)
+{
+	#menu li a {font-size:10px !important;}
+	aside {display:none;}
+}*/
+
+header {
+  /*width:960px; -> auto*/
+ 
+  margin: auto;
+  height:120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  /* dégradé de bleu */
+  /* navigateur mozilla firefox*/
+  background-image:-moz-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur Chrome 10 et suivants ainsi que pour Safari 5.1 et suivants */
+  background-image:-webkit-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur Opera */
+  background-image:-o-linear-gradient(top,#77dcfb,#0aafe1);
+  /* navigateur IE 10 et suivants */
+  background-image:-ms-linear-gradient(top,#77dcfb,#0aafe1);
+  /* vieux navigateur*/
+  /*background-image:linear-gradient(top,#77dcfb,#0aafe1);*/
+  /*text-align:center;*/
+}
+
+#logo {
+  display:block;
+}
+
+#headTitle {
+  float:left;
+}
+
+header h1 {
+	font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+	font-weight: normal; /* -> 7 */
+	font-size: 2.0em; /* -> 8 */
+	font-style: italic;
+	padding:5px;
+}
+
+header h2 {
+	font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+	font-weight: normal; /* -> 7 */
+	font-size: 1.5em; /* -> 8 */
+	padding-left:10px;
+}
+
+header nav {
+  float:right;
+  padding-top:20px;
+  /*padding-left:600px;*/
+}
+
+
+/* menu horizontal */
+header nav li {
+  display:inline;
+}
+
+header nav li a {
+  font-size: 20px;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  color: white;
+  /*text-transform:capitalize;*/
+  font-weight:normal;
+  /*display:block;	/* IE6, IE7 line height fix */
+  /* padding pour le hover */
+  padding:7px;
+  background-color:transparent;
+  margin-top:0px;
+  margin-right:20px;
+  text-decoration:none;
+}
+
+
+header nav a:hover, nav a.current {
+	color: #14647d;text-shadow: rgba(255,255,255,0.5) 1px 0px 1px; text-decoration: none; border: 1px solid #36b0d9; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px; background:#9ce6fe;
+	text-decoration:underline;
+}
+
+
+/************************************************ Partie CENTRALE **********************************************************************/
+
+#mainSection {
+background:#F7E0AE;
+  /*width:1100px; -> auto*/
+  margin:auto;
+  height:100%;
+}
+
+section h1 {
+  text-align:center;
+  font-size:1.7em;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+#mainSection nav {
+  /*display:inline-block;*/
+  /* par défaut inline-block positionne tous les élements sur une même ligne de base -> vertical-align permet de changer ce comportement ! */
+  vertical-align:top;
+  width:150px;
+  margin:5px;
+  background:#ea7f37;
+  border: solid 3px #DA7C0C;
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px; 
+  margin-bottom:10px;
+  /*height:400px;*/
+ /* position:fixed;*/
+  /*height:100%;*/
+}
+
+
+#mainSection nav ul {
+  list-style:none;
+}
+
+#mainSection nav li a {
+ /* color:#FF6533;*/
+ /*color:#CC3300;*/
+ color:#FFFFFF;
+/*color:#000000;*/
+   font-family:Georgia, "Times New Roman", Times, serif;
+   font-size:14px;
+ /*margin:10px;*/
+ font-weight:bold;
+  
+}
+
+#sommaireSection {
+  background:#F7E0AE;
+  /*width:1100px; -> auto*/
+  margin:auto;
+  height:100%;
+}
+
+#sommaireSection nav ul{
+  list-style:disc;
+}
+
+
+#sommaireSection article {
+  margin:auto;
+}
+
+#menu {
+display:inline-block;
+width:150px;
+position:fixed;
+}
+
+
+article h2 {
+  width:760px;
+  font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+  color:#ea7f37;
+  text-align:left;
+  font-size:1.5em;
+  padding-bottom:5px;
+}
+
+
+article {
+  margin-left:180px;
+  /*width:920px;*/
+  width:auto;
+  font-family: Georgia, "Bitstream Vera Serif", Norasi, serif;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+article ul{
+  padding-left:20px;
+}
+
+em {
+	color:#CC3300;
+	font-style: normal;
+	font-size: larger;
+}
+
+
+p {
+	margin: .75em 0;
+}
+
+ol {
+  margin-left:20px;
+}
+
+
+/*************************************************** formatage de codes  ***********************************************************/
+pre, code {
+	font-size: 95%;
+	font-family: "Bitstream Vera Mono", "Lucida Console", "Courier New", monospace;
+}
+pre {
+	width: 90%;
+	overflow: auto;
+	overflow-y: hidden;
+	margin: .50em 0;
+	padding: 12px;
+	background: #eee;
+	color: #555;
+}
+pre strong {
+	font-weight: normal;
+	color: black;
+}
+
+
+#codes {
+	margin: auto;
+	border-style: ridge;
+	background-color: #eee;
+}
+
+#codes th {
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+	border-collapse: collapse;
+}
+
+dt{
+	font-weight: bold;
+	/*margin-left: 30px;*/
+	}
+dd{
+	margin-left: 50px;
+	margin-bottom:15px;
+}
+
+/************************************************ Partie ASIDE **********************************************************************/
+aside {
+  /*margin:10px;*/
+  /*float:right;*/
+  /*height:400px;*/
+  width:150px;
+  /*background:#ededed;*/
+  /*background:#345361;*/
+  /*background:#fafafa;*/
+  background:#345361;
+  font-size:10px;
+  border: 3px solid; 
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px;
+  margin:5px;
+  padding-bottom:10px;
+  color:#FFFFFF;
+  
+}
+
+
+aside p {
+   font-size:1.1em;
+   text-align:center;
+   text-decoration:underline;
+}
+
+aside li {
+   list-style:none;
+   padding-left: 15px;
+}
+
+aside li a {
+  color:white;
+}
+
+
+
+/************************************************ Partie FOOTER **********************************************************************/
+footer {
+	height:100px;
+	background:#494949;
+	color:white;
+	/*width:960px; -> auto */
+	margin:auto;
+}
+#contact {
+display:inline-block;
+vertical-align:top;
+  width:200px;
+  margin:10px;
+  border-right:dashed;
+}
+#error {
+vertical-align:top;
+display:inline-block;
+  width:620px;
+  margin:10px;
+  border-right:dashed;
+}
+#version
+{
+  display:inline-block;
+  vertical-align:top;
+  padding:10px;
+  width:200px;
+}
+
+.mail {
+  color:#69c9ef; 
+  /* afficher les mails les uns en dessous des autres */
+  display:block;
+}
+/************************************************ Classes **********************************************************************/
+
+.cite {
+  font-style:italic;
+}
+
+.floatRight {
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.floatLeft {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.html {
+	font-family: "Bitstream Vera Mono", "Lucida Console", "Courier New",
+		monospace;
+	font-size: larger;
+	color: purple;
+}
+
+.information {
+   color:green;
+   height:128px;
+   border: 1px solid; 
+   border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px;
+   margin-right:5px;
+}
+.important {
+  color:red;
+  height:128px;
+  border: solid 1px;
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px;
+  margin-right:5px;
+}
+
+div.important {
+	height:180px;
+}
+
+div.important ol {
+		margin-left : 200px;
+}
+
+.clear {
+  clear:both
+}
+
+
+
+.advice {
+  color:green;
+  clear:left;
+ /* margin-bottom:50px;
+  padding-top:15px;*/
+}
+
+
+table.narrow-table {
+  width:800px;
+  table-layout:fixed;
+}
+
+.affichageNav {
+	background-color: #eee;
+}
+
+/******************************************************* CSS - Tableaux de couleurs ****************************************************************************************/
+div#couleurs table{
+	color:white;
+	border-style:none;
+	margin:0px;
+	padding:0px;}
+	
+div#couleurs td
+	{text-align:center;
+	font-weight:bold;
+	width:140px;
+	height:40px;
+	border-style:none;
+	margin:0px;
+	padding:0px;}	
+
+div#couleurs .aqua
+	{background-color:aqua;
+	color:black;}
+div#couleurs .black
+	{background-color:black;}
+div#couleurs .blue
+	{background-color:blue;}
+div#couleurs .fuchsia
+	{background-color:fuchsia;}
+div#couleurs .green
+	{background-color:green;}
+div#couleurs .lime
+	{background-color:lime;
+	color:black;}
+div#couleurs .maroon
+	{background-color:maroon;}
+div#couleurs .navy
+	{background-color:navy;}
+div#couleurs .olive
+	{background-color:olive;}
+div#couleurs .purple
+	{background-color:purple;}
+div#couleurs .red
+	{background-color:red;}
+div#couleurs .silver
+	{background-color:silver;}
+div#couleurs .teal
+	{background-color:teal;}
+div#couleurs .white
+	{background-color:white;
+	color:black;}
+div#couleurs .yellow
+	{background-color:yellow;
+	color:black;}
+div#couleurs .gray
+	{background-color:gray;}
+	
+/*************************************************************Tableaux  *******************************************************************************************************/
+#exemple td{
+	border-style: solid;
+	border-width: thin;
+	border-collapse: collapse;
+	
+}
+
+#tableBalises th{
+	border-style: solid;
+	border-width: thin;
+	border-collapse: collapse;
+	background-color: #DCDCDC;
+}
+#tableBalises td{
+	border-style: solid;
+	border-width: thin;
+	border-collapse: collapse;
+}
+
+.one td{
+	border-style: solid;}
+.two td{
+	border-style: solid;}
+.three td{
+	border-style: solid;}
+table.one { 
+		border-collapse : separate;
+		border-spacing : 10px;
+}
+table.two {
+		border-collapse: separate;
+		border-spacing: 10px 30px;
+}
+table.three {
+		border-collapse: collapse;
+}
+
+.colspan td{
+	border-style: solid;}
+	
+/*******************************************************************Formulaires ***********************************************************************************************/
+#getpost{
+	margin: auto;
+	border-style: ridge;
+	background-color: #eee;
+	}
+#getpost th{
+	border-style: solid;
+	border-width: thin;
+	border-collapse: collapse;
+	background-color: #DCDCDC;
+}
+#getpost td{
+	border-style: solid;
+	border-width: thin;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+
+
+

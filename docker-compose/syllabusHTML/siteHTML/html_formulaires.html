@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les formulaires</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Les formulaires</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="html5.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#fonctionnement">Le fonctionnement d'un
+							formulaire</a></li>
+					<li><a href="#i_form">Ecrire un formulaire</a></li>
+					<li><a href="#requete">Les requêtes</a></li>
+					<li><a href="#i_input">Les input</a></li>
+					<li><a href="#i_textarea">Les champs de type textarea</a></li>
+					<li><a href="#i_select">Les menus déroulants</a></li>
+					<li><a href="#autres">fieldset, legend et label</a></li>
+					<li><a href="#style">La mise en page d'un formulaire</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Jusqu'à présent, nous n'avons envisagé que la posssibilité
+				d'afficher des pages simples (contenant du texte et des images).
+				HTML permet bien plus que le simple affichage de texte, d'images, de
+				liens, ...</p>
+			<p>Un serveur HTML peut également récupérer des données
+				introduites par l'utilisateur au travers de pages HTML affichées
+				dans son navigateur.</p>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="fonctionnement">Le fonctionnement d'un formulaire</h2>
+			<p>
+				<img class="floatRight" alt="exemple de formulaire"
+					src="./images/exempleForm.jpg" />
+			</p>
+			<p>
+				Le formulaire HTML permet de récupérer des informations que va
+				saisir l'internaute sur une page HTML. L'internaute saisit ses
+				informations soit en remplissant des champs texte (input), soit
+				sélectionnant un élément dans une liste déroulante (select) ou en
+				sélectionnant une case à cocher (radio, checkbox). Une fois les
+				informations saisies, l'internaute valide en cliquant sur un bouton
+				de soumission (submit). Alors les informations sont transmises soit
+				à une adresse e-mail (mailto) soit à un cgi (<a
+					href="http://fr.wikipedia.org/wiki/Common_Gateway_Interface">Common
+					Gateway Interface</a>), soit à une page dynamique de type php, asp,
+				jsp...
+			</p>
+
+			<p>Toutes les informations transmises lors de la soumission du
+				formlaire sont rassemblées dans une requête, on parle de requête
+				HTTP.</p>
+			<p>L'exemple ci-contre montre le formulaire d'inscription sur le
+				site facebook.</p>
+			<h3 id="i_form">Ecrire un formulaire</h3>
+			<p>
+				Un formulaire se définit par les balises <span class="html"><em>&lt;form&gt;</em>...<em>&lt;/form&gt;</em></span>
+				.
+			</p>
+			<p>
+				Tous les champs d'input du formulaire doivent se trouver à
+				l'intérieur de cet élément, entre les balises <span class="html">&lt;form&gt;</span>
+				et <span class="html">&lt;/form&gt;</span>.
+			</p>
+			<p>Cette balise requière 2 attributs :</p>
+			<dl>
+				<dt>
+					<span class="html" id="i_action"><em>action</em></span>
+				</dt>
+				<dd>
+					spécifie l'adresse d'envoi des données introduites par
+					l'utilisateur par exemple l'adresse d'une page web référençant un
+					script (<span class="html">http://serveur/script.php</span>) ou
+					adresse email (<span class="html">mailto:adresse.email@machine</span>)
+				</dd>
+				<dt>
+					<span class="html" id="i_method"><em>method</em></span>
+				</dt>
+				<dd>
+					indique la méthode d'envoi "<span class="html">post</span>" ou "<span
+						class="html">get</span>".
+				</dd>
+			</dl>
+<pre class="taille80"><code><em>&lt;form</em><em> action </em>= "URL/script" <em>method</em> = "get"<em>&gt;</em>
+Donnez votre accord en cochant la boîte ci-dessous et en soumettant votre réponse.&lt;br/&gt;
+Oui, j'accepte cette proposition: <em>&lt;input</em> type = "checkbox" name = "acceptation"<em>/&gt;</em>&lt;br/&gt;
+<em>&lt;input</em> type = "submit"  value = "soumettre" <em>/&gt;</em> 
+<em>&lt;/form&gt; </em>
+</code></pre>
+			<p>Voici ce qu'affiche le browser :</p>
+			<div class="affichageNav taille70">
+				<form action="URL/script" method="get">
+					Donnez votre accord en cochant la boîte ci-dessous et en soumettant
+					votre réponse. <br /> Oui, j'accepte cette proposition: <input
+						type="checkbox" name="acceptation" /> <br /> <input
+						type="submit" value="soumettre" />
+				</form>
+
+			</div>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="requete">
+				les requêtes <span class="html"><em>get</em></span> et <span
+					class="html"><em>post</em></span>
+			</h2>
+
+
+			<p>
+				Le HTTP est &nbsp;donc un protocole qui re&ccedil;oit deux types
+				de&nbsp;requêtes : <span class="html" id="i_get">get</span> et <span
+					class="html" id="i_post">post</span>.
+			</p>
+			<p>
+				Avec un <span class="html">post</span> , le navigateur empaquette
+				les variables de la requête avant de l'envoyer au serveur alors que
+				le <span class="html">get</span> ajoute les variables à la fin de
+				l'URL, dans la barre d'adresse du navigateur, au moment d'envoyer la
+				requête au serveur. En bref, avec <span class="html">post</span> les
+				données sont envoyées dans la requête de fa&ccedil;on invisible
+				tandis qu'avec <span class="html">get</span> , les données sont
+				ajoutées à l'URL à la vue de l'internaute.
+			</p>
+
+
+			<table id="getpost">
+				<tr>
+					<th>GET</th>
+					<th>POST</th>
+				</tr>
+				<tr>
+					<td>Les variables sont ajoutées à la fin de l'URL dans la
+						barre d'adresse du navigateur.</td>
+					<td>Les variables sont invisibles pour l'utilisateur car elles
+						sont empaquetées.</td>
+				</tr>
+				<tr>
+					<td>Les requêtes get sont limitées à 256 caractères.</td>
+					<td>Les requêtes post sont de longueur illimitée.</td>
+				</tr>
+				<tr>
+					<td>On peut placer des signets sur des pages générées par des
+						get.</td>
+					<td>Il est impossible de mettre un signet (un marque-page)
+						pour une page générée par un post.</td>
+				</tr>
+				<tr>
+					<td>On utilise la méthode get pour laisser la possibilité à
+						l'utilisateur d'accéder à la page générée via un signet (sans
+						retour préalable au formulaire), pour des petits paquets, ...</td>
+					<td>On utilise la méthode post pour des données
+						confidentielles, pour des gros paquets, ...</td>
+				</tr>
+
+			</table>
+			<p class="important">
+				En tant que programmeur, vous devrez choisir dans vos formulaires entre la méthode GET ou POST.
+				Il est donc essentiel de bien connaître et comprendre les différences entre ces 2 méthodes.
+			</p>
+
+
+			<p>Abordons maintenant le contenu d'un formulaire.</p>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="i_input">
+				Les <span class="html">input</span>
+			</h2>
+			<p>
+				L'élément <span class="html"><em>input</em></span> permet
+				d'introduire dans une page HTML différents types d'entrée qui
+				offrent, à l'utilisateur, différents moyens d'encoder des données.
+				Dans cet élément, on peut préciser différents attributs :
+			</p>
+			<ul>
+				<li><span class="html"><em>type</em></span> qui permet de
+					définir le type d'input : <span class="html">text</span>, <span
+					class="html">password</span>, <span class="html">checkbox</span>,
+					...</li>
+				<li><span class="html"><em>name</em></span> ; voir ci-dessous</li>
+				<li><span class="html"><em>value</em></span> qui précise la
+					valeur de l'attribut précisé dans <span class="html">name</span></li>
+
+				<li><span class="html"><em>size</em></span> qui spécifie la
+					taille de la zone (en caractères pour les zones contenant des
+					caractères), sinon en pixels</li>
+				<li><span class="html"><em>maxlength</em></span> qui spécifie
+					la taille maximale de la zone (en caractères)</li>
+				<li><span class="html"><em>checked</em></span> qui
+					présélectionne (pour les <span class="html">radio</span> et <span
+					class="html">checkbox</span>) l'élément si la valeur de l'attribut
+					vaut <span class="html">checked</span></li>
+				<li><span class="html"><em>placeholder</em></span> qui
+					permet d'afficher un exemple de valeur</li>
+				<li><span class="html"><em>required</em></span> qui
+					permet d'indiquer qu'un champ est obligatoire</li>
+				<li><span class="html"><em>tabindex</em></span> qui
+					permet d'indiquer un ordre de tabulation</li>
+				<li><span class="html"><em>accesskey</em></span> qui
+					permet de créer un raccourci clavier</li>
+
+			</ul>
+			<h4>
+				L'attribut <em>name</em>
+			</h4>
+			<p>
+				L'attribut <span class="html">name</span> spécifie le nom de
+				l'attribut dans la requête. Ce nom doit être significatif ; il ne
+				comportera ni virgule, ni accent, ni espace, ...
+			</p>
+			<p>
+				Quand on soumet le formulaire, la requête est envoyé avec les
+				différents attributs du formulaire. Ces attributs correspondent aux
+				<span class="html">input</span> du formulaire. Ils sont transmis
+				comme liste de <em>nom=valeur </em>(name=value).
+			</p>
+			<p>Par exemple, dans un formulaire, j'ai:</p>
+			<ul>
+				<li>un <span class="html">input</span> dont le <span
+					class="html">name</span> est login
+				</li>
+				<li>un <span class="html">input</span> dont le <span
+					class="html">name</span> est password
+				</li>
+			</ul>
+			<p>Si l'utilisateur entre les valeurs de login "toto" et de
+				password "super" et soumet le formulaire, alors la requête
+				contiendra les informations suivantes:</p>
+			<p class="html">
+				login=toto<br /> password=super
+			</p>
+			<h4>
+				Les différents types d'<span class="html">input</span>:
+			</h4>
+			<dl>
+				<dt class="html" id="i_text">text</dt>
+				<dd>
+					<p>propose à l'utilisateur d'introduire une ligne de texte</p>
+					<p class="html">
+						<input type="text" value="exemple de capture de ligne"
+							name="ligneTexte" size="50" /><br />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>text</em>" value = "exemple de capture de ligne" name = "exemple_text" size = "50"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_password">password</dt>
+				<dd>
+					<p>
+						propose à l'utilisateur d'introduire une ligne de texte dissimulé,
+						par exemple un mot de passe, (les caractères introduits par
+						l'utilisateur sont remplacés par des "*".<br /> <input
+							type="password" name="password" placeholder="Entrez un mot de passe" size="8" />
+					</p>
+
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>password</em>" name = "exemple_password" placeholder="Entrez un mot de passe" "size = "8"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_checkbox">checkbox</dt>
+				<dd>
+					<p>propose des cases à cocher, l'utilisateur peut choisir ou
+						non la valeur proposée; ce type d'élément permet de choisir
+						plusieurs options comme dans l'exemple suivant</p>
+					<p class="taille50 affichageNav">
+						Marquez votre choix<br /> choix 1: <input type="checkbox"
+							name="choix[]" value="choix1" /><br /> choix 2 : <input
+							type="checkbox" name="choix[]" value="choix2" /><br /> choix 3
+						: <input type="checkbox" name="choix[]" value="choix3" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code>Marquez vore choix<br />
+choix 1: <em>&lt;input</em> type = "<em>checkbox</em>" name = "choix[]" value = "choix1"<em>/&gt;</em>
+choix 2 : <em>&lt;input</em> type = "<em>checkbox</em>" name = "choix[]" value = "choix2"<em>/&gt;</em>
+choix 3 : <em>&lt;input</em> type = "<em>checkbox</em>" name = "choix[]" value = "choix3"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_radio">boutons multiples (radio button)</dt>
+				<dd>
+					<p>
+						propose un bouton d'option, la valeur est envoyée si le bouton est
+						sélectionné.<br /> Si plusieurs boutons sont rassemblés sous le
+						même nom, le choix de l'utilisateur est exclusif
+					</p>
+					<p class="taille50 affichageNav">
+						Marquez votre choix<br /> choix 1: <input type="radio"
+							name="choix" value="choix1" /><br /> choix 2 : <input
+							type="radio" name="choix" value="choix2" /><br /> choix 3 : <input
+							type="radio" name="choix" value="choix3" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code>Marquez vore choix<br />
+choix 1: <em>&lt;input</em> type = "<em>radio</em>" name = "choix" value = "choix1"<em>/&gt;</em>
+choix 2 : <em>&lt;input</em> type = "<em>radio</em>" name = "choix" value = "choix2"<em>/&gt;</em>
+choix 3 : <em>&lt;input</em> type = "<em>radio</em>" name = "choix" value = "choix3"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_submit">submit</dt>
+				<dd>
+					<p>propose un bouton de soumission des données</p>
+					<p>
+						<input type="submit" value="soumettre" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>submit</em>" value = "soumettre" <em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_reset">reset</dt>
+				<dd>
+					<p>propose un bouton de rétablissement (effacer le contenu des
+						différents champs et les remplacer par les valeurs par défaut)</p>
+					<p>
+						<input type="reset" value="abandon" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>reset</em>" value = "abandon" <em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_file">file</dt>
+				<dd>
+					<p>propose à l'utilisateur d'introduire l'emplacement d'un
+						fichier</p>
+					<p>
+						<input type="file" name="un_fichier" />
+						<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+					</p>
+
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;form</em><em> action </em>= "URL/script" <em>method</em> = "post" <em>enctype="multipart/form-data"</em>&gt;
+<em>&lt;input </em>type = "<em>file</em>" name = "un_fichier" <em>/&gt;</em>
+<em>&lt;input </em>type = "<em>hidden</em>" name = "MAX_FILE_SIZE" value="100000" <em>/&gt;</em>
+</code></pre>
+					<p class="important">
+						Remarquez que pour envoyer un fichier un champ caché(hidden) doit être spécifié. <br>
+						Celui-ci indique la taille maximale du fichier qui pourra être envoyé. 
+					</p>
+					<p class="important">
+						Remarquez également l'ajout du paramètre enctype="multipart/form-data" dans la balise form.
+					</p>
+				</dd>
+				<dt class="html" id="i_hidden">hidden</dt>
+				<dd>
+					<p>propose un champs caché, pour forcer une valeur</p>
+					<p>
+						<input type="hidden" value="abcedf" name="exemple_hidden"/>
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>hidden</em>" name = "champ_cache" <em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_image">image</dt>
+				<dd>
+					<p>propose un bouton illustré</p>
+					<p>
+						<input type="image" src="./images/bouton.jpg" name="exemple_image" alt="boutonImage"/>
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type = "<em>image</em>" src = "images/bouton.jpg" name = "image" <em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_email">email</dt>
+				<dd>
+					<p>Il s'agit d'une nouveauté HTML5 permettant d' entrer une adresse email. Toujours dans cette idée de sémantique,
+					il est conseillé d'utiliser ce champ pour les adresses emails des formulaires.
+					</p>
+					<p class="information">
+						<img src="./images/information.png" class="floatLeft" alt="Information"/> 
+						Cet élément possède un attribut	<span class="html">pattern</span> utile pour renseigner une expression régulière. 
+					Ceci aura pour effet d'avertir l'utilisateur si son adresse email ne correspond pas à l'expression régulière.
+					Voici un <a href="http://www.regular-expressions.info/refquick.html">lien</a> vers plus d'informations sur les expression régulières.
+					Vous aurez l'occasion d'approfondir ce sujet au cours de vos études.    
+					</p>	
+					<p>
+						Entrez un email : <input type="email" pattern="(^[a-z0-9]+)@([a-z0-9])+(\.)([a-z]{2,4})" name="exemple_email" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input </em>type="<em>email</em>" pattern="(^[a-z0-9]+)@([a-z0-9])+(\.)([a-z]{2,4})" name="exemple_email"<em>/&gt; </em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_tel">tel</dt>
+				<dd>
+					<p>Il s'agit d'une nouveauté HTML5 permettant d'entrer un numéro de téléphone. Toujours dans cette idée de sémantique,
+					il est conseillé d'utiliser ce champ pour les numéros de téléphone dans les formulaires.
+					</p>
+					<p class="information">
+						<img src="./images/information.png" class="floatLeft" alt="Information"/> 
+						Cet élément possède un attribut	<span class="html">pattern</span> utile pour renseigner une expression régulière. 
+					Ceci aura pour effet d'avertir l'utilisateur si son numéro de téléphone ne correspond pas à l'expression régulière.
+					Voici un <a href="http://www.regular-expressions.info/refquick.html">lien</a> vers plus d'informations sur les expression régulières.
+					Vous aurez l'occasion d'approfondir ce sujet au cours de vos études.    
+					</p>	
+					<p>
+						Entrez un tel : <input type="tel" pattern="^0[0-9]{9}" placeholder="Entrez votre téléphone" name="exemple_tel" />
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input</em> type="<em>tel</em>" pattern="^0[0-9]{9}" placeholder="Entrez votre téléphone" name="exemple_tel" /<em>&gt; </em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_date">date, datetime, time, week, month</dt>
+				<dd>
+					<p>Il s'agit d'une nouveauté HTML5 permettant d'entrer une date et/ou une heure. Toujours dans cette idée de sémantique,
+					il est conseillé d'utiliser ce champ pour les dates et temps dans les formulaires.Regardez les attributs <span class="html">min</span>
+					et <span class="html">max</span> ainsi que <span class="html">step</span> dans l'exemple suivant.
+					Dans cet exemple, les dates valides seront tous les 7 jours à partir du 15/9/2014 à savoir tous les lundis.
+					</p>	
+					<p>
+						Entrez une date : <input type="date" name="date" min="2014-09-15" max="2020-09-15" step="7"/>
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input</em> type="<em>date</em>" name="date" min="2014-09-15" max="2020-09-15" step="7"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_color">color</dt>
+				<dd>
+					<p>Il s'agit d'une nouveauté HTML5 permettant d'entrer une couleur. </p>	
+					<p>
+						Une couleur préférée ? : <input type="color" name="color"/>
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input</em> type="<em>color</em>" name="color"<em>/&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_search">search</dt>
+				<dd>
+					<p>Il s'agit d'une nouveauté HTML5 permettant d'entrer un texte/mot-clé à rechercher. Toujours dans cette idée de sémantique,
+					il est conseillé d'utiliser ce champ pour les champs de recherches dans les formulaires.
+					</p>	
+					<p>
+						Une recherche ? : <input type="search" name="keyword"/>
+					</p>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;input</em> type="<em>search</em>" name="search"<em>/&gt;</em>
+</code></pre>
+				</dd>
+
+			</dl>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="i_textarea">
+				Les champs de type <span class="html">textarea</span>
+			</h2>
+			<p>
+				La balise <span class="html"><em>&lt;textarea&gt;</em>...<em>&lt;/textarea&gt;</em></span>
+				permet à l'utilisateur d'introduire un texte sur plusieurs lignes.
+			</p>
+			<p>Plusieurs attributs définissent cette balise :</p>
+			<dl>
+				<dt class="html">cols</dt>
+				<dd>détermine le nombre de caractères par ligne</dd>
+				<dt class="html">rows</dt>
+				<dd>définit le nombre de ligne de la zone</dd>
+				<dt class="html">disable</dt>
+				<dd>grise et fige la zone, permet d'introduire du texte qui ne
+					peut pas être modifié</dd>
+				<dt class="html">readonly</dt>
+				<dd>fige la zone</dd>
+			</dl>
+			<p>
+				Par exemple, voici l'apparance d'une zone <span class="html">textarea</span>
+			</p>
+			<p>
+				<textarea name="commentaire" cols="50" rows="10">
+         Donnez votre commentaire
+		</textarea>
+			</p>
+<pre><code>&lt;p&gt;<em>&lt;textarea</em> name = "commentaire" cols = "50" rows = "10"<em>&gt;</em> Donnez votre commentaire <em>&lt;/textarea&gt;</em>&lt;/p&gt;</code>
+</pre>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="i_select">Les menus déroulants</h2>
+			<p>
+				La balise <span class="html">&lt;select&gt;...&lt;/select&gt;</span>
+				permet de créer un menu déroulant à l'intérieur d'un formulaire.
+			</p>
+			<p>Par exemple :</p>
+			<p class="affichageNav taille50">
+				Quelle couleur préférez-vous ?<br /> <select name="couleur"
+					size="3">
+					<option>Blanc</option>
+					<option>Noir</option>
+					<option>Rouge</option>
+					<option>Vert</option>
+					<option>Bleu</option>
+					<option>Brun</option>
+					<option selected="selected">Jaune</option>
+					<option>Orange</option>
+					<option>Parme</option>
+				</select>
+			</p>
+			<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;select </em>name="couleur" size="3"<em>&gt;</em>
+<em>&lt;option </em><em>&gt;</em>Blanc<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Noir<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Rouge<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Vert<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Bleu<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Brun<em>&lt;/option&gt;</em>
+<em>&lt;option selected = "selected"&gt;</em>Jaune<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Orange<em>&lt;/option&gt;</em>
+<em>&lt;option&gt;</em>Parme<em>&lt;/option&gt;</em>
+<em>&lt;/select&gt;</em>
+</code></pre>
+
+
+			<p>
+				La balise <span class="html">select</span> ouvre la définition du
+				menu, les balises <span class="html">option</span> spécifient les
+				propositions contenues dans le menu et la balise <span class="html">/select</span>
+				termine le menu.
+			</p>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="autres">
+				<span class="html">fieldset</span>, <span class="html">legend</span>
+				et <span class="html">label</span>
+			</h2>
+			<dl>
+				<dt class="html" id="i_fieldset">fieldset</dt>
+				<dd>
+					La balise <span class="html"><em>fieldset</em></span> permet de
+					regrouper plusieurs éléments du formulaires. Elle crée un contour
+					autour des balises de formulaires qu'elle entoure.
+					<div class="taille60 affichageNav">
+						<fieldset>
+							Nom : <input type="text" name="nom" /><br /> Prénom : <input
+								type="text" name="prenom" />
+						</fieldset>
+					</div>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;fieldset&gt;</em> Nom :  &lt;input type = "text" name = "nom" /&gt; &lt;br/&gt;
+Prénom :  &lt;input type = "text" name = "prenom" /&gt;<em>&lt;/fieldset&gt;</em>
+</code></pre>
+				</dd>
+				<dt class="html" id="i_legend">legend</dt>
+				<dd>
+					La balise <span class="html"><em>legend</em></span> permet
+					d'afficher un titre au cadre d'un <span class="html">fieldset</span>.
+					<div class="taille60 affichageNav">
+						<fieldset>
+							<legend> Identité </legend>
+							Nom : <input type="text" name="nom" /><br /> Prénom : <input
+								type="text" name="prenom" />
+						</fieldset>
+					</div>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;fieldset&gt;</em> <em>&lt;legend&gt;</em>Identité<em>&lt;/legend&gt;</em>
+Nom :  &lt;input type = "text" name = "nom" /&gt; &lt;br/&gt;
+Prénom :  &lt;input type = "text" name = "prenom" /&gt;<em>&lt;/fieldset&gt;</em>
+</code></pre>
+
+					<fieldset>
+						<legend> Ma légende </legend>
+					</fieldset>
+				</dd>
+				<dt class="html" id="i_label">label</dt>
+				<dd>
+					La balise <span class="html"><em>label</em></span> permet lorsque
+					l'on clique sur son texte de donner le focus à un champ de
+					formulaire.
+					<div class="taille60 affichageNav">
+						<label for="prenom"> Direct sur le prénom</label><br /> Nom : <input
+							type="text" name="nom" id="nom" /><br /> Prénom : <input
+							type="text" name="prenom" id="prenom" />
+
+					</div>
+					<p>En HTML :</p>
+<pre class="taille60"><code><em>&lt;label for = "prenom"&gt;</em> Direct sur le prénom <em>&lt;/label&gt;</em>&lt;br/&gt;
+Nom :  &lt;input type = "text" name = "nom" id = "nom"/&gt; &lt;br/&gt;
+Prénom :  &lt;input type = "text" name = "prenom" id = "prenom" /&gt;</code>
+</pre>
+				</dd>
+			</dl>
+		</article>
+		<!-- **************************************************************************************************** -->
+		<article>
+			<h2 id="style">La mise en page d'un formulaire</h2>
+			<p>
+				Étant donné que les formulaires ont une allure tabulaire,
+				on utilise souvent les <span class="html">table </span> pour mettre en forme plus facilement ces
+				formulaires. Mais ceci amène souvent plus de lourdeur dans le fichier HTML puisque des balises
+				sont ajoutées. Ceci est la seule exception notoire où on utilise un composant HTML (table) pour effectuer de la mise en forme.
+			</p>
+		</article>
+		
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

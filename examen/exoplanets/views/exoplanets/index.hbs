@@ -1,0 +1,42 @@
+<section>
+    <h1>Liste des exoplanètes</h1>
+    <table>
+        <tr>
+            <th>Nom Exoplanète</th><th>hClass</th><th>Année de découverte</th>
+        </tr>
+        {{#each exoplanetsTable}}
+        <tr>
+            <td>{{this.unique_name}} </td> <td>{{this.hclass}} </td> <td>{{this.discovery_year}} </td>
+        </tr>
+        {{/each}}
+    </table>
+</section>
+<section>
+    <h1>Ajouter une Exoplanète découverte</h1>
+    <form method="post" action="/exoplanets/add">
+        <div>
+            <label>Nom de l'exoplanète découverte : </label>
+            <input type="text" name="uniqueNameExoplanet"/>
+        </div>
+        <div>
+        <label>Classe Habitable de l'exoplanète : </label>
+        <select name="hClassExoplanet">
+            <option value ="Mésoplanète"> Mésoplanète</option>
+            <option value ="Psychroplanète">Psychroplanète</option>
+            <option value ="Thermoplanète">Thermoplanète</option>
+            <option value ="Hypopsychroplanète">Hypopsychroplanète</option>
+            <option value ="Non Habitable">Non Habitable</option>
+        </select>
+        </div>
+        <div>
+            <label> Année de découverte </label>
+            <input type="number" min="2000" max="2022" step="1" value="2021" name="discoveryYearExoplanet"/>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</section>
+
+
+

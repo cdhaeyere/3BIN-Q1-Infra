@@ -1,0 +1,4 @@
+---
+# defaults file for deploy_nodejs_app_from_git
+app_git_repo: ""
+app_deploy_path: "/var/www/nodejs_app"

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les liens</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html" class="current">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>CSS 3 - Notions de base</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="css3.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#style">Donner un style à un élément</a></li>
+					<li><a href="#inserer">Comment insérer les CSS dans le
+							HTML</a></li>
+					<li><a href="#validateur">Validation du CSS</a></li>
+					<li><a href="#selecteurs">Les sélecteurs</a></li>
+					<li><a href="#heritage">Cascade et Héritage</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://jigsaw.w3.org/css-validator/">Validateur
+							CSS3</a></li>
+					<li><a
+						href="http://www.w3schools.com/cssref/css_selectors.asp">Sélecteurs
+							W3C</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+
+			<p>
+				Jusque maintenant, vous avez appris à <em>STRUCTURER</em> vos pages
+				Web en introduisant des balises correspondant à un élément dans
+				votre texte (un paragraphe, une image) et en les sauvegardant sous
+				forme de fichier HTML. Vous allez maintenant apprendre à <em>METTRE
+					EN PAGE</em> vos pages html c'est-à-dire à définir un style de
+				présentation pour les éléments de la page en utilisant des couleurs,
+				un type ou une taille de caractères, etc.
+			</p>
+			<p>Vous allez réaliser cette opération à l'aide des CSS.</p>
+			<dl>
+				<dt id="css">CSS</dt>
+				<dd>
+					Les CSS (Cascading Style Sheet) permettent de définir la
+					présentation de pages Web indépendamment de leur structure et de
+					leur contenu (rôle du HTML). Cette séparation présente une série
+					d'avantages.
+					<ul>
+						<li>La structure du document et la présentation peuvent être
+							gérées dans des fichiers séparés. Dans un premier temps, on
+							définit le contenu de la page Web; ensuite, on en définit la
+							présentation .</li>
+						<li>Dans le cas d'un site Web, la présentation est
+							uniformisée : les documents (pages HTML) font référence aux mêmes
+							feuilles de styles et auront donc tous le même "look". Ceci
+							permet beaucoup de souplesse lors d'une modification de la
+							présentation.</li>
+						<li>Cette technique permet la cascade des styles. La «
+							cascade » est la combinaison de différentes CSS appliquées à un
+							même document.</li>
+					</ul>
+				</dd>
+			</dl>
+			<p>Comme pour le HTML, vous utiliserez l'éditeur Notepad ++ pour
+				définir vos CSS.</p>
+		</article>
+		<article>
+			<h2 id="style">Donner un style à un élément</h2>
+			<p>Avant d'aborder les détails techniques de la conception d'une
+				feuille de style, observez tout d'abord l'exemple très simple qui
+				suit :</p>
+			<table class="narrow-table">
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille60">
+<pre><code><em>&lt;body&gt;
+&lt;h1&gt;</em> Petit lexique du tennis<em>&lt;/h1&gt;</em>
+<em>&lt;p&gt;</em>Ace: Balle de service que le receveur ne peut toucher. 
+Le serveur réalise alors un ace <em>&lt;/p&gt;</em>
+<em>&lt;p&gt;</em>Amortie (ou amorti, anglais: drop shot): Coup consistant 
+à placer la balle tout près du filet en la faisant rebondir 
+un minimum <em>&lt;/p&gt;</em>
+<em>&lt;/body&gt;</em>
+</code></pre></td>
+					<td><img src="./images/sampleCSS1.png"
+						alt="affichage d'un écran CSS" /></td>
+				</tr>
+				<tr>
+					<th>Les CSS associées à la page :</th>
+					<th>L'affichage par le navigateur avec les CSS :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code><em>body {</em>
+color :  green;
+<em>}
+h1 {
+</em>color: white;
+font-family: verdana, sans-serif; 
+border-bottom: 4px solid green;
+background-color : red;
+<em>}</em>
+</code></pre></td>
+					<td><img src="./images/sampleCSS2.png"
+						alt="affichage d'un écran CSS" /></td>
+				</tr>
+			</table>
+
+
+			<h4>Syntaxe :</h4>
+			<p>
+				En CSS, l'élément HTML dont on veut définir le style est désigné
+				sans mettre des <span class="html">&lt; &gt;</span> autour de son
+				nom. Il s'appelle le <span id="i_selecteur"><em>
+						sélecteur</em></span>, <span class="html">h1</span> en est un dans notre
+				exemple.
+			</p>
+			<p>
+				Le sélecteur est suivi d'une accolade ouvrante et puis de la liste
+				des propriétés. Chaque <em id="i_propriete">propriété</em> a un nom,
+				<span class="html">color</span> par exemple suivi de <span
+					class="html">: </span>et de la valeur que l'on veut donner à cette
+				propriété, <span class="html">white</span> pour <span class="html">h1</span>
+				dans notre exemple. La valeur est suivie d'un <span class="html">;</span>.
+				La description du sélecteur se termine par <span class="html">}</span>.
+				Le bloc sélecteur suivi de ses propriétés forme une règle CSS. Cette
+				CSS met en forme sauf spécification contraire tous les éléments <span
+					class="html">h1</span> en les écrivant en blanc.
+			</p>
+			<p>Les exemples qui suivent vont respecter une certaine
+				indentation qui nous semble la plus claire pour le lecteur : nom du
+				sélecteur sur la première ligne, liste des propriétés à raison d'une
+				par ligne et pour terminer l'accolade fermante. Dans la réalité,
+				l'écriture est tout à fait libre et notre exemple pourrait être
+				écrit sur une seule ligne.</p>
+			<p>
+				L'ordre dans lequel apparaissent les règles CSS n'a aucune
+				importance mais le bon usage veut que vous commenciez par la règle
+				la plus générale càd la règle body correspondant à la balise <span
+					class="html">&lt;body&gt;</span> en HTML.
+			</p>
+			<p>L'ordre dans lequel apparaissent les propriétés d'un sélecteur
+				n'a également aucune importance et il n'existe pas de recommandation
+				à ce sujet.</p>
+		</article>
+
+		<!--****************************************************************************************************************-->
+		<article>
+			<h2 id="inserer">Comment insérer les CSS dans le HTML ?</h2>
+			<h4>Première solution: (à l'intérieur d'une balise)</h4>
+			<p>Cette solution n'est pas conseillée et est même en
+				contradiction avec le principe d'indépendance entre structure et
+				mise en page de la page Web. En effet, la description du style peut
+				se faire individuellement, pour un mot ou paragraphe de page par
+				exemple et ce dans le fichier HTML.</p>
+			<p>Ceci revient en fait à se passer de CSS.</p>
+			<p>
+				<span class="html">&lt;p <em>style</em> = "font-size: 16pt ;"
+					&gt;
+				</span>définirait une taille de caractères pour le paragraphe qui suit. On
+				aura jamais recours à cette solution dans le cadre de ce cours.
+			</p>
+
+			<h4>Deuxième solution: (dans le fichier html)</h4>
+			<p>
+				Les CSS sont incorporées dans le fichier html. On rajoute une balise
+				<span class="html">&lt;style type="text/css"&gt;</span> dans la
+				section <span class="html">&lt;head&gt;</span> de la page html et on
+				introduit ensuite la liste des éléments et leurs propriétés. Cette
+				énumération se termine en introduisant la balise de fin de style <span
+					class="html">&lt;/style&gt;</span>.
+			</p>
+			<p>Exemple:</p>
+<pre><code>&lt;head&gt;
+&lt;title&gt;Le titre de ma page html &lt;/title&gt;
+<em>&lt;style type = "text/css"&gt;</em>
+h1 {
+ color : maroon;
+ font-family : sans-serif;
+ border-bottom : 1px solid black;
+}
+p {
+color : black;
+}
+<em>&lt;/style&gt;</em>
+&lt;/head&gt;
+</code></pre>
+			<p>Les règles CSS sont alors exclusivement applicables à la page
+				HTML en question.</p>
+
+
+			<h4>Troisième solution: (dans un fichier séparé)</h4>
+			<ol>
+				<li>Les règles CSS sont incluses dans un fichier séparé dont
+					l'extension sera <em>.css</em>; par exemple style.css. Ce fichier
+					est une <em>feuille de style externe</em>. Attention il ne faut
+					surtout pas inclure dans le fichier .css la balise <span
+					class="html">&lt;style&gt;</span> qui est du HTML.
+				</li>
+				<li>On ajoute à la page HTML un élément qui permet de faire le
+					lien entre la page et son style qui a été enregistré dans le
+					fichier d'extension <em>.css</em><br /> 
+<pre class="taille60"><code><em>&lt;link type = </em>"text/css" <em>rel = </em>"stylesheet" <em>href = </em>"style.css"<em>&gt; </em>
+</code></pre> 
+					L'attribut <span class="html">href</span> fait le lien avec le
+					fichier CSS externe (voir à ce sujet le cours sur les différents
+					adressages). rel indique au navigateur que le fichier lié est une
+					feuille de style. type indique à ce même navigateur que le contenu
+					du fichier lié est de type CSS.
+				</li>
+			</ol>
+			<p>
+				Cette troisième solution permet de n'avoir qu'une seule feuille de
+				style pour plusieurs pages html. Vous comprenez maintenant pourquoi
+				un des avantages des CSS est d'unifier le style des pages d'un site
+				Web et de faciliter les mises à jour de ce style. En effet, les
+				modifications ne sont effectuées qu'une fois, dans le fichier CSS
+				qui porte sur toutes les pages html qui y font référence grâce à
+				l'instruction <span class="html">link</span> dans la section head
+				des fichiers html correspondants.
+			</p>
+			<p>
+				Remarquez qu'il est également possible de lier une seule feuille
+				HTML à plusieurs feuilles de style CSS. Il y aura alors plusieurs
+				éléments <span class="html">link</span> ou <span class="html">style</span>
+				dans la feuille HTML (pour rappel, c'est pour cela que ces feuilles
+				de style s'appellent des "cascades").
+			</p>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Cette
+				troisième solution est une recommandation du W3C. C'est pourquoi
+				nous vous demandons de l'utiliser !
+			</p>
+		</article>
+		<!--****************************************************************************************************************-->
+		<article>
+			<h2 id="validateur">Validation du CSS</h2>
+			<p>
+				Tout comme pour le code HTML5, le code CSS3 peut être validé via un
+				validateur créé par le W3C. Vous trouverez ce validateur à cet
+				endroit : <a href="http://jigsaw.w3.org/css-validator/">
+					http://jigsaw.w3.org/css-validator/</a>
+			</p>
+		</article>
+		<!--****************************************************************************************************************-->
+		<article>
+			<h2 id="selecteurs">Les sélecteurs</h2>
+			<p>Nous avons vu qu'une déclaration CSS se compose d' un
+				sélecteur. Celui-ci permet de sélectionner un ou plusieurs éléments
+				HTML dans le but de leur donner du style. Nous allons voir ici les
+				différents sélecteurs possibles les plus courants. A vous par la suite de choisir
+				celui qui est le plus approprié à chaque cas qui se présente.</p>
+			<h4>La sélection simple</h4>
+			<p>Pour sélectionner tous les paragraphes d'une page HTML, le
+				sélecteur prend la forme de l'élément HTML sans les balises &lt; et
+				&gt;. Voici ci-dessous comment appliquer une couleur verte ainsi
+				qu'une police particulière à tous les paragraphes d'une page HTML.</p>
+<pre><code><em>p {</em>
+  color :  green;
+  font-family : sans-serif;
+<em>}</em>
+</code></pre>
+			<p>On peut regrouper différents éléments ensemble pour leur
+				appliquer un même style. Exemple :</p>
+<pre><code><em>article,p,h3 {</em>
+  color :  green;
+  font-family : sans-serif;
+<em>}</em></code></pre>
+			<p>Il est également possible de sélectionner tous les éléments à l'intérieur d'un autre élément via 
+			la notation : </p>
+<pre><code><em>div p {</em>
+  color :  green;
+  font-family : sans-serif;
+<em>}</em>
+</code></pre>
+			<p> On sélectionne dans l'exemple tous les paragraphes contenus dans un &lt;div&gt; et uniquement ceux-là !.
+				Les classes et les ids peuvent bien évidemment être utilisés dans cette notation.
+			</p>
+			<h4>La sélection universelle</h4>
+			<p>
+				Le sélecteur universel <em>*</em> permet de sélectionner tous les
+				éléments HTML d'une page et de leur affecter un style. Celui-ci est
+				souvent utiliser afin d'initialiser tous les éléments HTML à une
+				valeur par défaut qui pourra ensuite être modifiée (voir outrepasser
+				l'héritage ci-dessous). Dans l'exemple ci-dessous, nous définissons
+				les marges de tous les éléments HTML à 0.
+			</p>
+<pre><code><em>* {</em>
+  margin:0;
+<em>}</em></code></pre>
+
+			<h4 id="i_classe">Les classes</h4>
+			<ol>
+				<li>Dans l'exemple de la sélection simple, tous les paragraphes
+					et leurs "descendants" seront écrits en vert. Il est possible de
+					donner <em>un style différent à un seul des paragraphes</em>, à un
+					des titres <span class="html">h1</span>, <span class="html">h2</span>,
+					<span class="html">h3</span> de la page à l'aide d'une classe. La
+					classe permet de sélectionner individuellement ce paragraphe ou ce
+					titre.<br />
+					<ul>
+						<li>Dans la page HTML, on va associer l'élément en question à
+							une classe :<br /> <br /> 
+<pre class="taille40"><code>&lt;p <em>class</em> = "premiereclasse"<em>&gt;</em>
+</code></pre>
+						</li>
+						<li>Dans le code CSS, un sélecteur de classe est rajouté :<br />
+							<br /> 
+<pre class="taille40"><code><em>p.premiereclasse {</em>
+<em>}</em></code></pre> 	
+					 Seul le paragraphe associé à la classe <span
+							class="html">premiereclasse</span> sera écrit en noir.
+						</li>
+					</ul>
+
+
+				</li>
+				<li><p>
+						On peut vouloir utiliser le style défini dans une classe <em>à
+							différents éléments de la page HTML</em>.
+					</p>
+					<p>
+						Certains titres de niveau <span class="html">h1</span> peuvent
+						également se voir appliquer les propriétés de la classe
+						premiereclasse :
+					</p>
+
+					<ul>
+						<li><p>
+								Dans la page HTML, on va associer le ou les titre(s)<span
+									class="html"> h1</span> en question ainsi que certains
+								paragraphes sélectionnés à la classe:
+							</p> 
+<pre class="taille40"><code>&lt;h1 <em>class</em> = "premiereclasse"<em>&gt;</em>
+</code></pre>
+						</li>
+						<li><p>Dans le code CSS, un sélecteur de classe est
+								rajouté :</p> 
+<pre class="taille40"><code><em>p.premiereclasse, h1.premiereclasse {</em>
+color : black ;
+<em>}</em></code></pre>	</li>
+					</ul></li>
+
+
+
+				<li><p>
+						Pour pouvoir styler <em>n'importe quel élément </em>avec les
+						propriétés de la classe premiereclasse, il suffit de définir la
+						classe dans le fichier css sans l'associer à un élément. Le nom de
+						la classe s'écrit avec un point suivi du nom de la classe :
+					</p> <br /> 
+<pre class="taille30"><code><em>.premiereclasse {</em> 
+color : black ;
+<em>}</em></code></pre>
+				</li>
+				<li><p>
+						Un élément HTML peut appartenir à plusieurs classes. <span
+							class="html">&lt;p <em>class</em> = "premiereclasse
+							deuxiemeclasse"&gt;
+						</span>
+					</p>
+					<p>Les styles des 2 classes seront alors appliqués à l'élément
+						en question.</p>
+					<p>Il pourrait y avoir plusieurs sélecteurs portant sur une
+						propriété donnée pour un même élément. Quelle est la propriété qui
+						sera alors appliquée ? Celle de la dernière classe de la liste.</p>
+					<p>Dans l'exemple ci-dessus, les classes premiereclasse et
+						deuxiemeclasse peuvent toutes deux déterminer une couleur de
+						caractères différentes. Dans ce cas, c'est la dernière dans le
+						fichier CSS qui sera utilisée.</p></li>
+			</ol>
+
+			<h4>Les ids</h4>
+			<p>
+				Chaque élément HTML peut avoir un attribut <em>id</em> qui doit être
+				<em>unique</em> dans une page donnée. Nous pouvons dans notre
+				feuille de style CSS appliquer un style uniquement à cet élément
+				dont nous connaissons l'id. Voici un exemple :
+<pre><code><em>&lt;p id="monSuperParagraphe"&gt; </em>
+  super ce paragraphe ! <em>&lt;/p&gt;</em>
+</code></pre>
+			
+<pre><code><em>#monSuperParagraphe {</em>
+  color :  red;
+  font-family : sans-serif;
+<em>}</em></code></pre>
+			
+			<p>
+				Dans le code HTML nous définissons un <em>id</em> sur un paragraphe
+				bien déterminé. Ensuite dans la feuille CSS, nous pouvons accéder à
+				ce paragraphe et lui appliquer un style grâce au caractère <em>#</em>.
+			</p>
+			<h4>Autres sélections</h4>
+			<p>
+				Il est possible également de sélectionner des éléments HTML par
+				leurs attributs, par la valeur d'un attribut, par parent-enfant
+				directs mais nous n'avons généralement pas besoin de ces sélecteurs
+				pour un site Web simple. Nous vous renvoyons vers la documentation
+				du W3C à ce sujet pour ceux que cela intéresse : <a
+					href="http://www.w3schools.com/cssref/css_selectors.asp">Sélecteurs
+					W3C</a>
+			</p>
+
+
+
+		</article>
+		<!--****************************************************************************************************************-->
+		<article>
+			<h2 id="heritage">Cascade et Héritage</h2>
+			<h4>Cascade</h4>
+			<p> CSS est l'abréviation de Cascading Style Sheet. Il y a donc une notion de cascading mais qu'est-ce que cela peut bien vouloir dire ?
+			    En fait lorsqu'une page HTML est affichée, les sources CSS peuvent être multiples. Il y a bien sûr la feuille de style définie par l'auteur(vous) mais à celle-ci
+				s'ajoute la feuille de style du navigateur et même celle de l'utilisateur(rarement utilisé). Les règles CSS présentes dans ces feuilles de styles vont donc potentiellement entrer en conflit. 
+				Que faire dans le cas où 2 règles peuvent s'appliquer sur une même propriété ? Et bien le "cassading" répond à cette question en instaurant un système de priorité.	Il est donc important de bien connaître 
+				cette notion afin de "debugger" efficacement son code CSS.
+			</p>
+			<h4> Plusieurs feuilles de styles </h4>
+			<p>
+				Comme mentionné au paragraphe précédent, il existe différentes feuilles de styles s'appliquant à votre site même si vous n'en définissez qu'une seule.
+				La première feuille de style à s'appliquer est la feuille de style du navigateur. Si vous ne définissez aucune feuille de style pour votre page html, celle-ci s'affichera néanmoins avec un style par défaut (la feuille de style du navigateur). Ceci explique également en partie pourquoi le rendu peut différer d'un navigateur à l'autre, leurs feuilles de styles respectives étant quelque peu différentes.
+				<br>
+				La deuxième feuille de style à s'appliquer est celle de l'auteur (concepteur du site web). Il s'agit de la feuille de style que vous créérez le plus souvent.
+				<br>
+				La troisième feuille de style à s'appliquer est celle de l'utilisateur. Elle permet à l'utilisateur(surfeur) de définir sa propre feuille de style et donc d'adapter les sites Web 
+				à sa convenance. Malheureusement la procédure pour appliquer cette feuille de style diffère d'un navigateur à l'autre, c'est pourquoi elle est rarement utilisée.
+			</p>
+			<h4> Règles spécifiques </h4>
+			<p>
+				Plus une règle est complexe, plus elle sera spécifique et donc plus elle sera prioritaire. Voyons comment ce calcul de spécificité est réalisé. Pour chaque règle CSS, le sélecteur est analysé et un nombre de 4 chiffres lui est attribué. Le premier chiffre indique si le sélecteur est utilisé localement (via un attribut style dans le code HTML) ou non. Ce premier
+				chiffre devrait donc toujours valoir 0 si on respecte les recommandations du W3C. Attention un style local est prioritaire sur les autres styles ! 
+				<br>
+				Le deuxième chiffre indique le nombre d'IDs présents dans le sélecteur.
+				<br>
+				Le troisième chiffre indique le nombre de classes ou pseudo-classes présentes dans le sélecteur.
+				<br>
+				Le quatrième chiffre indique le nombre d'éléments HTML présents dans le sélecteur.
+			</p>
+			<p>
+				Au plus ce nombre est élevé, au plus la règle est spécifique et donc prioritaire.
+			</p>
+		
+				<h5>Exemple dans une feuille de style externe : </h5>
+<pre class="taille30"><code>p  		0,0,0,1
+p.myclass	0,0,1,1
+#myid p.myclass	0,1,1,1
+</code></pre>
+			<div class="important">
+				<p>
+				<img src="./images/important.png" alt="Important" class="floatLeft" />
+				L'ordre de priorité établi par le "cascading" est le suivant : 
+				</p>
+				<ol>
+					<li>Type de <span class="html">media</span> : une règle ne s'applique que pour le media visé (une règle pour le media print ne s'applique pas pour le media screen) </li>
+					<li>Origine de la feuille de style : utilisateur -> auteur -> navigateur. Une feuille de style utilisateur aura donc toujours la priorité sur une feuille de style auteur !</li>
+					<li>Poids de la règle : la déclaration <span class="html">!important</span> permet d'octroyer plus de poids à une règle en cas de conflit</li>
+					<li>Spécificité : plus une règle est spécifique (voir ci-dessus), plus elle est prioritaire </li>
+					<li>Ordre d'apparition </li>
+				</ol>
+			</div>
+			
+			<h4 class="clear">Héritage</h4>
+			<p>Certains éléments sont parfois imbriqués dans un autre
+				élément. Ils vont alors hériter des propriétés de cet élément. On
+				dit que les éléments enfants héritent du style de leurs parents.</p>
+
+
+			<h5>Exemple de fichier .css</h5>
+<pre class="taille30"><code><em>body {</em>
+color : yellow ;
+background-color : blue ;
+<em>}</em>
+<em>p {</em>
+color : white ;
+<em>}</em></code></pre>
+
+			<p class="centre">
+				<img alt="diagramme présentant la structure d'une page html"
+					src="./images/diagramme.gif" />
+			</p>
+			<p>
+				Quand une propriété est définie au niveau de l'élément <span
+					class="html">&lt;body&gt;</span>, tous les éléments enfants de <span
+					class="html">&lt;body&gt;</span> en héritent si celle-ci s'y prête
+				(sauf contre-ordre). Cet héritage s'étend à tous les niveaux. Si une
+				couleur de fond (<span class="html">background-color</span>) est
+				donnée au niveau de <span class="html">&lt;body&gt;</span>, tous les
+				éléments de la feuille concernée ainsi que leurs enfants seront
+				affectés. Dans notre exemple, toute la page aura un fond bleu.
+				Remarquez que certaines propriétés ne s'appliquent pas à tous les
+				éléments. Par exemple, la couleur de fond ne s'applique pas à la
+				balise <span class="html">&lt;img&gt;</span>. D'autres propriétés (souvent liées à la mise en page)
+				ne sont tout simplement pas héritées (margin, padding, border, width, height, ...).
+			</p>
+			<p class="important">
+				<img src="./images/important.png" alt="Important" class="floatLeft" />
+				Les propriétés liées à la mise en page (margin, padding, height, width, border, ...) ne sont pas héritées ! <br>
+				Les propriétés de couleur ou liées à la police de caractère sont héritées !
+			</p>
+
+			<h4>Outrepasser l'héritage</h4>
+			<p>
+				On peut vouloir qu'une des propriétés du parent ne soit pas
+				applicable à un des enfants. La couleur des caractères de ma page
+				peut être jaune (propriété définie à l'aide du sélecteur <span
+					class="html">body</span>) et on peut vouloir qu'un élément ait des
+				caractères d'une autre couleur ; les caractères de l'élément <span
+					class="html">p</span> seront blancs dans notre exemple. On
+				outrepasse l'héritage en introduisant une règle spécifique pour <span
+					class="html">p</span>. L'élément paragraphe hérite la couleur de
+				fond de <span class="html">body</span> mais la couleur des
+				caractères d'un paragraphe est différente.
+			</p>
+<pre class="taille60"><code><em>p { </em>/* permettre que les paragraphes soient écrits en blanc*/
+color : white ;
+<em>}</em></code></pre>
+			<p>
+				En CSS3, une déclaration d'importance a été introduite, il s'agit de <span class="html">!important</span>.
+				Vous pouvez ajouter à une propriété cette déclaration d'importance, 
+				c'est alors celle-ci qui prendra le dessus en cas de conflit.
+			</p>
+<pre class="taille60"><code><em>* {</em> color:black !important; <em>}</em>
+<em>p {</em> color : white <em>}</em>; /* les paragraphes seront en noir malgré cette déclaration spécifique */
+</code></pre>
+			<p class="important">
+				<img src="./images/important.png" alt="Important" class="floatLeft" />
+				Vous l'aurez sans doute remarqué. Savoir définir des styles est une chose, être sûr du résultat final en est une autre. 
+				Certains éléments seront hérités, d'autres pas (margin, padding, border, height, ...) . Le cascading aura également son effet.
+				Il est donc utile d'avoir un outil (<a href="css_debug.html">debugging</a>) qui nous montre quelles règles sont appliquées dans un cas bien précis.  
+			</p>
+			<p>
+				Une bonne pratique est de commenter vos sources. Pour introduire des
+				commentaires dans les CSS, il suffit d'encadrer vos remarques par <span
+					class="html">/*</span> et <span class="html">*/</span>.
+			</p>
+<pre class="taille60"><code><em>/*</em> Ceci est un tout petit commentaire ...<em>*/</em>
+</code></pre>
+		</article>
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

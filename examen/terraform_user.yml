@@ -1,0 +1,35 @@
+- name: Installation de Terraform et création d'utilisateur
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ajouter le dépôt officiel de Terraform
+      apt_repository:
+        repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main'
+        state: present
+        update_cache: yes
+
+    - name: Installer gnupg et software-properties-common
+      apt:
+        name: 
+          - gnupg
+          - software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Ajouter la clé GPG de HashiCorp
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+
+    - name: Installer Terraform
+      apt:
+        name: terraform
+        state: present
+        update_cache: yes
+
+    - name: Créer un utilisateur nommé 'terra'
+      user:
+        name: terra
+        shell: /bin/bash
+        groups: sudo
+        create_home: yes

@@ -1,0 +1,11 @@
+# exclude node modules directory  
+/node_modules/
+# exclude MAC OS metadata
+/.DS_Store/
+# exclude vscode preferences
+/.vscode/
+# exclude webstorm config
+/.idea/
+
+
+

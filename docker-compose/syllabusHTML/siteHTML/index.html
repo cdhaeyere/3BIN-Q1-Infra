@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - Accueil</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="current">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>Le cours</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="#comment"> Comment lire ce syllabus </a></li>
+					<li><a href="#intro"> Introduction </a></li>
+					<li><a href="#e-learning"> E-learning </a></li>
+					<li><a href="#e-syllabus"> E-syllabus </a></li>
+					<li><a href="#orga"> Organisation </a></li>
+					<li><a href="#evaluation"> Evaluation </a></li>
+					<li><a href="#ressources"> Ressources </a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://www.w3.org">W3C </a></li>
+					<li><a
+						href="http://fr.openclassrooms.com/informatique/cours/apprenez-a-creer-votre-site-web-avec-html5-et-css3">Open Classroom </a></li>
+					<li><a href="http://www.w3.org/TR/html5/">Norme HTML5</a></li>
+					<li><a href="http://www.w3schools.com/">W3Schools</a></li>
+					<li><a href="http://www.alsacreations.com/">AlsaCreation</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="comment">Comment lire ce syllabus</h2>
+			<p>Vous êtes prêts à lire ce syllabus ? Super ! Voici brièvement
+				quelques conventions typographiques utilisées dans ce syllabus.
+				Celles-ci vous permettront de mieux percevoir la structure de ce
+				syllabus mais également de distinguer les points importants.</p>
+			<p>Le menu principal (bleu) se trouve en haut de la page et se
+				compose de 6 rubriques. Chaque rubrique est divisée en section et
+				sous-section. A gauche un menu (orange) permet de naviguer
+				rapidement à l'intérieur d'une rubrique. Ce menu propose également
+				un rappel des différents liens intéressants de la rubrique (bleu
+				marine).</p>
+			<p>Les conventions typographiques :</p>
+			<h2>Je suis une section</h2>
+			<h4>Je suis une sous-section</h4>
+			<h5>Je suis une sous-sous-section</h5>
+
+			<p>
+				<em>Je suis en évidence. Je suis donc une clé du paragraphe qui
+					me contient.</em>
+			</p>
+			<p>
+				<span class="html">Je suis un mot du langage HTML ou CSS</span>
+			</p>
+			<p class="information">
+				<img src="./images/information.png" alt="Information"
+					class="floatLeft" /> Je suis une information complémentaire pour
+				votre culture générale. Vous pouvez m'ignorer.
+			</p>
+			<p class="important">
+				<img src="./images/important.png" alt="Important" class="floatLeft" />
+				Je suis important. Vous ne pouvez pas m'ignorer.
+			</p>
+
+
+		</article>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<h4>Pourquoi un cours d'Introduction au Web?</h4>
+			<p>
+				<img class="floatRight" src="images/reflexion.gif" alt="Reflexion" />
+				Vous désirez connaître la date de sortie du prochain Harry Potter?
+				Vous voulez vendre vos anciens jeux PS2? Vous recherchez des
+				informations sur l'Inde? Envoyer une carte de voeux? Un conseil
+				universel : Allez sur le Web! C'est quoi le Web? Comment ça marche?
+				Comment créer un site? Comment publier un site? ...
+			</p>
+
+			<p>
+				Commençons par la définition : <em>Internet est un réseau
+					informatique mondial</em>. Ni plus ni moins, Internet est un outil
+				universel de communication (parmi d'autres).
+			</p>
+
+			<p>Le but du cours est de vous ouvrir quelques portes sur le web
+				et ses nombreuses technologies. Il s'agit d'une introduction; à la
+				fin du cours, vous serez capables de comprendre le code source d'un
+				site Web et de créer un site web correctement (respectant les
+				critères normatifs) en HTML et CSS.</p>
+
+			<h4>HTML5 et un peu d'histoire</h4>
+			<p>Dans le cadre de ce cours, nous avons choisi de vous exposer
+				les standards du langage de balisage pour le Web propres au HTML5.
+				C'est le standard actuel recommandé par le W3C (World Wide Web
+				Consortium). Le W3C est un organisme international dont le but est
+				de développer des standards ouverts afin de permettre l'évolution et
+				la croissance du Web. Les navigateurs(Firefox, Chrome, Internet
+				Explorer) que vous utilisez suivent ces standards et les
+				implémentent. C'est ainsi que les navigateurs peuvent vous afficher
+				le rendu d'une page HTML5.</p>
+			<p>Avant le standard HTML5, deux autres standards étaient en
+				concurrence. Le HTML 4.0.1 qui est l'ancêtre du HTML5 et le XHTML 2
+				(le XHTML 1 fut un premier essai) basé sur le langage XML, que vous
+				étudierez en deuxième année. Vous serez peut-être encore confronter
+				à ces 2 autres standard qui restent utilisés aujourd'hui. Le langage
+				HTML 4.0.1, tout comme HTML 5 n'est pas très rigoureux, vous pouvez
+				oublier de fermer une balise par exemple et malgré cela votre page
+				HTML s'affichera correctement. Cependant l'oubli de cette balise
+				handicapera fortement des programmes lisant votre code HTML5 dans le
+				but par exemple de référencer votre site Web. Le langage XHTML est
+				né de cette faiblesse, il permet quant à lui d'avoir un contrôle
+				plus strict sur code XHTML.</p>
+			<p>
+				En résumé, ce qui importe dans ce cours, c'est la production d'un
+				document HTML vierge de tout élément de style; ce qui correspond au
+				respect de la norme HTML 5. Voir la norme <a
+					href="http://www.w3.org/TR/html5/">ici </a>
+			</p>
+
+
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important" />
+				<img class="floatRight" src="images/dodo.gif" alt="Avis" />
+				Attention à ceux qui ont déjà créé des sites Web: beaucoup de gens
+				savent concevoir un site Web mais peu le font correctement !
+				Assurez-vous de bien maîtriser tous les concepts véhiculés dans ce
+				cours avant de croire que le tour est joué;. Profitez-en pour
+				améliorer davantage vos compétences!
+			</p>
+		</article>
+		<article>
+			<h2 id="e-learning">E-learning</h2>
+			<p>Le fonctionnement de ce cours se veut original car nous savons
+				que certains d'entre vous sont déjà des
+				développeurs Web,&nbsp;d'autres ont déjà
+				gouté aux technologies Web mais d'autres encore les ignorent
+				totalement.</p>
+			<p>
+				Nous avons choisi de pratiquer de l'<em>eLearning</em>. KeKseKça?
+			</p>
+			<p>Selon l'Union Européenne,</p>
+			<p class="cite">l’e-learning est l’utilisation des nouvelles
+				technologies multimédias de l’Internet pour améliorer la qualité de
+				l’apprentissage en facilitant d’une part l’accès à des ressources et
+				à des services, d’autre part les échanges et la collaboration à
+				distance.</p>
+
+			<p>Dans le cadre du cours d'introduction au web, vous disposez de
+				théories et d'exercices articulés dans un parcours pédagogique. Vous
+				disposez également de forums pour toutes vos questions.</p>
+
+			<p>
+				La méthodologie employée pour ce cours permettra
+				à chacun d'avancer à son rythme et de prendre en main
+				son évolution. <em>En somme, vous êtes
+					maîtres de votre apprentissage. </em>
+			</p>
+		</article>
+
+		<article>
+			<h2 id="e-syllabus">E-syllabus</h2>
+			<p>Cette année nous nous basons essentiellement sur ce syllabus
+				en ligne que vous êtes en train de lire. 
+			</p>
+			<p>
+				Cette théorie est mise en lien avec les exercices dans le <em>parcours
+					pédagogique.</em>
+			</p>
+			<p>
+				Le parcours pédagogique vous présente également un ordre de lecture du syllabus; 
+				il est donc préférable de suivre cet ordre lors d'un premier apprentissage.
+			</p>
+			<p class="important">
+				<img src="./images/important.png" alt="Important" class="floatLeft" />
+				Le parcours pédagogique fait partie de l'évaluation continue !
+			</p>
+		</article>
+		<article>
+			<h2 id="orga">Organisation</h2>
+			<p>
+				Le cours en tant que tel s'étend sur une semaine. Cette semaine est consacrée à l'apprentisage
+				d'HTML5 et des feuilles de styles CSS3. Une présentation du framework Bootstrap sera également faite en semaine 4.
+				Un cours théorique en auditoire vous donnera les éléments essentiels pour pouvoir réaliser un premier site Web. 
+				Ce cours sera suivi par 3 séances d'exercices. Durant la première séance d'exercice, vous réaliserez un premier site Web
+				en étant guidé. Pour la deuxième séance d'exercice, vous ré-appliquerez ce qui a été vu à 
+				la première séance d'exercice mais sans guide cette fois-ci. La dernière séance servira à terminer les exercices ou 
+				à développer votre propre site Web.
+			</p>
+				
+		</article>
+
+		<article>
+			<h2 id="evaluation">L'évaluation (partie HTML) </h2>
+			<p>L'évaluation :</p>
+			<ul>
+				<li>100 % sur une interrogation en semaine 4. Le framework Bootstrap ne fera pas partie de l'évaluation</li>
+			</ul>
+		</article>
+
+		<article>
+			<h2 id="ressources">Autres Ressources</h2>
+			<p>Il existe une multitude de possibilités pour apprendre le HTML
+				et les CSS. Les professeurs encouragent les étudiants à effectuer
+				des recherches par eux mêmes : sur le Web(OpenClassRoom par ex., site W3schools, site Alsacreation), à
+				la bibliothèque, ... . <br>
+				Les liens utiles proposés ci-contre vont dans ce sens. 
+			</p>
+			<p>Toutefois, la matière du cours est celle qui se trouve sur
+				claco.</p>
+		</article>
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<section>
+    <h1>Bienvenue sur le site d'apprentissage du Javascript et dédié aux ExoPlanètes.</h1>
+
+    <h3>Qu'est-ce qu'une exoplanète?</h3>
+    <p>
+        Une exoplanète est une planète située en-dehors du Système solaire, autrement dit : 
+        elle orbite autour d'une étoile autre que le Soleil. <br>
+        La plupart des exoplanètes découvertes à ce jour sont situées à moins de 400 années-lumière de notre Système solaire. 
+        Une année-lumière équivaut approximativement à 9.460 milliards de km.
+    </p>
+    <img src="images/exoplanet.jpg" alt ="illustration exoplanète" class="img"/>
+    <h3>Liste des exoplanètes belges découvertes</h3>
+    <ul>
+        {{#each exoplanetsTable}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+</section>

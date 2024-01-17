@@ -1,0 +1,86 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer, header {
+  background-color: black;
+  color: white;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+header nav {
+  background-color:sandybrown;
+  padding : 5px;
+  text-align: left;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 50px;
+  font-size: x-large;
+}
+
+.authlink {
+  float:right;
+  margin-left:50px;
+}
+
+
+section {
+  background-color: steelblue;
+  padding-bottom: 20px;
+  padding-left:50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p, h3, ul {
+  padding : 10px;
+}
+
+.img {
+  width: 300px;
+  height: 300px;
+  padding : 10px;
+}
+
+#imgError {
+  display: flex;
+  justify-content: center;
+}
+
+
+table, th, td {
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: center;
+  padding : 5px;
+}
+
+form  { display: table;      }
+form div     { display: table-row;  }
+form label { display: table-cell; padding: 5px;}
+form input { display: table-cell; padding: 5px;}
+
+#addExoplanet section {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  
+}
+
+.error-message {
+  background-color: firebrick;
+}
+
+.error-message ul {
+  list-style: none;
+}

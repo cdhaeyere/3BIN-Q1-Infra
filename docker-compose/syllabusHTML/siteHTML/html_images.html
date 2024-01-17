@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les images</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Les images</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="html5.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#inserer">Insérer une image</a></li>
+					<li><a href="#formats">Les formats d'image</a></li>
+					<li><a href="#divers">Divers</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="http://www.w3.org/Graphics/PNG/">Format PNG
+							W3C</a></li>
+					<li><a href="http://www.gimp.org/">GIMP</a></li>
+					<li><a href="http://cooltext.com">CoolText</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>La première partie de ce chapitre présente la manière dont les
+				images sont gérées par le HTTP et les navigateurs. La deuxième
+				partie détaille les différents formats d'images : JPEG, GIF et PNG.</p>
+		</article>
+		<article>
+			<h2 id="inserer">Insérer une image</h2>
+			<h5>Introduction</h5>
+			<p>
+				<img class="floatLeft" src="./images/obelix.gif" alt="des romains" /><img
+					class="floatRight" src="./images/romains.gif" alt="des romains" />
+				L'une des caractéristiques les plus intéressantes du HTML est la
+				possibilité d'inclure des images dans une page, soit en tant
+				qu'élément en-ligne, soit en tant qu'élément à part (téléchargé via
+				un lien), ou en tant qu'arrière-plan de la page. On peut également
+				insérer des images dans les listes en remplacement des puces ou
+				encore dans les liens. Insérées judicieusement dans le contenu, les
+				images rendent les pages HTML plus attractives. Elles enrichissent
+				l'information et facilitent la lecture.
+			</p>
+			<p>Attention, placer trop d'images dans un texte assomme parfois
+				le lecteur et l'empêche de se concentrer sur l'essentiel, n'est-ce
+				pas Astérix?</p>
+
+			<h4>
+				La balise <span class="html" id="i_image">&lt;img&gt;</span>
+			</h4>
+			<p>
+				L'élément <span class="html"><em>img</em></span> permet l'insertion
+				d'une image dans une page HTML. Pour insérer une image dans une page
+				HTML, il suffit de placer la balise <span class="html">&lt;img&gt;</span>
+				en spéficiant la référence de l'image à insérer.
+			</p>
+			<p>
+				<span class="html">img</span> est un <a
+					href="html_balises.html#elementsVide">élément vide</a> car il
+				ne possède pas de contenu.
+			</p>
+			<p>
+				En HTML 4.01, l'élément <span class="html">img</span> doit renfermer
+				les attributs suivants :
+			</p>
+			<dl>
+				<dt>
+					<span class="html">src</span>
+				</dt>
+				<dd>
+					indique où se trouve le fichier image à afficher dans la page HTML
+					(source). On peut définir soit un lien relatif soit un lien absolu
+					comme pour l'élément <span class="html">a</span>.
+				</dd>
+				<dt>
+					<span class="html">alt</span>
+				</dt>
+				<dd>contient un texte descriptif de l'image (descriptif
+					alternatif). Cette fonction est utile pour les personnes ayant des
+					déficiences visuelles par exemple. Elle est également affichée
+					lorsque l'image est indisponible sur le serveur.</dd>
+			</dl>
+
+			<p>
+				On peut également ajuster la taille de l'image (hauteur et largeur)
+				en utilisant une feuille de style (voir le chapitre CSS). Il suffit
+				alors de jouer avec les attributs <span class="html">height</span>
+				et <span class="html">width</span> dans la CSS. Ceci ne change rien
+				à l'image, ça modifie uniquement l'apparence de celle-ci dans une
+				page HTML.
+			</p>
+
+			<p>
+				Si l'image est trop volumineuse ou si on désire modifier pour
+				toujours la taille de l'image, il est plus judicieux de la modifier
+				via un logiciel adapté comme <a href="http://www.gimp.org/">Gimp</a>
+				par exemple.
+			</p>
+			<h4>La gestion des images par le navigateur</h4>
+			<p>
+				Lorsque le navigateur croise une balise <span class="html">&lt;img&gt;</span>,
+				il ne réagit pas comme il le fait avec une autre balise comme <span
+					class="html">&lt;p&gt;</span> ou <span class="html">&lt;h1&gt;</span>.
+				Effectivement, il ne s'agit plus d'afficher simplement l'élément
+				mais de rechercher l'image référencée avant de l'afficher.
+			</p>
+			<p>Supposons le corps d'un page HTML sur un serveur quelconque:</p>
+			<table>
+				<tr>
+					<th>Le code de la page leChat.html :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille50">
+<pre><code>&lt;body&gt;
+Voici un dessin du chat : 
+<em>&lt;img alt = </em>"Le chat de P. Geluck : Fumer pue!"<em> 
+src = </em>"images/leChat.jpg"<em>/&gt;</em>
+&lt;/body&gt;</code>
+</pre></td>
+					<td>
+						<div class="zoomLeChat">
+							Voici un dessin du chat : <img
+								alt="Le chat de P. Geluck : Fumer pue!"
+								src="./images/leChat.jpg" />
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<p>Le navigateur affiche donc la page HTML mais doit également
+				chercher les images qu'elle contient sur le serveur. Pratiquement,
+				lorsqu'un utilisateur consulte la page leChat.html, son navigateur
+				interroge le serveur Web afin d'obtenir cette page. Le navigateur
+				fournit ensuite la page leChat.html.</p>
+			<p class="centre">
+				<img alt="Schéma pour récupérer une image" src="./images/image1.png" />
+			</p>
+			<p>Ensuite, le navigateur lit le fichier leChat.html et
+				l'affiche. Il se rend compte ensuite qu'il doit afficher une image.
+				Il va donc chercher cette image sur le serveur. Si le fichier HTML
+				contient plusieurs images, le navigateur fera plusieurs requêtes au
+				serveur (une pour chaque image).</p>
+			<p class="centre">
+				<img alt="Schéma pour récupérer une image" src="./images/image2.png" />
+			</p>
+
+			<h4>La gestion des images par le développeur Web</h4>
+			Lorsqu'on développe un site Web renfermant bon nombre d'images, il
+			est indispensable de réfléchir à l'organisation des fichiers. En
+			général, on crée un répertoire images à la source du site qui
+			renferme toutes les images. Mais parfois il est judicieux de créer un
+			répertoire images dans chaque partie du site.
+		</article>
+
+		<article>
+			<h2 id="formats">Les formats d'images</h2>
+			<p>Comme montré dans l'exemple ci-dessus, pour chaque image d'une
+				page HTML, le navigateur fait une requête au serveur. Ce qui
+				signifie que chaque image doit être transférée sur le Web. Le temps
+				nécessaire au transfert réseau d'une image dépend de la qualité du
+				réseau mais surtout de la taille du fichier. Par exemple, une image
+				de 3 Ko sera transférée plus rapidement qu'une image de 50 Ko. Il
+				est donc judicieux de choisir correctement le format de l'image en
+				fonction des besoins.</p>
+			<p>On distingue les différents formats notamment par le nombre de
+				couleurs que ceux-ci sont capables de gérer mais aussi par le fait
+				qu'ils soient capables ou non de gérer la transparence.</p>
+			<p>Les navigateurs reconnaissent nativement certains formats
+				d'images : GIF, JPG et PNG. La plupart du temps, les autres formats
+				multimédias demandent des applications particulières que chaque
+				internaute doit récupérer et installer. Par exemple, Adobe Flash
+				doit être installé pour lire les fichiers .swf (Shockwave Flash).
+				Les formats GIF et JPEG existent depuis longtemps (avant le Web) et
+				sont les plus répandus.</p>
+
+			<h4 id="i_jpeg">Le format JPG ou JPEG</h4>
+			<p>
+				Le format <em>JPEG</em> (Joint Photographic Experts Group) est un
+				format libre indépendant de toute plateforme. Il est
+				recommand&eacute; pour les images de type photographiques ou les
+				images complexes. Effectivement, le JPEG sait afficher jusqu'à 16
+				millions de couleurs, les images sont plus détaillées et plus
+				réalistes.
+			</p>
+			<p>Le format JPEG est un format de compression efficace mais
+				subissant une perte de qualit&eacute;.</p>
+			<p>Le format JPG ne supporte pas la transparence ni le fond
+				transparent.</p>
+			<p>Les 3 images suivantes sont des compressions de plus en plus
+				élevées de la même image.</p>
+
+			<table>
+				<tr>
+					<th>Compression faible : 5466 Ko -</th>
+					<th>Compression moyenne : 2506 Ko -</th>
+					<th>Compression forte : 1147 Ko</th>
+				</tr>
+				<tr>
+					<td class="centre"><img src="./images/fleur.jpg"
+						alt="Fleur en 5466 Ko" /></td>
+					<td class="centre"><img src="./images/fleur1.jpg"
+						alt="Fleur en 2506 Ko" /></td>
+					<td class="centre"><img src="./images/fleur2.jpg"
+						alt="Fleur en 1147 Ko" /></td>
+				</tr>
+			</table>
+			<h4 id="i_gif">Le format GIF</h4>
+			<p>
+				<img class="floatLeft" src="./images/course.gif" alt="Un coureur" />
+				<img class="floatRight" src="./images/calvin.gif"
+					alt="Calvin et Hobbes" /> Le format <em>GIF</em> (Graphic
+				Interchange Format) est également multiplateforme mais il a fait
+				l'objet d'un brevet <a href="http://www.unisys.com">Unisys</a>; il
+				s'agissait d'un format propriétaire (càd qui appartient à une
+				société; son usage n'est pas libre.). On recommande le GIF pour des
+				images qui comportent peu de couleurs et les dessins au trait, comme
+				des logos, des formes géométriques, des cliparts, ou des textes
+				transformés en images. Il est capable d'afficher 256 couleurs.
+			</p>
+			<p>Le format GIF est répandu pour la qualité de sa technique de
+				compression qui permet de réduire de manière considérable la taille
+				du fichier sans altérer la qualité de celui-ci.</p>
+			<p>Le format GIF supporte la transparence et permet
+				&eacute;galement de cr&eacute;er des animations (GIF anim&eacute;s).</p>
+
+			<h4 id="i_png">Le format PNG</h4>
+			<p>
+				<img class="floatLeft" src="./images/png.png" alt="Le logo de PNG" />Le
+				format <em>PNG</em> (Portable Network Graphics) initialement destiné
+				à remplacer le GIF propriétaire, est un format libre indépendant de
+				toute plateforme. PNG est une <a
+					href="http://www.w3.org/Graphics/PNG/">recommandation du W3C</a>.
+				Le PNG peut être utilisé dans les mêmes cas que le GIF mais fournit
+				un résultat de meilleure qualité par exemple pour la 3D.
+			</p>
+			<p>
+				<img class="floatRight" src="./images/StarCraft.png"
+					alt="StarCraft.png" />Le format PNG propose une compression non
+				destructive de qualité très élevée (plus que le GIF). Les fichiers
+				PNG sont g&eacute;n&eacute;ralement plus l&eacute;gers que les GIF.
+			</p>
+			<p>Le format PNG supporte la transparence mais ne permet pas de
+				cr&eacute;er des animations.</p>
+		</article>
+		<article>
+			<h2 id="divers">Divers</h2>
+			<p>
+				Souvent un site web possède un logo ou encore des boutons image. Certains sites propose dès lors de 
+				créer votre logo ou bouton image directement en ligne. Le site <a href="http://cooltext.com">CoolText</a> 
+				vous permetta par exemple de faire ceci. 
+			</p>
+		</article>
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

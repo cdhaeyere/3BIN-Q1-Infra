@@ -1,0 +1,8 @@
+- name: Deploy Node.js App from Git
+  hosts: localhost
+  become: true
+  roles:
+    - deploy_nodejs_app_from_git
+  vars:
+    app_git_repo: "https://gitlab.vinci.be/olivier.choquet/exoplanets_infra.git"
+    app_deploy_path: "/home/nitroc/ansible/exoplanets-infra-3"

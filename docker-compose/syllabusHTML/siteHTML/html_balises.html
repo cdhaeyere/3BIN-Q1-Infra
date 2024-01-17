@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les balises</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Les balises de structure</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="html5.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#idclasse">Id et Class</a></li>
+					<li><a href="#cat">Les catégories en HTML5</a></li>
+					<li><a href="#sem">Elts sémantiques</a></li>
+					<li><a href="#headerFooter">Header/Footer/Nav</a></li>
+					<li><a href="#sectArt">Sections, articles</a></li>
+					<li><a href="#gen">Elts génériques</a></li>
+					<li><a href="#p">P</a></li>
+					<li><a href="#div">Div</a></li>
+					<li><a href="#h">H1, ...</a></li>
+					<li><a href="#pre">Pre</a></li>
+					<li><a href="#listes">Les listes</a></li>
+					<li><a href="#span">Span</a></li>
+					
+
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a
+						href="http://www.w3.org/TR/html5/dom.html#kinds-of-content">Catégories
+							HTML5</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Dans cette rubrique, nous précisons quelques points théoriques. 
+				Nous parlerons de la nouvelle catégorisation des éléments en HTML5, ensuite nous détaillerons les 
+				éléments HTML5 les plus courants.</p>
+
+		</article>
+		<article>
+			<h2>Définitions</h2>
+			<h4>Structurer un texte</h4>
+			<p>
+				Les balises de structure sont des balises qui permettent de <em>structurer</em>
+				le texte en paragraphe, bloc, titre, ... mais aussi citation ou mise
+				en évidence. Par exemple, <span class="html">&lt;h3&gt;</span> est
+				une balise de structure qui permet de préciser un titre de niveau 3.
+			</p>
+			<p>Lorsqu'on produit un document (une revue, un livre, un
+				catalogue, ...), on veille toujours à sa structure, càd aux
+				différentes parties qui le composent. On distingue des paragraphes,
+				des citations, des titres, ... Imaginez-vous lire un texte sans
+				aucune structure (ni chapitre, ni paragraphe), vous abandonneriez
+				rapidement la lecture, noyé dans le flux monotone du texte. Ou
+				encore, imaginez un syllabus ne contenant que du texte en continu
+				sans aucun titre ou section!</p>
+			<p>Structurer le contenu permet de mettre en évidence les
+				concepts abordés et de faciliter la tâche du lecteur.</p>
+			<h4 id="elementsVide">Les éléments vides</h4>
+			<p>Pour rappel, un élément en HTML est
+				constitué d'une balise ouvrante + un contenu + une balise
+				fermante.</p>
+			<p>
+				Il existe des éléments en HTML qui ne possèdent pas de balise
+				fermante; il s'agit des <em>éléments vides</em>. On
+				parle d'élément vide parce que celui-ci n'a aucun
+				contenu lié. Il s'agit d'abréviation autorisée par le HTML
+				permettant de diminuer la quantité de balisage.
+			</p>
+			<p>
+				<span class="html"> br</span> (de l'anglais break) est un exemple
+				d'élément vide: il permet de faire un passage à la ligne suivante.
+				Cet élément sera détaillé plus tard.
+			</p>
+
+			<h4 id="idclasse">
+				L'attribut <span class="html">id</span> ou <span class="html">class</span>
+			</h4>
+			<p>
+				Les éléments HTML peuvent spécifier un attribut <span class="html">id</span>
+				et (ou) <span class="html">class</span>. Ces attributs sont
+				quasiment identiques; ils permettent notamment la mise en forme via
+				les CSS.
+			</p>
+			<p>
+				L'attribut <span class="html"><em>class</em></span> peut-être mis
+				sur n'importe quelle balise et permettra à plusieurs éléments au
+				sein d'une page d'appartenir à la même classe. Avec les css, ces
+				éléments auront le même rendu.
+			</p>
+			<p>
+				La valeur de l'attribut <span class="html"><em>id</em></span> par
+				contre doit être <em>unique</em> dans une page html. Cela permet de
+				référencer un élément précis dans une page.
+			</p>
+
+			<h4>Espace et tabulation</h4>
+			<p>
+				<img class="floatRight" src="./images/enter.gif" alt="Enter"/><img
+					class="floatLeft" src="./images/tab.jpg" alt="Tab"/>Un saut de ligne
+				correspond à un passage à la ligne suivante qui intervient
+				lorsqu'on appuie sur la touche "enter" du clavier. Un navigateur
+				n'affiche pas les sauts de lignes des fichiers HTML ni les lignes
+				vides ou tabulation; il prend le texte qui se trouve dans le corps
+				du document et l'affiche à l'écran sans en tenir compte. Il remplit
+				tout l'espace de la fenêtre en s'alignant le plus à gauche et le
+				plus à droite possible, puis passe à la ligne suivante.
+				Redimensionnez la fenêtre du navigateur et constatez que le texte se
+				replace de manière à remplir l'espace disponible, cela prouve bien
+				toute la souplesse du HTML. Il convient donc d'introduire
+				grâce aux éléments du langage HTML les espaces,
+				sauts de ligne ou tabulations en utilisant des
+				éléments de type bloc.
+			</p>
+
+			<h4>L'imbrication des éléments</h4>
+			<p>
+				<img class="floatRight" alt="../balisesStructure.png"
+					src="./images/balisesStructure.png" />En HTML, on peut
+				insérer des éléments les uns dans les autres,
+				on parle d'<em>imbrication</em>. Dans le chapitre précédent (HTML),
+				nous avons abordé la structure de base d'une page HTML.
+				Dessiner le syst&egrave;me d'imbrication des éléments
+				d'une page Web revient à dessiner un arbre
+				généalogique, comme montré dans le
+				schéma ci-contre. Au sommet se trouvent les arri&egrave;res
+				grands-parents puis en-dessous leurs enfants et petits-enfants, etc
+			</p>
+
+			<p>
+				Dans le schéma ci-contre, on comprend que
+				l'élément <span class="html">html</span> se trouve
+				toujours à la racine de l'arbre et poss&egrave;de deux
+				éléments imbriqués, ses deux enfants :&nbsp; <span
+					class="html">head</span> et <span class="html">body</span>.
+				L'élément <span class="html">title </span>est
+				imbriqué dans l'élément <span class="html">head</span>.
+			</p>
+
+			<p>Il faut toujours veiller à ce que les balises ne soient
+				pas dépareillées càd que les imbrications ne se
+				chevauchent pas. Effectivement, si votre page HTML poss&egrave;de
+				des balises dépareillées, les navigateurs Web
+				afficheront des choses erronées!</p>
+
+			<p>
+				Voici un mauvais exemple :<span class="exemple"><em>&lt;p&gt;&lt;em&gt;</em>HTML<em>&lt;/p&gt;
+				</em>est le cours le plus cool.<em>&lt;/em&gt;</em>&nbsp; </span>.
+				Effectivement, il faut d'abord fermer l'élément <span class="html">em</span>
+				avant de placer la balise <span class="html">&lt;/p&gt;</span>
+			</p>
+
+		</article>
+		<article>
+			<h2 id="cat">Les catégories de balises HTML5</h2>
+			<p>
+				Avant HTML5, on distinguait 2 types de balises de structure : le
+				type <em>en-ligne</em> ou le type <em>bloc</em>. Les balises "bloc"
+				pouvaient contenir des balises "bloc" et des balises "en-ligne"
+				tandis que les balises "en-ligne" ne pouvaient contenir QUE d'autres
+				balises "en-ligne". On ne pouvait pas par exemple mettre un
+				paragraphe (type block) dans un lien (type en-ligne). Ces
+				limitations, HTML5 a voulu les balayer. C'est pourquoi une nouvelle
+				manière de catégoriser les éléments est apparue.
+			</p>
+			<p>Il est à noter que l'on parle toujours de balises en ligne et
+				en bloc en HTML5. On parle alors du rendu et non pas de catégorie.
+				En effet, les balises en ligne s'afficheront les unes à côté des
+				autres (sur une ligne) tandis que les balise en bloc s'afficheront
+				les une en dessous des autres. Chaque balise HTML a un rendu par
+				défaut (en ligne ou en bloc) mais nous verrons que nous pouvons
+				facilement changer ce comportement grâce aux CSS.</p>
+			<p>
+				Voici la nouvelle catégorisation des éléments en HTML5 : <img src="./images/contenthtml5.png" alt="CategoriesHTML5"/>
+			</p>
+			<p>
+				Vous devez simplement retenir qu'un élément HTML fait partie d'une
+				ou plusieurs de ces catégories. L'objectif de ces catégories est de
+				rassembler les balises ayant des caractéristiques similaires
+				notamment <em>les balises enfants qu'elles peuvent contenir</em>.
+				Un exemple : la balise <span class="html">p</span> représentant un
+				paragraphe fait partie de la catégorie FlowContent mais aussi de
+				PhrasingContent et ne pourra contenir que des éléments faisant
+				partie de la catégorie PhrasingContent. De manière générale, les
+				balises faisant partie du PhrasingContent ne pourront contenir que
+				des balises PhrasingContent. Cependant des exceptions existent et il
+				serait fastidieux de tout énoncer ici. Je vais donc vous détailler
+				dans le pragraphe suivant la technique à employer pour s'assurer
+				d'imbriquer correctement les bons éléments HTML.
+			</p>
+			<p>
+				Premièrement, sachez que le validateur HTML vous indiquera si vous
+				avez des erreurs d'imbrications.<br> Deuxièmement, grâce à ce <a
+					href="http://www.w3.org/TR/html5/dom.html#kinds-of-content">lien</a>
+				pointant vers la norme HTML5 du site du W3C, vous pourrez voir les
+				différentes catégories. En cliquant sur une catégorie, vous verrez
+				les différents éléments qui la compose et surtout en cliquant sur un
+				élément vous verrez le <em>content model</em> autrement dit les
+				éléments ou la catégorie d'élément que l'élément HTML choisi peut
+				contenir. Essayez avec l'exemple de la balise <span class="html">p</span>.
+				Vous devriez obtenir ceci :
+			</p>
+			<p>
+				<img src="images/contentModelP.png" alt="samplecontentModelP">
+			</p>
+		</article>
+		<article>
+			<h2 id="sem">Eléments sémantiques HTML5</h2>
+			<h4>Introduction</h4>
+			<p>
+				En HTML, la plupart des balises ont une sémantique qui leur est associée.
+				Un élément <em>sémantique</em> est un
+				élément auquel on attache une signification. Par exemple l'élément
+				&lt;header&gt; contiendra l'en-tête (bannière, logo, menu) d'une
+				page HTML. Il y a plusieurs avantages à utiliser ces balises
+				sémantiques notamment le fait qu'elles rendent le code plus clair.
+				En HTML5, de nouveaux éléments sémantiques ont donc été introduits. 
+				Ils sont décrits ci-dessous.
+				On comprend beaucoup plus facilement ce que l'on va trouver dans une
+				balise &lt;header&gt; plutôt que &lt;div&gt;. Elles permettent
+				également aux robots des moteurs de recherche d'utiliser cette
+				sémantique pour traiter plus efficacement l'indexation d'un site
+				web.
+			</p>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> 
+				Utilisez donc toujours un élément sémantique plutôt qu'un élément générique quand
+				cela est approprié !
+			</p>
+			<h4 id="headerFooter" class="clear">L'en-tête</h4>
+			<p>
+				L'élément <em><span class="html">&lt;header&gt; </span></em>
+				constitue l'en-tête(bannière, logo, menu) de la page HTML. Il est
+				souvent commun à toutes les pages d'un site Web.
+			</p>
+
+			<h4>Le pied de page</h4>
+			<p>
+				L'élément <em><span class="html">&lt;footer&gt;</span></em>
+				constitue le pied de page de la page HTML. Il peut être constitué de
+				coordonnées, d'un copyright, ... . Il est souvent commun à toutes les
+				pages d'un site Web.
+			</p>
+			<h4>La navigation</h4>
+			<p>
+				L'élément <em><span class="html">&lt;nav&gt;</span></em> contient la
+				liste des liens utiles à la navigation vers les différentes pages du
+				site Web. C'est dans cette balise qu'il faut inclure le(s) menu(s).
+				Il peut être placé dans le &lt;header&gt; ou directement dans
+				l'élément &lt;body&gt;. Plusieurs balises <em><span class="html">&lt;nav&gt;</span></em>
+				peuvent être présentes sur un site si vous avez par exemple un menu et un sous-menu. 
+			</p>
+
+			<h4 id="sectArt">Les divisions de texte</h4>
+			<p>
+				Pour diviser un document en sections bien déterminées, on utilise la
+				balise <em><span class="html">&lt;section&gt;</span></em> ou la
+				balise <em><span class="html">&lt;article&gt;</span></em>. Ces 2
+				divisions de texte représentent une portion de texte indépendante
+				(qui peut contenir des titres, des paragraphes, ...) comme un
+				article de journal par exemple. On discute beaucoup au sujet de
+				l'imbrication de ces 2 balises l'une dans l'autre. Retenez tout
+				simplement que l'imbrication est possible dans les 2 sens.
+	
+
+			<h4 id="p">Les paragraphes</h4>
+			<p>
+				La balise <em><span class="html">&lt;p&gt;</span></em> indique le
+				début d'un paragraphe et <span class="html">&lt;/p&gt;</span>
+				termine le paragraphe. Lorsque le navigateur rencontre un nouveau
+				paragraphe (càd <em class="html">&lt;p&gt;</em>), il insère une
+				ligne vide ainsi qu'un peu d'espace vertical avant de débuter un
+				nouveau paragraphe.
+			</p>
+			<p>L'exemple suivant illustre ces propos:</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+
+				<tr>
+					<td class="taille50">
+<pre><code><em>&lt;p&gt;</em>Lili,take another walk out of your fake world 
+please put all the drugs out of your hand
+you'll see that you can breath without not back
+up some much stuff you got to understand for every step 
+in any walk any town of any thought
+i'll be your guide for every street of any scene
+any place you've never been
+i'll be your guide <em>&lt;/p&gt;</em>
+<em>&lt;p&gt;</em>Lili,take another walk out of your fake world 
+please put all the drugs out of your hand you'll see
+that you can breath without not back up some much 
+stuff you got to understand for every step in any walk
+any town of any thought i'll be your guide for every 
+street of any scene any place you've never been i'll be
+ your guide<em>&lt;/p&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<p>Lili,take another walk out of your fake world please put
+								all the drugs out of your hand you'll see that you can breath
+								without not back up some much stuff you got to understand for
+								every step in any walk any town of any thought i'll be your
+								guide for every street of any scene any place you've never been
+								i'll be your guide</p>
+							<p>Lili,take another walk out of your fake world please put
+								all the drugs out of your hand you'll see that you can breath
+								without not back up some much stuff you got to understand for
+								every step in any walk any town of any thought i'll be your
+								guide for every street of any scene any place you've never been
+								i'll be your guide</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<p>
+				Un paragraphe peut contenir n'importe quel élément permis dans un
+				flux de texte (càd élément de type en-ligne) comme par exemple <em
+					class="html">img</em>. Quand un élément de type bloc intervient
+				dans un paragraphe, le navigateur considère le paragraphe comme
+				terminé (càd comme si il ajoutait la balise <span class="html">&lt;/p&gt;</span>).
+			</p>
+
+			<p>
+				On peut spécifier un certain nombre d'attributs dans la balise <em
+					class="html">&lt;p&gt;</em>. Néanmoins, ces attributs prendront
+				tout leur sens que lorsqu'on introduira les CSS. Enumérons quand
+				même quelques-uns d'entre eux
+			</p>
+			<dl>
+				<dt>
+					<span class="html">id</span>
+				</dt>
+				<dd>
+					permet de définir un style pour le paragraphe (voir le chapitre sur
+					les CSS). <span class="html">id</span> permet également de faire
+					des liens au sein d'un document (voir le chapitre sur les liens
+					hypertextes).
+				</dd>
+				<dt>
+					<span class="html">class</span>
+				</dt>
+				<dd>
+					permet de définir un style à appliquer à l'élément. La valeur de <span
+						class="html">class</span> est le nom d'un style défini dans une
+					feuille de style (voir le chapitre sur les CSS).
+				</dd>
+
+				<dt>
+					<span class="html">title</span>
+				</dt>
+				<dd>
+					affecte un titre au paragraphe. La valeur de l'attribut est une
+					chaîne de caractères qui se trouve entre guillemets. Il n'existe
+					pas de règle pour définir la valeur de l'attribut <span
+						class="html">title</span>, mais les navigateurs actuels affichent
+					le titre quand la souris survole l'élément.
+				</dd>
+			</dl>
+
+			<h4 id="h">Les titres</h4>
+			<p>
+				Il est également possible de structurer le document au moyen
+				d'éléments de type titre. Effectivement, des balises <span
+					class="html"><em>&lt;h1&gt;</em></span> ... <span class="html"><em>&lt;h6&gt;</em></span>
+				(head en anglais) permettent de définir des titres. Les titres
+				séparent les passages de texte et véhiculent aussi visuellement une
+				signification. Il existe 6 niveaux: l'élément <span class="html">h1</span>
+				représente le titre de plus haut niveau, <span class="html">&lt;h2&gt;</span>
+				représente le niveau juste inférieur, etc . Le texte qui se trouve,
+				par exemple, à l'intérieur des balises (par exemple : <span
+					class="html">&lt;h1&gt; </span>le titre premier <span class="html">&lt;/h1&gt;</span>)
+				constitue le vrai contenu du titre de niveau 1 (" le titre premier "
+				dans l'exemple). Par défaut, càd sans feuille de style précisée, le
+				navigateur affiche leur contenu de la plus grande à la plus petite
+				taille de caractères, en gras la plupart du temps. Le texte de
+				l'élément <span class="html">h4</span> est de la même taille de
+				caractères que le texte normal (du reste du document).
+			</p>
+			<p>Les balises de titre cassent le flux de texte, le titre est
+				isolé sur une ligne, séparé du reste du texte. Il s'agit bien d'un
+				élément de type bloc.</p>
+			<p>
+				Un titre peut contenir n'importe quel élément autorisé dans un texte
+				(càd élément de type en-ligne) comme par exemple <span class="html">img</span>
+				ou encore <span class="html">a</span>.
+			</p>
+			<p>
+				On peut garnir les éléments de type titre d'un certain nombre
+				d'attributs (<span class="html">id</span>, <span class="html">class</span>
+				et <span class="html">title</span>) ayant la même signification que
+				pour <span class="html">&lt;p&gt;</span> et <span class="html">&lt;div&gt;</span>
+			</p>
+			<p>Voici un exemple d'utilisation des balises de titre:</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code><em>&lt;h1&gt;</em>Titre principal<em>&lt;/h1&gt;</em>
+<em>&lt;h2&gt;</em>Partie 1<em>&lt;/h2&gt;</em>
+<em>&lt;h3&gt;</em>Section 1<em>&lt;/h3&gt;</em>
+Cette section se divise en de nombreux points : 
+<em>&lt;h4&gt;</em>Sous-section 1<em>&lt;/h4&gt;</em>
+Une première partie 
+<em>&lt;h4&gt;</em>Sous-section 2<em>&lt;/h4&gt;</em>
+Une deuxième partie
+<em>&lt;h3&gt;</em>Section 2<em>&lt;/h3&gt;</em>
+<em>&lt;h2&gt;</em>Partie 2<em>&lt;/h2&gt;</em><br />
+</code>
+						</pre></td>
+					<td><img src="./images/titres.png" alt="Les titres en HTML" /></td>
+				</tr>
+			</table>
+
+			<h4>Les citations</h4>
+			<p>
+				Le bloc de citation est un passage de texte extrait d'un autre
+				document. La balise <span class="html">&lt;blockquote&gt;</span>
+				permet de définir le début de l'extrait et <span class="html">&lt;/blockquote&gt;</span>,
+				la fin. Les navigateurs affichent généralement le bloc de citation
+				dans un paragraphe isolé avec une indentation particulière (en
+				italique, entre guillemets ou avec indentation). Il existe un
+				élément similaire de type en-ligne pour les citations plus courtes:
+				<span class="html">&lt;q&gt;</span> (détaillé ci-après).
+			</p>
+			<p>
+				On peut garnir l'élément <span class="html">blockquote</span> avec
+				des attributs <span class="html">id</span>, <span class="html">class</span>
+				et <span class="html">title</span> mais aussi de l'attribut :
+			</p>
+			<dl>
+				<dt>
+					<span class="html">cite</span>
+				</dt>
+				<dd>permet d'indiquer l'origine de la citation. La valeur de
+					l'attribut est une URL entre guillemets qui pointe sur le document.</dd>
+			</dl>
+			<p>Voici un exemple de citation :</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML</th>
+					<th>L'affichage par le navigateur</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>	<em>&lt;blockquote&gt;</em> Citer les mots de quelqu'un, 
+c'est mettre sous verre une collection 
+de beaux papillons qui ont perdu leur lumière
+et leur éclat.<em>&lt;/blockquote&gt;</em>
+O.Wilde</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<blockquote>Citer les mots de quelqu'un, c'est
+								mettre sous verre une collection de beaux papillons qui ont
+								perdu leur lumière et leur éclat.</blockquote>
+						</div> O.Wilde
+					</td>
+				</tr>
+			</table>
+			<p>
+				On peut intégrer des éléments de type bloc dans un élément <span
+					class="html">blockquote</span>.
+			</p>
+
+			<h4 id="pre">Le texte préformaté</h4>
+			<p>
+				Parfois il est nécessaire d'imposer au navigateur d'afficher un
+				texte tel quel avec des indentations, des alignements, etc. <em>&lt;pre&gt;</em>
+				permet l'affichage d'un texte exactement comme il a été tapé dans
+				l'éditeur y compris les retours à la ligne, les espaces et les
+				lignes vides. On utilise souvent la balise de mise en forme <span
+					class="html">&lt;pre&gt;</span> quand l'intégrité des colonnes et
+				des rangées de caractères doit être conservée. L'usage le plus
+				fréquent est l'affichage de code informatique comme le montre
+				l'exemple qui suit.
+			</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>
+<em>&lt;pre&gt; </em>public class SommeImpl {
+  public int calculateSomme(int n1, int n2){
+	return n1+n2;
+    }
+}<em>&lt;/pre&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<pre>public class SommeImpl { 
+  public int calculateSomme(int n1, int n2){
+	return n1+n2;
+    }
+}
+</pre>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<p>
+				Les balises qui produisent une coupure dans le flux du texte (les
+				titres, <span class="html">&lt;p&gt;</span> ou encore <span
+					class="html">&lt;div&gt;</span>) ne doivent pas être utilisées dans
+				l'élément <span class="html">pre</span>.
+			</p>
+			<p>
+				On peut garnir l'élément <span class="html">pre</span> des attributs
+				<span class="html">id</span>, <span class="html">class</span> et <em
+					class="html">title</em> ayant la même signification que pour <em
+					class="html">&lt;p&gt;</em> et <span class="html">&lt;div&gt;</span>
+			</p>
+			<h4>Les lignes horizontales</h4>
+			<p>
+				Il est également possible d'insérer des lignes horizontales pour
+				délimiter et séparer certaines sections d'un document. <em>&lt;hr&gt;</em>
+				permet effectivement d'insérer une ligne sur toute la largeur de la
+				fenêtre afin de casser le flux de texte. <em class="html">hr</em>
+				est un élément vide, càd qui ne possède pas de contenu.
+			</p>
+			<p>Voici un exemple :</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>&lt;h2&gt;Pour la recette du brownie:
+&lt;/h2&gt; <br />
+&lt;h3&gt;Les ingrédients : &lt;/h3&gt; <br />
+- 100gr de beurre&lt;br&gt; <br />
+- 200gr de chocolat&lt;br&gt; <br />
+- ... &lt;br&gt; <br />
+<em>&lt;hr&gt;</em><br />
+&lt;h3&gt;La préparation: &lt;/h3&gt; <br />
+Faire fondre le chocolat dans un bain marie ...</code>
+						</pre></td>
+					<td><img src="./images/brownie.png" alt="l'élément hr" /></td>
+				</tr>
+			</table>
+			<h4 id="listes">Les listes</h4>
+			<p>Pour créer une liste en HTML, on &nbsp;a besoin de deux
+				éléments. Le premier élément permet de
+				baliser chaque item de la liste. Le second détermine le genre
+				de liste qu'on établit.</p>
+
+
+			<p>
+				L'élément qui délimite les items de la liste
+				est <span class="html"><em>li</em></span> (list item). Pour
+				définir le genre de liste, on utilise deux balises : <span
+					class="html"><em>&lt;ol&gt;</em></span> (ordered list), <span
+					class="html"><em>&lt;ul&gt;</em></span> (unordered list) et <span
+					class="html"><em>&lt;dl&gt;</em></span> (definition list).
+			</p>
+			<p>
+				Les listes sont des&nbsp;éléments de type bloc
+				précédées d'un marqueur : une puce, pour les listes non-ordonnées,
+				et un numéro, pour les listes ordonnées.Une liste ordonnée (<em
+					class="html">ol </em>) est une liste dans laquelle chaque item est
+				numéroté tandis que dans une liste non-ordonnée
+				(<em class="html">ul</em>), les items sont
+				énumérés (avec des puces, boules, ...).
+			</p>
+
+			<p>
+				Une liste de définitions permet de mettre en évidence un mot
+				pour chaque item de la liste. Pour intégrer une liste de
+				définition dans une page HTML, on n'utilise pas la balise <em
+					class="html">&lt;li&gt;</em> comme pour les autres listes mais les
+				éléments: <span class="html">dl</span>, <span
+					class="html">dt </span> (definition title) et <span class="html">dd</span>
+				(definition description).
+			</p>
+
+
+			<p>Voici quelques exemples:</p>
+
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille50">
+<pre><code>
+<em>&lt;ol&gt;</em>
+<em>&lt;li&gt;</em>Justine Henin<em>&lt;/li&gt;</em>
+<em>&lt;li&gt;</em>Yanina Wickmayer <em>&lt;/li&gt;</em>
+<em>&lt;li&gt;</em>Kim Clijsters<em>&lt;/li&gt;</em>
+<em>&lt;/ol&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<ol>
+								<li>Justine Henin</li>
+								<li>Yanina Wickmayer</li>
+								<li>Kim Clijsters</li>
+							</ol>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="taille50">
+<pre><code>
+<em>&lt;ul&gt;</em>
+<em>&lt;li&gt;</em>1 botte de &lt;img src="images/carotte.gif"/&gt; 
+<em>&lt;/li&gt;</em>
+<em>&lt;li&gt;</em>3 oignons<em>&lt;/li&gt;</em>
+<em>&lt;li&gt;</em>400 gr de lards<em>&lt;/li&gt;</em>
+<em>&lt;/ul&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<ul>
+								<li>1 botte de <img src="../images/carotte.gif"
+									alt="une carotte" /></li>
+								<li>3 oignons</li>
+								<li>400 gr de lards</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="taille50">
+<pre><code>
+<em>&lt;dl&gt;</em><em>&lt;dt&gt;</em>HTML<em>&lt;/dt&gt;</em>
+<em>&lt;dd&gt;</em>Langage informatique qui décrit les différents 
+éléments d'un document  textuel et permet d'y inclure 
+des ressources non textuelles (images, vidéo, sons), 
+en vue de sa publication sur le Web.<em>&lt;/dd&gt;</em>
+<em>&lt;dt&gt;</em>Java<em>&lt;/dt&gt;</em>
+<em>&lt;dd&gt;</em>Langage de programmation orienté Objet.<em>&lt;/dd&gt;</em>
+<em>&lt;/dl&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<dl>
+								<dt>HTML</dt>
+								<dd>Langage informatique qui décrit les
+									différents éléments d'un document textuel
+									et permet d'y inclure des ressources non textuelles (images,
+									vidéo, sons), en vue de sa publication sur le Web.</dd>
+								<dt>Java</dt>
+								<dd>Langage de programmation orienté Objet.</dd>
+							</dl>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+
+			<br />
+
+
+			<p>Avec les feuilles de style, vous verrez qu'il est possible de
+				modifier le type des puces , le type de numérotation ou
+				encore modifier l'image de la puce dans une liste. (Voir le chapitre
+				sur les CSS)</p>
+
+			<h4>Les break</h4>
+			<p>
+				La balise <span class="html">&lt;br&gt;</span> ou <span class="html">&lt;br/&gt;</span>
+				(selon le standard employé) effectue un retour à la ligne du texte.
+				<span class="html">&lt;br&gt;</span> vient de l'anglais break,
+				coupure de ligne en français.
+			</p>
+			<p>
+				L'élément <span class="html">br</span> ne possède pas de balise
+				fermante en HTML 5 contrairement aux autres éléments
+				HTML; il s'agit d'un élément vide. Effectivement, <span
+					class="html">&lt;br&gt;</span> permet d'effectuer un saut de ligne;
+				il n'a pas été con&ccedil;u pour avoir de contenu. En
+				toute logique, on aurait eu un élément composé des balises <span
+					class="html"> &lt;br&gt;</span> et <em class="html">&lt;/br&gt;</em>
+				mais, n'ayant aucun contenu à indiquer, cela s'avérait inutile.
+			</p>
+
+			<p>On peut améliorer la présentation de l'exemple présenté plus
+				haut</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>
+<em>&lt;p&gt;</em>Lili,take another walk out of your fake 
+world please put all the drugs out of your hand 
+you'll see that you can breath without not back 
+up some much stuff you got to understand<em>&lt;/p&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<p>Lili,take another walk out of your fake world please put
+								all the drugs out of your hand you'll see that you can breath
+								without not back up some much stuff you got to understand</p>
+
+						</div>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+<pre><code>
+<em>&lt;p&gt;</em>Lili,take another walk
+out of your fake world<em>&lt;br&gt;</em> please put all 
+the drugs out of your hand<em>&lt;br&gt;</em> you'll see 
+that you can breath without not back up<em>&lt;br&gt;</em> 
+some much stuff you got to understand<em>&lt;/p&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<p>
+								Lili,take another walk out of your fake world<br /> please put
+								all the drugs out of your hand<br /> you'll see that you can
+								breath without not back up<br /> some much stuff you got to
+								understand
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<p>
+				On peut garnir l'élément <span class="html">br</span> des attributs
+				<em class="html">id</em>, <span class="html">class</span> et <span
+					class="html">title</span> ayant la même signification que pour <span
+					class="html">p</span> et <em class="html">div</em>
+			</p>
+
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Attention
+				cependant, si vous avez plusieurs balises &lt;br&gt; les unes à la
+				suite des autres, vous avez soit un problème de structuration HTML
+				ou vos règles CSS doivent être modifiées.
+			</p>
+			<h4>Citation</h4>
+			<p>
+				L'élément <span class="html">q</span> est utilisé pour des citations
+				courtes. Il est similaire à l'élément bloc <span class="html">blockquote</span>
+				car il permet également de baliser des citations mais plus courtes.
+				Une citation en-ligne est entourée de texte normal et s'affiche
+				entre-guillemets dans le suivi normal du flux de texte.
+			</p>
+			<p>
+				<span class="html">&lt;q&gt;</span> dispose également des attributs
+				<span class="html">cite </span>, <span class="html">id</span> et <span
+					class="html">class</span>.
+			</p>
+			<p>Voici un exemple :</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML</th>
+					<th>L'affichage par le navigateur</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>&lt;p&gt;Comme on dit : <em>&lt;q&gt;</em>Si jeunesse savait, 
+si vieillesse pouvait.<em>&lt;/q&gt;</em>&lt;/p&gt;</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<p>
+								Comme on dit : <q>Si jeunesse savait, si vieillesse pouvait.</q>
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<h4>Mise en évidence</h4>
+			<p>
+				La balise <span class="html">&lt;em&gt;</span> permet de dire au
+				navigateur qu'il doit mettre l'emphase sur le texte. La plupart du
+				temps, il s'agit d'afficher le texte en italique mais on peut
+				décider de marquer autrement l'emphase via une feuille de style.
+				Dans ce syllabus, l'<em>emphase</em> est marquée par un
+				agrandissement du texte et un changement de couleur (orange).
+			</p>
+			<p>Voici un exemple :</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML</th>
+					<th>L'affichage par le navigateur</th>
+				</tr>
+				<tr>
+					<td>
+<pre><code>
+<em>&lt;p&gt;</em> Il faut placer un bon nombre d'<em>&lt;em&gt;</em>emphases
+<em>&lt;/em&gt;</em> dans un texte; ni trop ni trop peu. <em>&lt;/p&gt;</em>
+							</code>
+						</pre></td>
+					<td>
+						<div class="affichageNav">
+							<p>
+								Il faut placer un bon nombre d'<em>emphases</em> dans un texte;
+								ni trop ni trop peu.
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+			</article>
+			<article>
+			<h2 id="gen">Eléments génériques HTML5</h2>
+
+			<h4 id="div">Les divisions de texte</h4>
+			<p>
+				En HTML4, les éléments sémantiques &lt;section&gt; et &lt;article&gt; n'existaient pas, les sections
+				d'une page HTML était alors divisées grâce à l'élément générique <span
+					class="html">div</span>. Cet élément en HTML5 a perdu de son
+				utilité, cependant il peut encore être employé pour réaliser des
+				divisions où on ne trouve pas un élément sémantique approprié.
+			</p>
+			<p>
+				On peut l'utiliser pour structurer le texte mais on ne perçoit son
+				intérêt que lorsqu'on y ajoute des attributs d'identification (<span
+					class="html">id</span>, <span class="html">class</span> et <span
+					class="html">title</span>) pour la mise en forme du document. En
+				d'autres termes, il faut attendre d'avoir abordé les feuilles de
+				style (CSS) pour comprendre les attributs de <span class="html">&lt;div&gt;</span>
+				énoncés ci-après.
+			</p>
+			<h4 id="span">Partie de texte</h4>
+			<p>
+				L'élément <em><span class="html">span</span></em> délimite
+				simplement une partie de contenu. On peut préciser les attributs <em
+					class="html">id</em> ou <span class="html">class</span> d'un
+				élément <em class="html">em</em>.
+			</p>
+			<p>
+				La balise <span class="html">&lt;span&gt;</span> est utile lorsqu'on
+				décide d'appliquer un style sur une partie de texte (voir les
+				feuilles de styles, CSS) ou de déterminer une ancre (voir les liens
+				hypertextes).
+			</p>
+		</article>
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

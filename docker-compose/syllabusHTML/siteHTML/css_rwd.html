@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - Responsive Web Design </title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html" class="current">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>CSS 3 - Responsive Web Design</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="css3.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries">Compléments Media Queries</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Le nombre de media permettant de visualiser une page web se sont fortement multipliés ces dernières années et 
+				la capacité d'affichage ces terminaux est également fort variable. Pensez par exemple à un écran 30 pouces et un smartphone.</p>
+		</article>
+		<!--*************************************************************************************************************-->
+		<article>
+			<h2 id="query">Media queries</h2>
+			<p>
+				CSS3 apporte donc un mécanisme capable de cibler un média précis et d'adapter les styles en conséquence. 
+				On parle de <strong> Responsive web design</strong> autrement dit un design qui s'adapte au type de media.
+			</p>
+			<p>
+				En CSS3, les <span class="html">Media Queries</span> permettent de faire du <strong>Responsive web design</strong>.
+				<br>
+				Analysons l'exemple ci-dessous : 
+			</p>
+<pre><code>@media screen and (max-height:500px)
+{
+	header {display:none;}
+}</code></pre>
+			<p>
+				Dans cet exemple, nous voyons que nous ciblons les médias de type <span class="html">screen</span> à savoir les
+				écrans d'ordinateurs, les tablettes, smartphones et nous regardons si la hauteur du navigateur est inférieure à 500 pixels.
+				Dans ce cas, le header disparait ! Cet exemple est implémenté dans ce syllabus, essayez de réduire la hauteur de la fenêtre
+				de votre navigateur pour vous en rendre compte.  
+			</p>
+			<p>
+				Voici les différents mot-clé media disponibles et leur signification. Il s'agit des plus courants.
+			</p>
+			<dl>
+				<dt class="html">braille</dt>
+				<dd>
+					<p>
+						Terminal braille.
+					</p>
+				</dd>
+				<dt class="html">print</dt>
+				<dd>
+					<p>
+						imprimante.
+					</p>
+				</dd>
+				<dt class="html">projection</dt>
+				<dd>
+					<p>
+						data-projecteur.
+					</p>
+				</dd>
+				<dt class="html">screen</dt>
+				<dd>
+					<p>
+						écran d'ordinateur, tablette, smartphone.
+					</p>
+				</dd>
+			</dl>
+			<p>
+				Et voici les différentes propriétés qui peuvent être testées. Il s'agit des plus courantes.
+			</p>
+			<dl>
+				<dt class="html">min-width</dt>
+				<dd>
+					<p>
+						largeur du navigateur &gt; N pixels
+					</p>
+				</dd>
+				<dt class="html">max-width</dt>
+				<dd>
+					<p>
+						largeur du navigateur &lt; N pixels
+					</p>
+				</dd>
+				<dt class="html">min-height</dt>
+				<dd>
+					<p>
+						hauteur du navigateur &gt; N pixels
+					</p>
+				</dd>
+				<dt class="html">max-height</dt>
+				<dd>
+					<p>
+						heuteur du navigateur &lt; N pixels
+					</p>
+				</dd>
+				<dt class="html">orientation : portait | paysage </dt>
+				<dd>
+					<p>
+						Ecran en mode portait ou paysage 
+					</p>
+				</dd>
+			</dl>
+
+			
+		</article>
+
+
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

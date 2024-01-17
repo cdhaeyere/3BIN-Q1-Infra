@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - HTML Les liens</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html" class="current">HTML5 </a></li>
+				<li><a href="css3.html">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>HTML 5 - Les liens hypertextes</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="html5.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#def">Définition</a></li>
+					<li><a href="#elta">L'élément a</a></li>
+					<li><a href="#chemin">Href: chemin relatif - chemin absolu</a></li>
+					<li><a href="#ancre">Ancres</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Nous abordons dans ce chapitre la raison du succès d'Internet:
+				les liens qui tissent la toile universelle. Une définition permettra de
+				comprendre ce qu'est un lien. Ensuite, nous verrons comment placer
+				un lien dans une page ainsi que l'adressage de ce lien: de manière
+				relative ou absolue. Enfin, nous expliquerons ce qu'est une ancre.</p>
+		</article>
+		<article>
+			<h2 id="def">Définition</h2>
+			<p>
+				Les <em><span id="i_hypertext">liens hypertextes</span></em> sont
+				des liens qui permettent de créer une navigation à
+				travers des sites Web. Le World Wide Web est entièrement
+				basé sur la notion d'hypertexte. Dans le langage HTML, il est
+				possible de transformer certains mots ou images d'une page Web en
+				référence vers une adresse. Lorsque l'on clique sur ces liens,
+				l'utilisateur est renvoyé vers un autre document, plus bas
+				dans la page, vers un site, un mail, une image, un son...
+			</p>
+
+		</article>
+		<article>
+			<h2 id="elta">L'élément a</h2>
+			<h4>Syntaxe</h4>
+			<p>
+				Pour créer un lien hypertexte, on emploie la balise <span
+					class="html"><em> &lt;a&gt;</em></span> (ancre) qui permet de
+				signifier un lien vers une autre page Web. Un lien est
+				constitué de deux parties: le départ (le texte
+				permettant le click) et l'arrivée (où l'on veut
+				diriger l'utilisateur). Le contenu de la balise <em class="html">&lt;a&gt;</em>
+				est cliquable sur la page Web.
+			</p>
+			<p>
+				L'attribut <em class="html">href</em> (hypertext reference) permet
+				de spécifier&nbsp;au navigateur la destination du lien.
+			</p>
+			<p>
+				Théoriquement, on aura <span class="html"><em>&lt;a
+						href=</em>"adresse_de_la_ressource"<em>&gt; </em>mot-clé <em>&lt;/a&gt;</em></span>.
+			</p>
+			<p>Le navigateur affichera "mot-clé" en le soulignant pour
+				signifier qu'il s'agit d'un lien. Lorsque l'utilisateur clique sur
+				le "mot-clé", il est redirigé sur la page "adresse de la
+				source".</p>
+			<p>
+				L'élément <em class="html">a</em> peut contenir que des éléments
+				en-ligne, des retours à la ligne et des images.
+			</p>
+			<p>Prenons un exemple, pour placer un lien sur le site de l'IPL:</p>
+			<table class="narrow-table">
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille70">
+<pre><code>Mon école adorée est l'<em>&lt;a href=</em>"http://www.ipl.be"<em>&gt;</em>IPL<em>&lt;/a&gt;</em>.</code>
+						</pre></td>
+					<td><div class="affichageNav">
+							Mon école adorée est l'<a href="http://www.ipl.be">IPL</a>.
+						</div></td>
+				</tr>
+			</table>
+
+			<p>
+				On peut également placer une image dans
+				l'élément <em class="html">a</em>. Dans ce cas,
+				l'image sera cliquable comme du texte.
+			</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML</th>
+					<th>L'affichage par le navigateur</th>
+				</tr>
+				<tr>
+					<td class="taille70">
+<pre><code>Mon école adorée est l'<em>&lt;a href=</em>"http://www.ipl.be"<em>&gt;</em>
+<em>&lt;img src=</em>"images/logo.jpg"<em>alt=</em>"logo de l'IPL"<em>/&gt;&lt;/a&gt;</em>.</code>
+</pre></td>
+					<td><div class="affichageNav">
+							Mon école adorée est l'<a href="http://www.ipl.be"><img
+								style="" src="./images/logo.jpg" alt="logo de l'IPL" /></a>.
+						</div></td>
+				</tr>
+			</table>
+
+		</article>
+		<article>
+			<h2 id="chemin">href: chemin relatif - chemin absolu</h2>
+
+			<h4>Introduction</h4>
+			<p>
+				Dans la balise <span class="html">&lt;a&gt;</span>, on doit
+				spécifier l'adresse de la ressource du lien (hyperlink
+				reference - <span class="html">href</span>). Cette adresse peut
+				prendre plusieurs formes: <em>relative</em> ou <em>absolue</em>.
+			</p>
+			<p>
+				Un <em>chemin relatif</em> est un chemin qui dépend de
+				l'élément de départ tandis qu'un <em>chemin
+					absolu</em> est le chemin complet de l'élément.
+			</p>
+			<p>Petit exemple, si vous êtes au métro&nbsp;et
+				qu'on vous demande le chemin de l'IPL, vous pouvez soit expliquer le
+				chemin à partir du métro, genre "tout droit puis
+				à gauche", soit vous dictez l'adresse complète de
+				l'école "clos chapelle aux champs 43 à 1200
+				Bruxelles". Si vous indiquez le chemin à partir du
+				métro (gauche, droite, etc), vous faites de l'adressage
+				relatif car votre explication dépend de votre point de
+				départ. Si vous détaillez l'adresse de l'école,
+				vous faites de l'adressage absolu car il s'agit de la position de
+				l'école peu importe votre position à vous.</p>
+
+
+			<p>En informatique, c'est plus ou moins &nbsp;la même
+				chose, il y a&nbsp;le chemin relatif et le chemin absolu. En bref,
+				une adresse de la forme suivante "unePage.html" est un chemin
+				relatif; effectivement, le navigateur cherchera la page
+				"unePage.html" dans le dossier courant, càd le dossier dans
+				lequel se trouve la page à partir de laquelle le lien est
+				effectué. Par contre, l'adresse de la ressource
+				"http://www.ipl.be" est un chemin absolu.</p>
+			<p>On utilise des chemins relatifs pour faire des liens vers des
+				pages du même site Web, alors qu'on utilise des chemins
+				absolus pour faire des liens vers d'autres sites.</p>
+
+			<h4 id="i_externe">Le chemin absolu</h4>
+			<p>
+				Pour référencer un site, càd pour faire un <em>lien
+					externe</em>, il faut préciser l'adresse (ou URL) complète
+				et exacte de ce site. L'adresse complète, càd le
+				protocole à utiliser pour les atteindre (http, ftp, ...), le
+				nom du serveur qui les héberge, le chemin d'accès sur
+				le serveur, et enfin leur nom. Ce point est détaillé
+				plus tard dans la section intitulée "Mettre un site en ligne".
+			</p>
+			<p>
+				Par exemple pour obtenir la page du département informatique
+				du site de l'école, il faut utiliser l'url suivante :
+				"http://www.ipl.be/orientations/programme_bachelier_en_informatique_de_gestion".
+				Effectivement, si vous encodez le lien <br /> <span class="html">&lt;a
+					href="http://www.ipl.be/orientations/programme_bachelier_en_informatique_de_gestion"&gt;
+					département informatique de l'école&lt;/a&gt;</span>, vous
+				obtenez le lien suivant : <a
+					href="http://www.ipl.be/orientations/programme_bachelier_en_informatique_de_gestion">département
+					informatique de l'IPL</a>.
+			</p>
+
+
+			<h4 id="i_interne">Le chemin relatif</h4>
+			<p>
+				Un chemin relatif permet de créer un lien entre fichiers d'un
+				site (dit <em>lien interne</em>). Il s'agit d'un lien qui connecte
+				des fichiers situés sur un même serveur web. Il n'est
+				pas utile, pour relier ces fichiers, de préciser leur adresse
+				(ou url) complète. En adressage relatif,&nbsp;le chemin du
+				fichier visé est établi à partir du dossier du
+				fichier appelant (celui dans lequel on a inséré le
+				lien). L'adressage relatif se résume alors à sa plus
+				simple expression puisque, pour relier deux fichiers se trouvant
+				dans le même dossier, l'adresse à mentionner
+				correspondra tout simplement au nom du fichier visé.
+			</p>
+
+			<p>
+				Souvent il est nécessaire de spécifier un chemin parmi
+				les dossiers pour accéder au fichier désiré. Si
+				celui-ci se trouve dans un dossier contenu dans le dossier du
+				fichier source ou dans un sous-dossier ou un sous-sous dossier ... ,
+				il suffit de mentionner tous les dossiers séparés par
+				"<em>/</em>" ainsi que le fichier à lier. Parfois le fichier
+				à référencer se trouve dans un dossier en
+				dehors du dossier courant, il faut alors aller dans le dossier au
+				dessus (ou celui encore au dessus) pour retrouver la ressource.
+				Lorsqu'on remonte d'un niveau, on va vers le dossier parent.
+				Et en informatique, un dossier n'a qu'un dossier parent.
+				Pas besoin donc de dire où on va quand on remonte d'un
+				niveau, on remonte toujours chez son parent, c'est tout. Cette
+				opération est traduite par <em>../</em> Si on doit remonter
+				de 2 niveaux (chez le grand-parent) on aura ../../ Si on a trois
+				niveaux ../../../ etc.
+			</p>
+
+
+
+			<p>
+				<img src="./images/dossier.png" alt="dossier.png" class="floatLeft" />
+			</p>
+
+
+			<p>
+				Par exemple, le dossier mesDocuments contient deux fichiers :
+				maPage1.html et maPage2.html (voir ci-contre). Pour créer un
+				lien à partir du fichier maPage1.html vers maPage2.html, il
+				suffit de référencer la page du lien, càd
+				maPage2.html puisque les deux fichiers se trouvent dans le
+				même dossier. Concrètement, pour insérer un lien
+				dans maPage1 vers maPage2, on écrira l'élément
+				suivant: <span class="html">&lt;a href="maPage2.html"&gt;un
+					lien vers maPage2&lt;/a&gt;</span>.
+			</p>
+			<p>
+				<img src="./images/dossiers.png" alt="dossiers.png"
+					class="floatRight" />
+			</p>
+			<p>Prenons un exemple plus complexe, le dossier mesDocuments
+				contient deux dossiers: dossier1 et dossier2 comme montré
+				dans la figure ci-contre, à droite. Le dossier1 contient un fichier
+				maPage1.html et le dossier2 contient un fichier maPage2.html. Pour
+				créer un lien dans le fichier maPage1.html vers le fichier
+				maPage2.html, il ne suffit plus de mentionner maPage2.html car les
+				deux fichiers ne se trouvent pas dans le même dossier.</p>
+
+
+			<p>Comment faire?</p>
+			<p>
+				L'adressage se fait relativement au dossier parent du dossier
+				courant; càd celui qui contient maPage1.html à partir
+				de laquelle le lien va être effectué. Il faut donc
+				remonter dans l'arborescence des dossiers jusqu'à trouver un
+				parent commun entre le fichier source et le lien.
+				Concrètement,&nbsp;pour insérer un lien dans maPage1
+				vers maPage2, on écrira l'élément suivant: <span
+					class="html">&lt;a href="../dossier2/maPage2.html"&gt;un
+					lien vers maPage2&lt;/a&gt;</span>.
+			</p>
+			<h4>Avantages de l'adressage relatif</h4>
+			<p>Dans un site Web, le fait d'exprimer les liens de
+				manière relative et non absolue facilite la gestion de ce
+				site. Effectivement, mettre en ligne un site ainsi conçu ou encore
+				changer le site d'adresse sera similaire à un simple copier-coller.
+				Pourquoi?</p>
+			<p>Tout d'abord, sachez que les chemins absolus sont plus
+				difficiles à gérer: en cas de déplacement du site ou
+				encore changement de nom, il faut modifier toutes les URL. De plus,
+				une URL est beaucoup moins lisible qu'un chemin relatif car elle est
+				plus longue.</p>
+			<p>Ensuite, lors d'un transfert de fichiers sur le serveur de
+				l'hébergeur, il faudrait, en cas d'adressage absolu, modifier
+				toutes les URL puisque le site se trouvera dans un dossier dans un
+				autre espace mémoire.</p>
+			<h4>Les autres attributs de &lt;a&gt;</h4>
+			<p>
+				La balise <em class="html">&lt;a&gt;</em> peut être garnie d'autres
+				attributs que la source du lien. Outre les attributs déjà connus
+				comme <em class="html">id</em> ou <em class="html">class</em>, on
+				peut spécifier les attributs suivants:
+			</p>
+
+			<h4>
+				<span class="html">title</span>
+			</h4>
+			<p>
+				On peut spécifier un attribut <em class="html">title</em>
+				dans l'élément <em class="html">a</em> qui permet de
+				donner une description textuelle de la page vers laquelle
+				mène le lien. Par exemple,
+			</p>
+<pre><code>&lt;a href = "http://www.ipl.be" <em>title</em> = "Le site de l'école vous informe sur le programme des cours."&gt;
+Le site de l'IPL&lt;/a&gt;</code></pre>
+			<p>
+				Dans la plupart des navigateurs, l'attribut <span class="html">title</span>
+				s'affiche dans une info-bulle qui appara&icirc;t lors du passage de
+				la souris au-dessus du lien. Pensez que les navigateurs pour les
+				mal-voyants lisent à haute voix la valeur que vous lui avez
+				donnée.
+			</p>
+
+			<h4>
+				<span class="html">target</span>
+			</h4>
+			<p>
+				Par défaut, le navigateur se contente d'ouvrir le lien dans
+				la fenêtre courante. Si on désire que le lien soit
+				ouvert dans une autre fenêtre, il faut spécifier
+				explicitement dans l'attribut <em><span class="html">target</span></em>
+				de <em class="html">&lt;a&gt;</em> la valeur <em class="html">_blank</em>.
+			</p>
+			<p>Concrètement, pour créer un lien vers le site de
+				l'IPL qui s'ouvre à chaque fois dans une nouvelle
+				fenêtre, on précisera l'élément de la
+				manière suivante :</p>
+			<div class="taille70">
+<pre><code>&lt;a <em>target = "_blank"</em> href = "http://www.ipl.be"&gt;IPL &lt;/a&gt;</code></pre>
+			</div>
+			<p>
+				<em class="html">_blank</em> signifie qu'on ouvre une nouvelle
+				fenêtre à chaque fois. Si une page possède
+				plusieurs liens avec un attribut target qui vaut <em class="html">_blank</em>,
+				à chaque click une nouvelle fenêtre s'ouvrira. Si on
+				désire que tous les liens d'une page s'ouvre dans la
+				même fenêtre, on peut donner une autre valeur à
+				l'attribut <em class="html">target</em> et si tous les liens de la
+				page &nbsp;spécifient dans <em class="html">target</em> cette
+				valeur, alors ils s'ouvriront tous dans la même fenêtre.
+			</p>
+			<p>
+				Par exemple, sur une page d'index de recette de cuisine, on
+				désire que lorsque l'utilisateur sélectionne une
+				recette, cette recette s'affiche dans une nouvelle fenêtre. Si
+				l'utilisateur sélectionne une autre recette, ce sera toujours
+				la même fenêtre qui sera utilisée. Pour ce faire,
+				on indique un target identique pour tous les éléments
+				<em class="html">a</em>.
+			</p>
+			<p>Par exemple :</p>
+			<table>
+				<tr>
+					<th>Le code de la page HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille70">
+<pre><code>&lt;p&gt;En dessert au choix : &lt;/p&gt;
+&lt;ul class="gateau"&gt;
+&lt;li&gt;&lt;a  <em>target</em> = "recette" href = 
+"http://www.marmiton.org/recettes/recette.cfm?num_recette=19586"<em>&gt;</em>
+Brownies au chocolat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a <em>target</em> = "recette" href = 
+"http://www.marmiton.org/recettes/recette.cfm?num_recette=11363"<em>&gt;</em>
+Cake aux amandes et miel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a <em>target</em> = "recette" href = 
+"http://www.marmiton.org/recettes/recette.cfm?num_recette=21900"<em>&gt;</em>
+Des bananes flambées&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></td>
+					<td><div class="affichageNav">
+							<p>En dessert au choix :</p>
+							<ul class="gateau">
+								<li><a target="recette"
+									href="http://www.marmiton.org/recettes/recette.cfm?num_recette=19586">
+										Brownies au chocolat</a></li>
+								<li><a target="recette"
+									href="http://www.marmiton.org/recettes/recette.cfm?num_recette=11363">
+										Cake aux amandes et miel</a></li>
+								<li><a target="recette"
+									href="http://www.marmiton.org/recettes/recette.cfm?num_recette=21900">
+										Des bananes flambées</a></li>
+							</ul>
+						</div></td>
+				</tr>
+			</table>
+
+		</article>
+		<article>
+			<h2 id="ancre">Ancres</h2>
+			<p>
+				L'attribut <em class="html">id</em> (<em class="html">name</em>
+				anciennement) permet de créer une <em>ancre de
+					destination</em> qui permet de faire un lien vers un endroit
+				précis dans une page. Il suffit de le préciser dans
+				l'élément à ancrer, càd pour préciser la destination, et de placer
+				cet <em class="html">id</em> à la fin du chemin du lien.
+			</p>
+			<p>Voici un exemple de lien vers une ancre de destination placée
+				dans le chapitre HTML sur l'écriture de commentaire:</p>
+
+			<div class="taille50">
+<pre><code>&lt;h4 <em>id</em> = "i_commentaire"&gt;Commentaire&lt;/h4&gt;</code></pre>
+			</div>
+
+			<p>Il est également possible de créer des liens
+				vers une ancre de destination qui se trouve sur la même page;
+				il suffit alors de mentionner comme chemin
+				"#idDeLAncreDeDestination"</p>
+			<p>Voici un exemple de lien vers cette ancre de destination :</p>
+			<table>
+				<tr>
+					<th>Le code des pages HTML :</th>
+					<th>L'affichage par le navigateur :</th>
+				</tr>
+				<tr>
+					<td class="taille70">
+<pre><code>Placer un &lt;a href = "html.html<em>#</em>i_commentaire"&gt; commentaire &lt;/a&gt; 
+... </code></pre></td>
+					<td><div class="affichageNav">
+							Placer un <a href="html.html#i_commentaire"> commentaire </a> ...
+						</div></td>
+				</tr>
+			</table>
+		</article>
+
+
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez une erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Choquet Olivier" />
+<title>e-Syllabus HTML5 et CSS3 - CSS Le positionnement</title>
+<!-- une icône dans la barre du navigateur-->
+<link rel=icon href="images/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+	<!-- bannière et menu -->
+	<header>
+		<div id="logo">
+			<h1>Cours d'introduction au Web</h1>
+		</div>
+		<div id="headTitle">
+			<h2>HTML5 et CSS3</h2>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Le cours </a></li>
+				<li><a href="internet.html">Internet </a></li>
+				<li><a href="html5.html">HTML5 </a></li>
+				<li><a href="css3.html" class="current">CSS3 </a></li>
+				<li><a href="methodologie.html">Méthodologie </a></li>
+				<li><a href="lexique.html">Lexique</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- section principale -->
+	<section id="mainSection">
+		<h1>CSS 3 - Le positionnement</h1>
+		<div id="menu">
+			<nav>
+				<ul>
+					<li><a href="css3.html">Retour au sommaire</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#lignebloc">En ligne ou en en bloc</a></li>
+					<li><a href="#i_position">Le positionnement des boîtes</a></li>
+					<li><a href="#i_absolu">Le positionnement absolu</a></li>
+					<li><a href="#i_relatif">Le positionnement relatif</a></li>
+					<li><a href="#i_fixe">Le positionnement fixe</a></li>
+					<li><a href="#i_flottant">Le positionnement flottant</a></li>
+					<li><a href="#display">La propriété display</a></li>
+				</ul>
+			</nav>
+			<!-- aside lié à la page et pas à l'article donc pas à l'intérieur de article -->
+			<aside>
+				<p>Liens utiles</p>
+				<ul>
+					<li><a
+						href="http://fr.openclassrooms.com/informatique/cours/apprenez-a-creer-votre-site-web-avec-html5-et-css3/le-positionnement-en-css">Positionnement
+							inline-block</a></li>
+				</ul>
+			</aside>
+		</div>
+		<article>
+			<h2 id="intro">Introduction</h2>
+			<p>Nous avons vu au chapitre précédent le modèle de boîtes et
+				plus particulièrement comment modifier la hauteur, la largeur,
+				l'espacement de ces boîtes. Nous allons maintenant voir comment vont
+				se positionner ces boîtes dans une page HTML et également comment
+				intervenir sur ce positionnement.</p>
+
+		</article>
+		<article>
+			<h2 id="lignebloc">En-ligne et en bloc</h2>
+			<p>
+				A l'origine en HTML4, on distinguait 2 types de balises de structure
+				: le type <em>en-ligne</em> ou le type <em>bloc</em>.
+			</p>
+			<p>Les éléments de type bloc s'affichent toujours comme s'il y
+				avait un saut de ligne avant et après, tandis que les éléments de
+				type en-ligne s'affichent dans le cours du texte de la page. En
+				bref, les éléments de type bloc constituent des blocs tandis que les
+				éléments en-ligne sont insérés dans une ligne.</p>
+			<p>
+				Les éléments de rendu "bloc" servent à distinguer les parties
+				entières de texte, comme des titres, des paragraphes, des listes,
+				des citations, etc. Voici une liste des éléments de type bloc : <span
+					class="html">DIV</span>, <span class="html">P</span>, <span
+					class="html">H1</span>...<span class="html">H6</span>, <span
+					class="html">UL</span>, <span class="html">OL</span>, <span
+					class="html">TABLE</span>, <span class="html">PRE</span>, <span
+					class="html">FORM</span>, <span class="html">BLOCKQUOTE</span>,
+				etc.
+			</p>
+			<p>
+				Les éléments en-ligne sont prévus pour rester dans le texte pour
+				l'enrichir (lien hypertexte, emphase, renforcement, etc.). Voici une
+				liste des éléments de type en-ligne : <span class="html">SPAN</span>,
+				<span class="html">EM</span>, <span class="html">Q</span>, <span
+					class="html">A</span>, <span class="html">IMG</span>, <span
+					class="html">BR</span>, <span class="html">INPUT</span>, etc.
+			</p>
+			<p>
+				Les éléments de type bloc se placent toujours l'un en dessous de
+				l'autre par défaut. Par exemple: une suite de paragraphes (balise <span
+					class="html">&lt;p&gt;</span>) ou les éléments d'une liste (balise
+				<span class="html">&lt;li&gt;</span>). Par ailleurs, un élément de
+				type bloc occupe automatiquement, par défaut, toute la largeur
+				disponible dans son conteneur.
+			</p>
+			<p>
+				Les éléments de type en-ligne se placent toujours l'un à côté de
+				l'autre afin de rester dans le texte. Par exemple : la mise en
+				évidence d'une partie de texte à l'aide de la balise <span
+					class="html">&lt;em&gt;</span>.
+			</p>
+
+			<p>
+				Prenons l'exemple d'une image qu'on insère dans un document (.doc)
+				de Word (Microsoft); on peut choisir dans les propriétés de l'objet
+				si on désire que l'image apparaisse dans le texte ou comme étant un
+				élément séparé: <br />
+			</p>
+			<table>
+				<tr>
+					<th>Une image insérée en-ligne :</th>
+					<th>Une image insérée comme un bloc :</th>
+				</tr>
+				<tr>
+					<td>Mon image apparaît dans le texte. <img
+						src="./images/hello.gif" alt="exemple d'image en ligne" /> Vous
+						êtes bienvenus dans ce cours!
+					</td>
+					<td>Mon image apparaît comme un bloc séparé.
+						<div>
+							<img src="./images/hello.gif" alt="exemple d'image en ligne" />
+						</div> Vous êtes bienvenus dans ce cours!
+					</td>
+				</tr>
+			</table>
+			<p>Chaque navigateur possède une feuille de styles
+				par défaut dans lequel il définit l'affichage en bloc ou en-ligne
+				des éléments HTML. Voici donc une raison pour laquelle le rendu HTML
+				peut différer d'un navigateur à un autre. Maintenant pour les
+				éléments les plus courants, vous ne verrez pas de différence (ouf
+				!), les paragraphes sont toujours affichés en bloc par défaut quel
+				que soit le navigateur utilisé.</p>
+			<p class="important">
+				<img src="./images/important.png" class="floatLeft" alt="Important"/> Il faut
+				savoir qu'en HTML5 le typage des éléments HTML en bloc ou en-ligne
+				n'est plus d'actualité. Le navigateur possède une feuille de style par défaut dans laquelle
+				chaque élément HTML est défini en ligne ou en bloc  ou encore en table via la propriété display (voir ci-dessous).
+				Le développeur Web, quant à lui, peut utiliser cette propriété pour modifier le comportement par défaut donné
+				par le navigateur. Un élément HTML ayant donc un rendu par défaut en ligne peut très bien devenir un bloc et vice-versa. 
+			</p>
+		</article>
+		<!--************************************************************************************************************-->
+		<article>
+			<h2 id="i_position">Le positionnement des boîtes</h2>
+			<p>Pour afficher une page web, le navigateur interprète le flux
+				des éléments de type bloc de manière séquentielle, c-à-d du début à
+				la fin du fichier HTML en les affichant au fur et à mesure, les
+				blocs étant placés les uns en dessous des autres, séparés par une
+				ligne (fictive). Les éléments en ligne quant à eux sont placés à la
+				queue-leu-leu sur la même ligne, selon leur ordre d'apparition.</p>
+			<p>
+				Il est néanmoins possible de modifier cet affichage par défaut
+				(statique) en spécifiant un positionnement différent : <a
+					href="#i_absolu">absolu (<span class="html">absolute</span>)
+				</a>, <a href="#i_relatif">relatif (<span class="html">relative</span>)
+				</a> ou <a href="#i_fixe">fixe (<span class="html">fixed</span>)
+				</a>. Dans chacun de ces modes, le positionnement de la boîte peut être
+				spécifié pour l'un ou l'autre des coté : <span class="html">top</span>
+				(coté supérieur de la boîte par rapport au coté supérieur de
+				l'élément de réference), <span class="html">bottom</span> (coté
+				inférieur), <span class="html">right</span> (coté droit) et <span
+					class="html">left</span> (coté gauche), l'élément de référence
+				dépendant du type de positionnement. Il est déconseillé d'utiliser
+				des valeurs négatives car certains navigateurs les interprêtes de
+				manière personnelle.
+			</p>
+
+			<p>La manipulation de ces positionnements peut être délicate car
+				elle risque de produire des recouvrements de blocs.</p>
+			<p>
+				Une autre manière de positionner des éléments d'une page HTML est
+				d'utiliser le mode <a href="#i_flottant">flottant (<span
+					class="html">float</span>)
+				</a> qui permet de construire des menus, de créer une colonne, etc.
+			</p>
+
+			<h4 id="i_absolu">
+				Positionnement absolu (position : <span class="html">absolute</span>)
+			</h4>
+			<p>Le positionnement absolu est calculé à partir des côtés du
+				document. Par exemple, la combinaison des propriétés CSS</p>
+			<p>
+				<span class="html">position:absolute;</span> et <span class="html">left:10%;</span>
+				va déplacer le bloc concerné par ce style de 10% par rapport au coté
+				gauche du document.
+			</p>
+
+			<h4 id="i_relatif">
+				Positionnement relatif (position : <span class="html">relative</span>)
+			</h4>
+			<p>De manière similaire, le positionnement relatif est calculé à
+				partir de l'élément bloc précédant.</p>
+
+			<h4 id="i_fixe">
+				Positionnement fixe (position : <span class="html">fixed</span>)
+			</h4>
+			<p>Le positionnement fixe est calculé à partir du coin supérieur
+				gauche de la fenêtre du navigateur.</p>
+
+			<h4 id="i_flottant">
+				Positionnement flottant (<span class="html">float : left</span> ou <span
+					class="html">right</span>)
+			</h4>
+			<p>Le positionnement flottant permet de modifier le
+				positionnement statique des éléments pour "faire flotter" les
+				éléments à gauche</p>
+
+			<p class=" html">float:left;</p>
+			<p>ou à droite</p>
+			<p class=" html">float:right;</p>
+			<p>Dans l'exemple suivant, l'image est positionnée à gauche.</p>
+			<table>
+				<tr>
+					<th>La CSS :</th>
+					<th>L'affichage :</th>
+				</tr>
+				<tr>
+					<td class="taille50">
+<pre><code>div#header {
+color :  maroon;
+font-family :  sans-serif;
+border-bottom :  1px solid black;
+}
+div#footer {
+color :  black;
+clear : left;
+}
+div#texte {
+margin-left : 25%;
+}
+div#image {
+background-color : red;
+<em>float:left ; </em>
+width : 20%;
+}
+</code></pre>
+					</td>
+					<td><img src="./images/miseEnPage.png"
+						alt="saisie écran encadrement" /></td>
+				</tr>
+			</table>
+
+			<p>Dans cet exemple,</p>
+			<ul>
+				<li>la propriété <span class="html">float : left;</span> de
+					l'élément <em>image</em> indique que l'élément doit être flottant à
+					gauche et placé hors du flux normal; il est important de lui donner
+					une dimension grâce à la propriété <span class="html">width
+						: 20%;</span> pour lui fixer une taille fixe, en rapport avec l'élément
+					voisin.
+				</li>
+				<li>la propriété <span class="html">margin-left : 25%;</span>
+					de l'élément <em>texte</em> est nécessaire pour permettre à
+					l'élément flottant de trouver sa place à gauche de l'entièreté du
+					texte.
+				</li>
+				<li>la propriété <span class="html">clear : left;</span> de
+					l'élément <em>footer</em> signifie que l'élément reprend une
+					position normale dans le flux.
+				</li>
+			</ul>
+
+		</article>
+		<!--************************************************************************************************************-->
+		<article>
+			<h2 id="display">Display</h2>
+			<p>En HTML5, nous retrouvont le typage d'éléments HTML en-ligne
+				et en bloc comme expliqué ci-dessus mais également d'autres typages
+				que voici :</p>
+			<ul>
+				<li><span class="html">none</span> : l'élément n'est pas
+					affiché</li>
+				<li><span class="html">inline</span> : l'élément est affiché
+					en-ligne</li>
+				<li><span class="html">block</span> : l'élément est affiché en
+					bloc</li>
+				<li><span class="html">inline-block</span> : l'élément est
+					affiché en ligne mais peut être redimensionné (width, height) comme
+					un bloc</li>
+				<li><span class="html">list-item</span> : l'élément est affiché
+					en élément de liste (ex : &lt;li&gt;)</li>
+				<li><span class="html">table</span> : l'élément est affiché
+					comme une table (ex : &lt;table&gt;)</li>
+			</ul>
+			<p>Il existe d'autres types de positionnement liés essentiellement
+				aux tables mais il restent peu utilisés à ce jour.</p>
+			<h4>Remarque sur le positionnement inline-block</h4>
+			<p>
+				Les manipulations que demande le positionnement flottant se révèlent
+				parfois un peu délicates sur des sites complexes. Dès qu'il y a un
+				peu plus qu'un simple menu à mettre en page, on risque d'avoir à
+				recourir à des <em>clear</em> qui complexifient rapidement le code
+				de la page. Imaginez que vous voulez réaliser une mise en page du
+				type "menu à gauche suivi d'une partie centrale" (exactement comme
+				la mise en page de ce syllabus). Dans ce cas le positionnement
+				inline-block convient parfaitement car :
+			</p>
+			<ul>
+				<li>Les éléments vont se postionnemer les uns à côté des autres
+					(exactement ce qu'on veut pour placer notre menu et le corps de
+					notre page !).</li>
+				<li>On peut leur donner des dimensions précises (là encore,
+					exactement ce qu'on veut !).</li>
+			</ul>
+			<p>
+				Plus d'informations à ce sujet sur le site d'Open Classroom : <a
+					href="http://fr.openclassrooms.com/informatique/cours/apprenez-a-creer-votre-site-web-avec-html5-et-css3/le-positionnement-en-css">Positionnement
+					inline-block</a>
+			</p>
+		</article>
+		<!--************************************************************************************************************-->
+
+		<!-- fin de section partiePrincipale -->
+	</section>
+	<footer>
+		<div id="contact">
+			<address>
+				Professeurs : <a class="mail" href="mailto:olivier.choquet@ipl.be">Choquet
+					Olivier</a> <a class="mail" href="mailto:emmeline.leconte@ipl.be">Leconte
+					Emmeline</a><a class="mail" href="mailto:jeanluc.collinet@ipl.be">Collinet
+					Jean-Luc</a>
+			</address>
+		</div>
+		<div id="error">
+			<p>
+				Si vous détectez ene erreur, une faute d'orthographe n'hésitez pas à
+				envoyer un <a href="mailto:olivier.choquet@ipl.be"> mail</a> avec le
+				nom de la page et l'erreur détectée.
+			</p>
+		</div>
+		<div id="version">
+			<p>
+				Syllabus HTML <br> version 5.0
+			</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>
